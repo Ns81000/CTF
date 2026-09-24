@@ -1,0 +1,174 @@
+0000  ANDI     i32r    10, 1
+0006  JNZ      rel16   ->dbg_path
+0009  JMP      rel16   ->eng_start
+000c  MOVI64   ri64    8, 16045690984503111693
+0016  ACC      r       8
+0018  ACRM     r       8
+001a  ACCS     r       8
+001c  MOVI64   ri64    8, 6840368246859698740
+0026  ANDI     i32r    8, 1073741823
+002c  ACC      r       8
+002e  JMP      rel16   ->eng_start
+0031  MOVI8    ri8     10, 0
+0034  MOVI32   i32r    6, 12
+003a  DEC      r       6
+003c  JNZ      rel16   ->bait_a
+003f  CMPI     i32r    6, 0
+0045  JZ       rel16   ->bait_done
+0048  MOVI32   i32r    6, 286331153
+004e  JMP      rel16   ->bait_done
+0051  MOVI64   ri64    8, ->mut_echo
+005b  CLOAD    rr      4, 8
+005d  ACC      r       4
+005f  MOVI64   ri64    8, ->bait_a
+0069  ACCC     r       8
+006b  CREAD    r       4
+006e  ACC      r       4
+0070  CREAD    r       4
+0073  ACC      r       4
+0075  CREAD    r       4
+0078  ACC      r       4
+007a  CREAD    r       4
+007d  ACC      r       4
+007f  CREAD    r       4
+0082  ACC      r       4
+0084  CREAD    r       4
+0087  ACC      r       4
+0089  CREAD    r       4
+008c  ACC      r       4
+008e  CREAD    r       4
+0091  ACC      r       4
+0093  MOVI64   ri64    8, ->dead_land
+009d  MOVI64   ri64    9, ->disp_ok
+00a7  CMPI     i32r    10, 0
+00ad  JZ       rel16   ->via_reg
+00b0  JMPR     r       8
+00b2  JMPR     r       9
+00b4  MOVI32   i32r    8, 512
+00ba  DEC      r       8
+00bc  JNZ      rel16   ->dead_loop
+00bf  JMP      rel16   ->disp_ok
+00c2  MOVI64   ri64    8, ->survey_sub
+00cc  CALLR    r       8
+00ce  JMP      rel16   ->seed_done
+00d1  MOVI64   ri64    10, ->sub_data
+00db  CLOAD    rr      11, 10
+00dd  ACCS     r       11
+00df  CLOAD    rr      11, 10
+00e1  ACC      r       11
+00e3  MOVI64   ri64    11, 11400714819323198485
+00ed  PUSH     r       11
+00ef  POP      r       10
+00f1  ACC      r       10
+00f3  RET      none    
+00f4  MOVI64   ri64    8, ->mut_echo
+00fe  MOVI8    ri8     9, 90
+0101  CSTORE   rr      8, 9
+0103  MOVI8    ri8     9, 165
+0106  CXOR     rr      8, 9
+0108  CADD     ri8     8, 1
+010b  MOVI8    ri8     9, 55
+010e  CXOR     rr      8, 9
+0110  CLOAD    rr      4, 8
+0112  ACC      r       4
+0114  MOVI64   ri64    8, ->nop_slot
+011e  INC      r       8
+0120  MOVI8    ri8     9, 17
+0123  CXOR     rr      8, 9
+0125  CLOAD    rr      4, 8
+0127  ACCS     r       4
+0129  MOV      rr      1, 7
+012b  MOVI64   ri64    8, 4611686018427387905
+0135  OR       rr      1, 8
+0137  MOVI64   ri64    9, 9223372036854775807
+0141  AND      rr      1, 9
+0143  MOV      rr      2, 7
+0145  ROTLI    ri8     2, 29
+0148  MOVI64   ri64    8, 11400714819323198485
+0152  XOR      rr      2, 8
+0154  MOVI64   ri64    8, 2305843009213693953
+015e  OR       rr      2, 8
+0160  AND      rr      2, 9
+0162  MOD      rr      2, 1
+0164  CMPI     i32r    2, 3
+016a  JGE      rel16   ->base_ok
+016d  MOVI8    ri8     2, 3
+0170  MOV      rr      3, 7
+0172  ROTLI    ri8     3, 47
+0175  MOVI64   ri64    8, 15485907386658061715
+017f  XOR      rr      3, 8
+0181  MOVI64   ri64    8, 4611686018427387903
+018b  AND      rr      3, 8
+018d  ORI      i32r    3, 1
+0193  MOV      rr      4, 7
+0195  SHRI     ri8     4, 8
+0198  MOVI8    ri8     8, 30
+019b  MOD      rr      4, 8
+019d  SHLI     ri8     4, 1
+01a0  INC      r       4
+01a2  CMPI     i32r    4, 31
+01a8  JNZ      rel16   ->stride_ok
+01ab  MOVI8    ri8     4, 33
+01ae  MOV      rr      5, 7
+01b0  SHRI     ri8     5, 16
+01b3  MOVI8    ri8     8, 62
+01b6  MOD      rr      5, 8
+01b8  MOVI8    ri8     6, 1
+01bb  MOVI8    ri8     0, 62
+01be  MOVI8    ri8     11, 62
+01c1  MOVI64   ri64    9, 2685821657736338717
+01cb  MULMOD   r3      6, 6, 1
+01cf  MOV      rr      8, 3
+01d1  SHR      rr      8, 5
+01d3  ANDI     i32r    8, 1
+01d9  JZ       rel16   ->rskip
+01dc  MULMOD   r3      6, 6, 2
+01e0  MOV      rr      10, 0
+01e2  MUL      rr      10, 9
+01e4  XOR      rr      6, 10
+01e6  MOD      rr      6, 1
+01e8  ADD      rr      5, 4
+01ea  MOD      rr      5, 11
+01ec  DEC      r       0
+01ee  JNZ      rel16   ->rnd
+01f1  MOVI8    ri8     0, 8
+01f4  MOV      rr      8, 7
+01f6  ROTL     rr      8, 0
+01f8  ORI      i32r    8, 1
+01fe  MULMOD   r3      6, 8, 1
+0202  DEC      r       0
+0204  JNZ      rel16   ->mix
+0207  MOVI64   ri64    10, 2611923443488327891
+0211  MOVI64   ri64    11, 1376283091369227076
+021b  MOVI32   i32r    0, 384
+0221  ROTLI    ri8     10, 3
+0224  MUL      rr      10, 11
+0226  XOR      rr      10, 0
+0228  POKE     r       10
+022a  PEEK     r       11
+022c  ADD      rr      11, 10
+022e  OPAQUE   none    
+022f  LOOP     rrel16  0, ->noise
+0233  MOVI8    ri8     0, 12
+0236  MOVI64   ri64    8, ->pad0
+0240  ADD      rr      8, 0
+0242  MOV      rr      10, 0
+0244  ADDI     i32r    10, 157
+024a  CXOR     rr      8, 10
+024c  CLOAD    rr      10, 8
+024e  ACC      r       10
+0250  DEC      r       0
+0252  JNZ      rel16   ->mut
+0255  MOVI64   ri64    8, ->nop_slot
+025f  INC      r       8
+0261  MOVI8    ri8     10, 99
+0264  CXOR     rr      8, 10
+0266  NOPA     i8      0
+0268  CLOAD    rr      10, 8
+026a  ACC      r       10
+026c  MOVI8    ri8     0, 0
+026f  MOVI8    ri8     8, 0
+0272  MOVI8    ri8     9, 0
+0275  MOVI8    ri8     10, 0
+0278  MOVI8    ri8     11, 0
+027b  HALT     none    

@@ -1,0 +1,102 @@
+==============================================================
+== D:\gandu\drive-upload
+==============================================================
+    212199  e82293c20d7f2234fa2d0f4a7a49618dd8dc3c9c84381bbd01275428b18b48d2  cartographer.zip
+      3383  770cf0cd209cce4c364528f25c8da20dc4e3dfbf3f4031722908b96144ce342b  cartographer/README_FOR_SOLVER.txt
+     66840  ebce5c7f9012021ab6de1d770f28bf34f938ac11d38fb99022082899042766b9  cartographer/stage0_start/stage0_start
+     66824  53f891d669b2475305aef929c7ec7d9c3c73f9ab73ffdab0bf0a19bacd4fdc13  cartographer/stage1_vm/stage1_vm
+     62728  64e9d123b52082fd56e8612f712efdef70f7e7b743032418f27e69b27bbc1a73  cartographer/stage2_stego/stage2_stego
+     46258  81b630a8d9cf0a7a85ac2fd99e352d6a4a3b432f568900a7ab9da5e88712d23c  cartographer/stage2_stego/survey_frame.png
+      8152  17bb6addf71803ebf13864fde2c96c9a28927180b9fa4074697b67e2201d29f6  cartographer/stage2_stego/survey_tape.wav
+     58632  2bc24a4a70fd4b22d6962aabd820b1255f793b37b47b6c9ed998ceaf07a3ab8e  cartographer/stage3_oracle/oracle
+     54536  4715ee4633cdb4614fa8860a12ee6a275a914c919e25e2d6cf22783a3090e637  cartographer/stage4_assembly/validate
+files: 9
+==============================================================
+== D:\gandu\organizer-private
+==============================================================
+      2695  a26f5a408222e318f5fdbf37c73bde40d0c997036bf928a3c47cf9a01b92b28c  HINTS.md
+      3383  770cf0cd209cce4c364528f25c8da20dc4e3dfbf3f4031722908b96144ce342b  README_FOR_SOLVER.txt.solver-copy
+     32666  2887eff6b6e79ec91e58c8858ca58a88bf06cd4c1b7d00afe9b13ba5234e2472  SOLVE_PATH_PRIVATE.md
+      3068  74019b02d4ca72b521f249779a99f7f2178a3eb5f7f2a304f43fef47a84198fa  TRYHACKME_ROOM_TEXT.md
+     19263  18dd1fa22a90371704ce574a7d0c445aa258a13a2bd8ad3f0b761e89e152c8ab  docs/BUILD_SPEC.md
+      2359  884d3566b765a23c52f0ae64f1a439062162acd8a1ddf828a397215a3739cca2  logs/KICKOFF_PHASE_1.md
+      3544  ad91c3067876c0a78c62b39b455809cf90674947a2c014e1762728bbfd53965e  logs/KICKOFF_PHASE_2.md
+      5704  8dae414942028b579e0784721424b17119e6448855600780dba801b6514804f2  logs/KICKOFF_PHASE_3.md
+      6789  827322a49b5e4da66577596e38a336c26cbf2bc67438f086889b037838e652d1  logs/KICKOFF_PHASE_4.md
+      7445  1d57cd869032268ff52ff66c6b62ab1475f25baf84f6c71ae28d8879517b9a2e  logs/KICKOFF_PHASE_5.md
+      8437  d6a51b85faf04e7fb8bbe227ba92d6b23f6460587b9c8e380c05478294061eda  logs/KICKOFF_PHASE_6.md
+      7016  fb6c3cb6940f5ddbe2ac6aa2bd9fc59973ad597b600283c2cabbb7cacb424c25  logs/KICKOFF_PHASE_FINAL.md
+     18351  c498e1765cc407b1ccfb00db0fccf21459f30d1ef5bbc3714638776dfe7bf839  logs/PHASE_0_LOG.md
+     17293  42b428e537754aedba7e657f7f5f1fb828c66bceffd9f4ec7a80e2fed098b742  logs/PHASE_1_LOG.md
+     49870  3838e3fcaaca5b155fff78f394023ceefe109bc480b648830610eeca7b12ffd1  logs/PHASE_2_LOG.md
+     44540  848c65c6a24903990845e62694e3356a0a94f58a4061d916fabdcce2824d6448  logs/PHASE_3_LOG.md
+     37378  4131111f5afcae62d173e78a93710ee483a80527dbbe03e17a4289281763ca65  logs/PHASE_4_LOG.md
+     32467  866b966192f23ed11b28ef9a5e2dc50fff0f918a4ed026165f87d3a8f5a056b6  logs/PHASE_5_LOG.md
+     26527  80e829540413a9a43ca70344e11e66ecc96aeb84b21a32ec71bf85df1ff01473  logs/PHASE_FINAL_2_LOG.md
+     21150  64c239d20e8b32842d243bfb37522536c770d06f7365ef557e2d71319808cb0b  logs/PHASE_FINAL_LOG.md
+      7283  fd48fa839d0b0bf4159d1575daa4bcdac0a3a16169d23e605c11e9fda5cb8ac6  logs/runs/final_adversarial.txt
+      3313  5306771884399747e5b1410d51f680a04168d3d8bbf6b732b69c5f7fddec499e  logs/runs/final_clean_path.log
+        21  65bc33b17460cfa86e565afb4a55ce29a544272b8e0f4e4d1070c66a11aee601  logs/runs/final_clean_path.started
+      3313  5306771884399747e5b1410d51f680a04168d3d8bbf6b732b69c5f7fddec499e  logs/runs/final_clean_path.stdout
+      2329  c219f80d4b953827647fd267319c5a808e2d14a47c31557bf1aef3ab04fb9487  logs/runs/final_decoy_segment.log
+       592  831bccf22f0b6a50d49742176760e5a88b45cdd210d83bf0d9729f99b021ce55  logs/runs/p4_vectors.txt
+     14286  9a3cab7b926fbd194923f31ae4de8598b14dd5569bf209de1d5e76e31951b848  logs/runs/p5_suites_run.txt
+     18877  a79e2d58c796b36261a557fb54d8f1526340815addf77a4b6908ab2b7700d81a  logs/runs/p5_verify_baseline.txt
+      8506  db18c3ce29b1861b6f8c72f40b56f5569b894b640bf548840d093bb4edcd09cf  logs/runs/p5_verify_final.txt
+      8501  794e875bcab2aac82885c9e7dfb8c354d82e41d009b5f16f65f964265aa90d93  logs/runs/p5_verify_run.txt
+      7288  d0631ee28eded9760c5862288f7fa3e3ecfa8424e8c45d936e558f799af445c3  logs/runs/pf2_adversarial.txt
+       686  0afcbddac881e85f5e55510a58bae498d81a56977a0a5549f7ac13a10ed8104c  logs/runs/pf2_binaries_diff.txt
+      3196  c93d0ef96d62cb0d1061ca83519fc1798b430dace2a9441d7c995e37d151dddd  logs/runs/pf2_clean_rebuild.txt
+      1355  0b2d150b70f6dc29bda41ca1ce07f6d5f7f0760da80c0e26743c2e1f3ef49ebb  logs/runs/pf2_confirm_hedge.log
+      2904  9da31be8b46e013b90e70088755f15814c1d5afd70cf1ba2eab9e76baeea4da3  logs/runs/pf2_confirm_hedge.stdout
+      3154  e3041d40e9467b45d43d13637cad388ddccc317f62a396480528f7ccf695c866  logs/runs/pf2_confirm_lower.log
+      3154  e3041d40e9467b45d43d13637cad388ddccc317f62a396480528f7ccf695c866  logs/runs/pf2_confirm_lower.stdout
+      3157  5028dfd5a0348ab8132667302d12542a651058248956f24b5189e256d2e2cfe6  logs/runs/pf2_confirm_upper.log
+      3157  5028dfd5a0348ab8132667302d12542a651058248956f24b5189e256d2e2cfe6  logs/runs/pf2_confirm_upper.stdout
+     11565  e18927b2a2e28a34778a25f58264e89d421837fe3a2eb9fd578e694c7d260dfc  logs/runs/pf2_cppcheck.txt
+   1335356  cf3118e9d818b43d091fd97944a09a256880c597754a25ca4154deb8c44a8fce  logs/runs/pf2_model_sweep.txt
+     98890  a2f94fe5115909c2f021d712d746baca1932f602488a68e1063854df15b98311  logs/runs/pf2_model_sweep2.txt
+       357  84a1e64ce81bd459dcbaafb5fec43b72d18ae5aaa79cbda03df7ed6c71304003  logs/runs/pf2_package.txt
+       389  ec2ca69c13a7b1159ec01334287e2d48870de2dc0932655ef6a143c87ef59f38  logs/runs/pf2_poison_volume.txt
+       957  e24404a256c83ba2ea9dd8b5a244b6781b210aaf7bca299818c66f8495ccb134  logs/runs/pf2_real_sweep.txt
+   1831083  483675f89cb985e4ade40c3da5491acbde9e1d8b4a3b3bc862dffdf9a3da31f6  logs/runs/pf2_trials_model.jsonl
+   5312744  33e707c0894dac5b7a737b7b2da080b22681c4581b98a2afdb5301fb90c09cfc  logs/runs/pf2_trials_model2.jsonl
+     18634  2ef0ce5fe1ccad2ae5cdc5b1b595c8cc8d89728be30fcd7e8300da083c53f2a4  logs/runs/pf2_trials_real.jsonl
+      8514  e8db4c72713e5ab3308ad0056d79bc090c39218eb98724bcbc3b6fc958e2d169  logs/runs/pf2_verify_chain.txt
+     17073  9b785a5906613a49837a914dc5570f6855b29373b600edb5abf49260e77a13ef  logs/runs/pf_finalize.log
+      8506  80e1d659c09174e29bd00d1c8404dfae248db1ceae1e830c4d40e0a1243156ad  logs/runs/pf_verify_final.txt
+      3320  20e91ebd85691a5d64736a1697ac5be44590d9205e4db68a474547966e9cdb56  logs/runs/scale60_clean.log
+      3320  20e91ebd85691a5d64736a1697ac5be44590d9205e4db68a474547966e9cdb56  logs/runs/scale60_stdout.txt
+files: 53
+
+== the shipped zip, itemised ==
+Archive:  cartographer.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  2026-09-21 10:29   cartographer/
+        0  2026-09-21 10:29   cartographer/stage2_stego/
+    62728  2026-09-21 10:29   cartographer/stage2_stego/stage2_stego
+     8152  2026-09-21 10:29   cartographer/stage2_stego/survey_tape.wav
+    46258  2026-09-21 10:29   cartographer/stage2_stego/survey_frame.png
+        0  2026-09-21 10:29   cartographer/stage4_assembly/
+    54536  2026-09-21 10:29   cartographer/stage4_assembly/validate
+        0  2026-09-21 10:29   cartographer/stage3_oracle/
+    58632  2026-09-21 10:29   cartographer/stage3_oracle/oracle
+        0  2026-09-21 10:29   cartographer/stage1_vm/
+    66824  2026-09-21 10:29   cartographer/stage1_vm/stage1_vm
+     3383  2026-09-21 10:29   cartographer/README_FOR_SOLVER.txt
+        0  2026-09-21 10:29   cartographer/stage0_start/
+    66840  2026-09-21 10:29   cartographer/stage0_start/stage0_start
+---------                     -------
+   367353                     14 files
+
+== zero-organizer-content assertion, on the WINDOWS copy of the zip ==
+  -> no organizer content in the Drive zip
+
+== CARTO_TEST_TIME_SCALE must be absent from the Windows-side binaries ==
+  clean: stage2_stego/stage2_stego
+  clean: stage4_assembly/validate
+  clean: stage3_oracle/oracle
+  clean: stage1_vm/stage1_vm
+  clean: stage0_start/stage0_start
+WINDOWS-REPORT-OK

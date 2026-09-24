@@ -1,0 +1,175 @@
+=== build hygiene (spec 4.5: same recipe as every shipped tool) ===
+PASS gen-consts
+PASS real-door-index-mint-derived
+PASS consts-deterministic
+PASS build
+PASS build-warning-free
+PASS binary-static
+PASS binary-nm-empty
+PASS binary-rebuild-deterministic
+PASS binary-no-toolchain-strings
+PASS binary-carries-canary
+
+=== chambers (generated, never hand-written) ===
+PASS chambers-generated
+PASS chamber-count
+PASS chamber-max-size-below-limit
+PASS chamber-0-marker
+PASS chamber-1-marker
+PASS chamber-2-marker
+PASS chamber-3-marker
+PASS chamber-4-marker
+PASS chamber-5-marker
+PASS chamber-6-marker
+PASS chamber-7-marker
+PASS chambers-no-verdict-words
+PASS real-chamber-has-ink
+PASS real-chamber-has-chain2-vector
+PASS decoy-chamber-1-no-real-values
+PASS decoy-chamber-1-cites-mirror
+PASS decoy-chamber-1-carries-field-token
+PASS decoy-chamber-1-carries-walk
+PASS decoy-chamber-2-no-real-values
+PASS decoy-chamber-2-cites-mirror
+PASS decoy-chamber-2-carries-field-token
+PASS decoy-chamber-2-carries-walk
+PASS decoy-chamber-3-no-real-values
+PASS decoy-chamber-3-cites-mirror
+PASS decoy-chamber-3-carries-field-token
+PASS decoy-chamber-3-carries-walk
+PASS decoy-chamber-4-no-real-values
+PASS decoy-chamber-4-cites-mirror
+PASS decoy-chamber-4-carries-field-token
+PASS decoy-chamber-4-carries-walk
+PASS decoy-chamber-5-no-real-values
+PASS decoy-chamber-5-cites-mirror
+PASS decoy-chamber-5-carries-field-token
+PASS decoy-chamber-5-carries-walk
+PASS decoy-chamber-6-no-real-values
+PASS decoy-chamber-6-cites-mirror
+PASS decoy-chamber-6-carries-field-token
+PASS decoy-chamber-6-carries-walk
+PASS decoy-chamber-7-no-real-values
+PASS decoy-chamber-7-cites-mirror
+PASS decoy-chamber-7-carries-field-token
+PASS decoy-chamber-7-carries-walk
+
+=== build the doors (spec 4.5: identical records, raw XOR streams) ===
+PASS doors-build
+PASS doors-bin-size
+PASS riddle-bin-size
+PASS doors-bin-hides-marker
+PASS doors-bin-hides-real-chamber
+PASS doors-bin-hides-door-ink
+PASS doors-bin-hides-chain2-vector
+PASS riddle-hides-verse
+
+=== open lanes: every designed phrase opens exactly its chamber ===
+PASS open-0-rc
+PASS open-0-stderr-silent
+PASS open-0-byte-exact-chamber
+PASS open-1-rc
+PASS open-1-stderr-silent
+PASS open-1-byte-exact-chamber
+PASS open-2-rc
+PASS open-2-stderr-silent
+PASS open-2-byte-exact-chamber
+PASS open-3-rc
+PASS open-3-stderr-silent
+PASS open-3-byte-exact-chamber
+PASS open-4-rc
+PASS open-4-stderr-silent
+PASS open-4-byte-exact-chamber
+PASS open-5-rc
+PASS open-5-stderr-silent
+PASS open-5-byte-exact-chamber
+PASS open-6-rc
+PASS open-6-stderr-silent
+PASS open-6-byte-exact-chamber
+PASS open-7-rc
+PASS open-7-stderr-silent
+PASS open-7-byte-exact-chamber
+PASS real-chamber-output-has-ink
+PASS decoy-output-lacks-ink
+PASS output-framing-identical
+
+=== undesigned lanes: zero signal (byte-identical fixed line) ===
+PASS undesigned-0-rc
+PASS undesigned-1-rc
+PASS undesigned-2-rc
+PASS undesigned-3-rc
+PASS undesigned-4-rc
+PASS undesigned-5-rc
+PASS undesigned-6-rc
+PASS undesigned-7-rc
+PASS undesigned-8-rc
+PASS undesigned-9-rc
+PASS undesigned-single-distinct-output
+PASS undesigned-output-fixed-line
+PASS undesigned-output-is-not-a-chamber
+
+=== riddle lane: the verse needs the loom claim ===
+PASS riddle-right-claim-rc
+PASS riddle-right-claim-stderr-silent
+PASS riddle-right-claim-opens-verse
+PASS riddle-verse-byte-exact
+PASS riddle-verse-matches-generator
+PASS riddle-wrong-claim-refused
+PASS riddle-garbage-refused
+PASS riddle-missing-file-neutral
+PASS riddle-wrong-equals-right-refusal
+
+=== state (spec 4.9: created, gated, tamper-reset) ===
+PASS state-size
+PASS doors-real-bit-set
+PASS loom-done-bit-set
+PASS decoy-open-does-not-set-bit
+PASS tamper-resets-silently
+FAIL state-hmac-valid-after-reset
+
+=== leak lanes (spec 4.5 acceptance) ===
+PASS binary-hides-all-phrases
+PASS binary-hides-real-values
+PASS binary-hides-decoy-tokens
+PASS binary-prints-notice
+PASS usage-rc
+PASS usage-prints-canary
+PASS usage-stderr-silent
+PASS usage-hides-mechanism-words
+
+=== behaviour probe (rc 0, silent stderr, no crash) ===
+PASS beh-noargs-rc
+PASS beh-noargs-stderr-silent
+PASS beh-unknown-subcommand-rc
+PASS beh-unknown-subcommand-stderr-silent
+PASS beh-open-no-phrase-rc
+PASS beh-open-no-phrase-stderr-silent
+PASS beh-open-empty-phrase-rc
+PASS beh-open-empty-phrase-stderr-silent
+FAIL beh-open-200kb-rc (got [126] want [0])
+FAIL beh-open-200kb-stderr-silent (got [66] want [0])
+PASS beh-open-16-extra-args-rc
+PASS beh-open-16-extra-args-stderr-silent
+PASS beh-riddle-no-key-rc
+PASS beh-riddle-no-key-stderr-silent
+PASS beh-riddle-short-key-rc
+PASS beh-riddle-short-key-stderr-silent
+PASS beh-narrow-columns-rc
+PASS beh-narrow-columns-stderr-silent
+PASS beh-term-dumb-rc
+PASS beh-term-dumb-stderr-silent
+PASS beh-devnull-stdin-rc
+PASS beh-devnull-stdin-stderr-silent
+PASS beh-devnull-rc
+PASS beh-devnull-stderr-silent
+PASS beh-piped-stdin-rc
+PASS beh-piped-stdin-stderr-silent
+PASS beh-readonly-dir-rc
+PASS beh-readonly-dir-stderr-silent
+PASS beh-missing-doors-bin-rc
+PASS beh-missing-doors-bin-neutral
+PASS beh-truncated-doors-bin-rc
+PASS beh-corrupt-doors-bin-rc
+PASS package-still-pristine-after-suite
+
+P6: 152 PASS, 3 FAIL

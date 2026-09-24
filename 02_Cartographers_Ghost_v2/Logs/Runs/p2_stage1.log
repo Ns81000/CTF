@@ -1,0 +1,65 @@
+== stage1 ==
+  PASS no arguments (rc 0, stderr silent)
+  PASS usage is printed when nothing is asked for
+  PASS a fresh record starts on the interior survey
+  PASS interior steps
+  PASS the checkpoint is offered
+  PASS the engine ink is never printed
+  PASS the bench setting is printed
+  PASS independent python check of the record
+  PASS the shorter survey (rc 0, stderr silent)
+  PASS coast steps
+  PASS coast reaches the same checkpoint
+  PASS the longer survey again (rc 0, stderr silent)
+  PASS the longer survey still reaches the checkpoint
+  PASS the same survey twice (rc 0, stderr silent)
+  PASS the same survey a third time (rc 0, stderr silent)
+  PASS the same survey is byte-identical every run
+  PASS the independent model reproduces both traces and the 32 bytes
+  PASS the model ran both profiles
+  PASS record the bearing (rc 0, stderr silent)
+  PASS the bearing was written to the record
+  PASS the recorded bearing is the expected one
+  PASS the bearing low half is not printed
+  PASS the bearing high half is not printed
+  PASS submit the old index key (rc 0, stderr silent)
+  PASS the decoy is corroborated, not refused
+  PASS the decoy answer does not leak the checkpoint
+  PASS the decoy re-inks the bearing
+  PASS the decoy bearing comes from the old index key
+  PASS a wrong key (rc 0, stderr silent)
+  PASS another wrong key (rc 0, stderr silent)
+  PASS every wrong key gets the same answer
+  PASS the refusal is the documented line
+  PASS the refusal is printed exactly once
+  PASS a traced run answers with the alternate key
+  PASS the traced run never shows the checkpoint
+  PASS the debugger flag reached the record
+  PASS empty argument (rc 0, stderr silent)
+  PASS sixteen arguments (rc 0, stderr silent)
+  PASS an unknown survey name (rc 0, stderr silent)
+  PASS 80 KB argument (one argv may not exceed 128 KB) (rc 0, stderr silent)
+  PASS piped streams (rc 0, stderr silent)
+  PASS dumb terminal (rc 0, stderr silent)
+  PASS narrow terminal (rc 0, stderr silent)
+  PASS missing argument file (rc 0, stderr silent)
+  PASS corrupt record (rc 0, stderr silent)
+  PASS still reaches the checkpoint
+  PASS record is 1168 bytes
+  PASS independent python check of the record
+  PASS record is 1168 bytes
+  PASS independent python check of the record
+  PASS nm is empty (/home/ns8pc/ghost-build/cartographer/stage1_engine/engine)
+  PASS no build provenance in strings (/home/ns8pc/ghost-build/cartographer/stage1_engine/engine)
+  PASS no engine ink in the binary
+  PASS no K_engine in the binary
+  PASS no reading in the binary
+  PASS no title in the binary
+  PASS no stage-3 seed text in the binary
+  PASS no decoy token in the binary
+  PASS no checkpoint string in the binary
+  PASS the engine is executable
+  PASS statically linked
+  PASS a clean rebuild is byte-identical
+  62 checks, 0 failed
+  OK

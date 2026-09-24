@@ -1,0 +1,16 @@
+== vectors ==
+wrote /tmp/carto_v2_vectors.txt (16 vectors)
+== build ==
+== unit suite ==
+
+33 tests run, 0 failed
+== wheel: does an independent implementation accept the bytes? ==
+ring_count=2 ring_head=2 first_run=1700000000000 distinct=7 (3-byte field)
+PASS /tmp/p1rec/.cartographer_state: 1168 bytes, hmac ok, chain ok, tags ok
+PASS record size 1168
+PASS exactly one file written
+== leak scan: no plaintext key material in the linked test binaries ==
+PASS leak scan (no vector prefix found in test_state/mkrec)
+== shipped binaries must ignore the test hook ==
+PASS test hook absent from default builds
+OK

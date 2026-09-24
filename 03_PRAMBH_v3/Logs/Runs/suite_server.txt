@@ -1,0 +1,66 @@
+=== server start (min-journey 3 s so the gate can be crossed) ===
+PASS server-up
+PASS server-binds-localhost
+
+=== register (3 players) ===
+PASS register-alice-ack
+PASS register-alice-token
+PASS register-bob-ack
+PASS register-bob-token
+PASS register-carol-ack
+PASS register-carol-token
+players recorded by HMAC only
+PASS register-hmac-records-only
+
+=== checkpoints: in order accepted, out of order is a stall ===
+PASS checkpoint-alice-stage0-accepted
+PASS checkpoint-alice-loom-accepted
+PASS checkpoint-alice-doors-accepted
+PASS checkpoint-alice-eyes-accepted
+PASS checkpoint-alice-title-accepted
+out-of-order recorded as a stall, order kept
+PASS checkpoint-out-of-order-stalls
+unknown token accepted silently, counted as a stall
+PASS checkpoint-unknown-token-stalls
+PASS checkpoint-refusal-shape-identical
+
+=== submit: early refused, then the real one ===
+digests planted for the gate lanes
+PASS digest-planted
+PASS submit-early-refused
+PASS submit-early-counted-as-stall
+PASS submit-forged-refused
+PASS submit-right-title-without-journey-refused
+PASS submit-flag-issued
+PASS submit-flag-stable
+
+=== board, persistence, disk hygiene ===
+PASS board-has-callsign
+PASS board-has-stalls
+PASS board-has-checkpoints
+PASS board-has-journey_s
+PASS board-has-solve_s
+PASS board-has-solved
+PASS board-lists-three-players
+PASS restart-persists-players
+PASS restart-persists-flag
+PASS no-title-on-disk
+PASS no-server-secret-on-disk
+PASS state-holds-hmac-records
+PASS server-code-stdlib-only
+PASS server-never-binds-wide
+
+=== abuse lanes ===
+PASS get-unknown-path-ack
+PASS put-ack
+PASS bad-json-submit-ack
+PASS empty-callsign-tolerated
+PASS missing-fields-tolerated
+PASS huge-title-tolerated
+PASS timing-safe-compares-used
+PASS rate-limit-implemented
+no real answers anywhere in the server record
+PASS records-hold-no-answers
+PASS no-plaintext-title-in-record
+
+P9-SERVER: 48 PASS, 0 FAIL

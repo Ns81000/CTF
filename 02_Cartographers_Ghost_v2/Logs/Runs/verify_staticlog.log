@@ -1,0 +1,14 @@
+  PROVEN naive LSB lane yields CARTO{the_coast_was_drawn_twice}
+  PROVEN press tag yields press-metadata (not a reading)
+  PROVEN stage0_ledger static output yields CARTO{hand_this_to_your_operator}
+  PROVEN stage0_ledger static output yields CARTO{the_survey_reopens_tonight}
+  PROVEN stage1_engine static output yields CARTO{64c4ad4ea9c40319}
+  PROVEN stage2_sheet static output yields CARTO{hand_this_to_your_operator}
+  PROVEN stage3_oracle static output yields CARTO{hand_this_to_your_operator}
+  PROVEN stage4_seal static output yields CARTO{hand_this_to_your_operator}
+  PROVEN stage5_title static output yields CARTO{54a3eb304734135c5308bf186b21c839}
+  PROVEN stage5_title static output yields CARTO{hand_this_to_your_operator}
+  PROVEN decoy key at real stamp yields refused
+  PROVEN struck draft at validator yields refused
+  12 static checks, 0 failed
+STATIC PATH PROVEN

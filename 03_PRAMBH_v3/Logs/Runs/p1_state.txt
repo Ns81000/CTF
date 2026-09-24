@@ -1,0 +1,62 @@
+PASS build (musl static)
+PASS static link
+PASS state size constant is 512
+PASS fresh magic
+PASS fresh first_run nonzero
+PASS fresh version
+PASS missing file -> fresh
+PASS save ok
+PASS file exactly 512 bytes
+PASS file mode 0600
+PASS load valid state
+PASS first_run_ms stable
+PASS counter monotonic
+PASS stage bits roundtrip
+PASS poison bits roundtrip
+PASS loom_out slot roundtrip
+PASS chain2_seed slot roundtrip
+PASS door_ink slot roundtrip
+PASS chain2_out slot roundtrip
+PASS byteflip-region-00 all 32 reset
+PASS byteflip-region-01 all 32 reset
+PASS byteflip-region-02 all 32 reset
+PASS byteflip-region-03 all 32 reset
+PASS byteflip-region-04 all 32 reset
+PASS byteflip-region-05 all 32 reset
+PASS byteflip-region-06 all 32 reset
+PASS byteflip-region-07 all 32 reset
+PASS byteflip-region-08 all 32 reset
+PASS byteflip-region-09 all 32 reset
+PASS byteflip-region-10 all 32 reset
+PASS byteflip-region-11 all 32 reset
+PASS byteflip-region-12 all 32 reset
+PASS byteflip-region-13 all 32 reset
+PASS byteflip-region-14 all 32 reset
+PASS byteflip-region-15 all 32 reset
+PASS truncated state -> reset
+PASS extended state -> reset
+PASS garbage state -> reset
+PASS empty state -> reset
+PASS foreign state swapped in -> reset
+PASS replay of sealed state -> valid (documented)
+PASS device key stable
+PASS device key bound to root
+PASS pacing first attempt free
+PASS pacing both clocks pass
+PASS pacing 1ms early refused
+PASS pacing exact boundary
+PASS pacing wall backwards refused
+PASS pacing wall jump + mono small refused
+PASS pacing mono backwards refused
+PASS pacing zero pace allows
+PASS save in read-only dir fails cleanly
+PASS concurrent writers -> state valid
+CHECKS 51 FAILS 0
+PASS py: state file exactly 512 bytes
+PASS py: magic bytes
+PASS py: version 3
+PASS py: independent HMAC-SHA256 verifies
+PASS py: reserved region zero
+PASS py: sha256ctr keystream matches C implementation
+PASS deterministic resave path (h1!=h2 expected: counter bumps)
+STATE SUITE DONE

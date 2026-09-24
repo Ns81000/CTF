@@ -1,0 +1,7 @@
+FAIL build-run-1
+FAIL build-run-2
+PASS two-builds-byte-identical
+src/final/rebuild_repro.sh: line 24: ok: command not found
+PASS shipped-package-matches-rebuild
+
+REBUILD REPRO NOT OK

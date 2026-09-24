@@ -1,0 +1,51 @@
+  PASS no leak: the_survey_reopens_tonight
+  PASS no leak: 3821ad004ab30263_e509312ae8a2e0ad_145e1d23feac3932_rust_blooms_under_tin_roofs
+  PASS present by design: 54a3eb304734135c5308bf186b21c839
+  PASS present by design: a_warm_plate_and_a_full_ring
+  PASS no leak: 145e1d23feac3932
+  PASS no leak: rust_blooms_under_tin_roofs
+  PASS no leak: rust_blooms
+  PASS no leak: tin_roofs
+  PASS no leak: e509312ae8a2e0ad
+  PASS no leak: 3821ad004ab30263
+  PASS no leak: e509312ae8a2e0adeb4c0b2517a3f842ca5aff0d7bce2c117f47a2dcf028e034
+  PASS no leak: f059e3a8ec8fb6a1
+  PASS no leak: 64c4ad4ea9c40319
+  PASS no leak: f5ea27c63ed89565
+  PASS no leak: bab073aec06d6b60
+  PASS no leak: 1513351e85d8b50a
+  PASS no leak: 040ec499dd20e571
+  PASS no leak: 771760977412952853
+  PASS no leak: 01d94d492a46ce3d
+  PASS no leak: 01d94d49
+  PASS the naive lane lands exactly on the registered decoy
+  PASS present by design: c3240a6373072eab
+  PASS no leak: ghost2:stage0:token:v1
+  PASS no leak: ghost2:stage1:key:v1
+  PASS no leak: ghost2:stage1:vm:map:v1
+  PASS no leak: ghost2:stage1:bytecode:v1
+  PASS no leak: ghost2:stage1:decoy:key:v1
+  PASS no leak: ghost2:stage1:debug:key:v1
+  PASS no leak: ghost2:stage2:reading:v1
+  PASS no leak: ghost2:stage2:press:v1
+  PASS no leak: ghost2:stage2:decoy:layer:v1
+  PASS no leak: ghost2:stage2:middle:layer:v1
+  PASS no leak: ghost2:stage2:dither:v1
+  PASS no leak: ghost2:stage2:tape:v1
+  PASS no leak: ghost2:stage3:cipher:v1
+  PASS no leak: ghost2:stage3:seed:v1
+  PASS no leak: ghost2:stage3:tally:v1
+  PASS no leak: ghost2:stage3:cold:v1
+  PASS no leak: ghost2:stage4:cipher:v1
+  PASS no leak: ghost2:stage4:key:v1
+  PASS no leak: ghost2:stage4:decoy:key:v1
+  PASS no leak: ghost2:stage5:title:v1
+  PASS no leak: ghost2:stage5:decoy:draft:v1
+  PASS no leak: CARTO_TEST_TIME_SCALE
+  PASS no leak: ns8pc
+  PASS no leak: /home/
+  PASS no leak: drive-upload
+  PASS no leak: stage2_stego
+  PASS no leak: s2_inflate_payload_marker
+  49 leak checks, 0 failed
+OK

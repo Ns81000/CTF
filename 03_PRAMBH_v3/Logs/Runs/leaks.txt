@@ -1,0 +1,57 @@
+# PRAMBH leak grep - machine-readable report (spec 7 lane 5)
+# package: /mnt/e/drive-upload/prambh-build/prambh
+# generated: 2026-09-23T02:22:35Z
+
+## real values that must be ABSENT
+PASS absent:96415166fc01091e
+PASS absent:4668e434c5ea0e9b
+PASS absent:6939de42d44af1f2
+PASS absent:kiln weir saplin
+PASS absent:83687190e2798db9
+PASS absent:d269f4e50287da37
+PASS absent:5LNE5X_XV5WUW_AL
+PASS absent:5LNE5X
+PASS absent:de918c455c4b1d42
+PASS absent:43560fb33c8d0924
+PASS absent:PRAMBH{43560fb33
+PASS stage0-token-present-in-milestone
+PASS stage0-token-lives-nowhere-else
+PASS canary-present-by-design
+
+## derivation-label scope (each tool carries only its own stage labels)
+PASS label-scope-loom-own
+PASS label-scope-loom-others
+PASS label-scope-milestone-others
+PASS label-scope-doors-others
+
+## forbidden v2 values (must be ABSENT)
+PASS forbidden-absent:CARTO{the_surv
+PASS forbidden-absent:145e1d23feac39
+PASS forbidden-absent:e509312ae8a2e0
+PASS forbidden-absent:3821ad004ab302
+PASS forbidden-absent:rust_blooms_un
+PASS forbidden-absent:CARTO{64c4ad4e
+PASS forbidden-absent:f5ea27c63ed895
+PASS forbidden-absent:CARTO{hand_thi
+PASS forbidden-absent:CARTO{a_warm_p
+PASS forbidden-absent:01d94d492a46ce
+PASS forbidden-prefix-absent
+PASS no-organizer-content
+
+## registered decoys that must be PRESENT exactly where documented
+PASS canary-in-notice-file
+PASS launch-sheet-archive
+PASS canary-in-rom-text
+PASS canary-in-mirror-binaries
+PASS canary-in-plate-notice-chunk
+PASS decoy-registered:D-ROM-1
+PASS decoy-registered:D-ROM-2
+PASS decoy-registered:D-ROM-3
+PASS decoy-plates-present
+PASS decoy-folios-present
+PASS needle-folios-in-field-notes
+PASS datasheet-present
+PASS carrier-present
+PASS no-master-secret-in-package
+
+LEAKS: 44 PASS, 0 FAIL

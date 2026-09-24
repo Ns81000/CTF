@@ -1,0 +1,8 @@
+package root : /tmp/carto_poison_probe
+budget       : 8 x 260 pairs = 4160 oracle calls, fixed 0.1 s spacing
+collected 2080 pairs in 420.6 s
+ring stddev  : 0.82 ms (poison floor 150.0 ms)
+attack state : ['B0:insufficient@kA=07ab2970', 'B0:insufficient@kA=0fab2970', 'B0:insufficient@kA=07af2970']
+recovered K  : None
+real K       : 73070925a159f9e2
+RESULT: NO-CONSENSUS (dataset unusable)

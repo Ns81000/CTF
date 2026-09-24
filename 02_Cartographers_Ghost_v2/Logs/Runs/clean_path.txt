@@ -1,0 +1,9 @@
+CLEAN PATH COMPLETE
+TIME stage0 ledger                   4.2 s (scaled wall)
+TIME stage1 engine coast             0.0 s (scaled wall)
+TIME stage1 engine interior          0.0 s (scaled wall)
+TIME stage2 sheet reveal             0.1 s (scaled wall)
+TIME stage3 oracle sitting         425.9 s (scaled wall)
+TIME stage4 seal walk                2.6 s (scaled wall)
+TIME stage5 title                    0.0 s (scaled wall)
+TIME TOTAL                         432.9 s (scaled total)

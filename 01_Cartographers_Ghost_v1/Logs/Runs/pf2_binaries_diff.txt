@@ -1,0 +1,7 @@
+  unchanged    cartographer/stage0_start/stage0_start  ebce5c7f9012021ab6de1d770f28bf34f938ac11d38fb99022082899042766b9
+  CHANGED      cartographer/stage1_vm/stage1_vm
+    pre-FINAL-2: 5574b14a3e9ccb9b1b55abef422eb0d52c3b565bb942d6e674b3b3389cbc5752
+    now        : 53f891d669b2475305aef929c7ec7d9c3c73f9ab73ffdab0bf0a19bacd4fdc13
+  unchanged    cartographer/stage2_stego/stage2_stego  64e9d123b52082fd56e8612f712efdef70f7e7b743032418f27e69b27bbc1a73
+  unchanged    cartographer/stage3_oracle/oracle  2bc24a4a70fd4b22d6962aabd820b1255f793b37b47b6c9ed998ceaf07a3ab8e
+  unchanged    cartographer/stage4_assembly/validate  4715ee4633cdb4614fa8860a12ee6a275a914c919e25e2d6cf22783a3090e637

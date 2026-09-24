@@ -1,0 +1,43 @@
+--- src/state: make clean && make ---
+musl-gcc -O2 -Wall -Wextra -std=c11 -static -fno-ident -c carto_sha256.c -o carto_sha256.o
+musl-gcc -O2 -Wall -Wextra -std=c11 -static -fno-ident -c state_core.c -o state_core.o
+musl-gcc -O2 -Wall -Wextra -std=c11 -static -fno-ident -c state_policy.c -o state_policy.o
+ar rcs libstate.a carto_sha256.o state_core.o state_policy.o
+--- src/stage0: make clean && make ---
+mkdir -p ../../cartographer/stage0_start
+musl-gcc -O2 -Wall -Wextra -std=c11 -static -fno-ident -I../state stage0.c ../state/libstate.a -o ../../cartographer/stage0_start/stage0_start
+strip --strip-all ../../cartographer/stage0_start/stage0_start
+objcopy --remove-section .comment ../../cartographer/stage0_start/stage0_start 2>/dev/null || true
+--- src/stage1_vm: make clean && make ---
+mkdir -p ../../cartographer/stage1_vm
+musl-gcc -O2 -Wall -Wextra -std=c11 -static -fno-ident -I../state stage1_vm.c vm.c ../state/libstate.a -o ../../cartographer/stage1_vm/stage1_vm
+strip --strip-all ../../cartographer/stage1_vm/stage1_vm
+objcopy --remove-section .comment ../../cartographer/stage1_vm/stage1_vm 2>/dev/null || true
+--- src/stage2_stego: make clean && make ---
+mkdir -p ../../cartographer/stage2_stego
+musl-gcc -O2 -Wall -Wextra -std=c11 -static -fno-ident -I../state stage2_stego.c s2_inflate.c ../state/libstate.a -o ../../cartographer/stage2_stego/stage2_stego
+strip --strip-all ../../cartographer/stage2_stego/stage2_stego
+objcopy --remove-section .comment ../../cartographer/stage2_stego/stage2_stego 2>/dev/null || true
+--- src/stage3_oracle: make clean && make ---
+mkdir -p ../../cartographer/stage3_oracle
+musl-gcc -O2 -Wall -Wextra -std=c11 -static -fno-ident -I../state oracle.c ../state/libstate.a -o ../../cartographer/stage3_oracle/oracle
+strip --strip-all ../../cartographer/stage3_oracle/oracle
+objcopy --remove-section .comment ../../cartographer/stage3_oracle/oracle 2>/dev/null || true
+--- src/stage4_assembly: make clean && make ---
+mkdir -p ../../cartographer/stage4_assembly
+musl-gcc -O2 -Wall -Wextra -std=c11 -static -fno-ident -I../state validate.c ../state/libstate.a -o ../../cartographer/stage4_assembly/validate
+strip --strip-all ../../cartographer/stage4_assembly/validate
+objcopy --remove-section .comment ../../cartographer/stage4_assembly/validate 2>/dev/null || true
+--- state library unit tests on the fresh build ---
+[PASS] test_hmac_differential
+== 27 tests run, 0 failed ==
+ALL TESTS PASSED
+--- shipped binaries after the clean rebuild ---
+  unchanged    cartographer/stage0_start/stage0_start  ebce5c7f9012021ab6de1d770f28bf34f938ac11d38fb99022082899042766b9
+  CHANGED      cartographer/stage1_vm/stage1_vm
+    pre-FINAL-2: 5574b14a3e9ccb9b1b55abef422eb0d52c3b565bb942d6e674b3b3389cbc5752
+    now        : 53f891d669b2475305aef929c7ec7d9c3c73f9ab73ffdab0bf0a19bacd4fdc13
+  unchanged    cartographer/stage2_stego/stage2_stego  64e9d123b52082fd56e8612f712efdef70f7e7b743032418f27e69b27bbc1a73
+  unchanged    cartographer/stage3_oracle/oracle  2bc24a4a70fd4b22d6962aabd820b1255f793b37b47b6c9ed998ceaf07a3ab8e
+  unchanged    cartographer/stage4_assembly/validate  4715ee4633cdb4614fa8860a12ee6a275a914c919e25e2d6cf22783a3090e637
+PF2-CLEAN-REBUILD-OK

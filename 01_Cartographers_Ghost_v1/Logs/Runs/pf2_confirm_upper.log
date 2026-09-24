@@ -1,0 +1,46 @@
+[     0.00s] === Run A -- CLEAN PATH ===
+[     0.00s] time scale            : 1 (REAL/UNSCALED)
+[     0.00s] Stage-3 budget        : 8 experiments x 260 pairs = 2080 pairs = 4160 queries
+[     0.00s] pacing                : jitter:0.6,3.4  -> mean 2.000 s, stddev 0.808 s
+[     0.00s] projected Stage-3 time: 138.7 min (2.00 s per query)
+[     0.00s] poison floor in force : CARTO_STDDEV_LOW_MS = 150.0 ms (stddev margin 5.4x)
+[     0.00s] state file removed; starting from a fresh ledger
+[     0.00s] stage0_start -> CARTO{first_ink_in_the_ledger}
+[     0.00s] MARK stage0_start             t=0.00s
+[     0.01s] stage1_vm[real] -> key fd3e8049dfdfc32efe22fe823822b8c0a5d66f1b2b5f596e4c8111cf4224010f steps=7266 token CARTO{fd3e8049dfdfc32efe22fe823822b8c0}
+[     0.01s]    (matches the recorded real Stage-2 key material)
+[     0.01s] MARK stage1_vm                t=0.01s
+[     0.01s]    sweep from key: stride=46 start=5070 (marks=262144)
+[     0.01s]    sweep detail: {'stride': 46, 'start': 5070, 'len': 48, 'error': None, 'framed_hex': '300078f971b816bc73760c0af1afcecb8f4fcb4c2f2d4a8d2fce2c298ecfcc8b...'}
+[     0.01s]    reading extracted: CARTO{no_figure_sits_in_every_pixel}
+[     0.01s]    ./stage2_stego/stage2_stego -c '<reading>' accepted it
+[     0.01s] MARK stage2_stego             t=0.01s
+[   623.27s]    [runA] 160/2080 pairs (A window 0)
+[  1251.97s]    [runA] 320/2080 pairs (A window 1)
+[  1902.30s]    [runA] 480/2080 pairs (A window 1)
+[  2552.42s]    [runA] 640/2080 pairs (A window 2)
+[  3171.29s]    [runA] 800/2080 pairs (A window 3)
+[  4424.53s]    [runA] 960/2080 pairs (A window 3)
+[  5063.48s]    [runA] 1120/2080 pairs (B window 0)
+[  5699.15s]    [runA] 1280/2080 pairs (B window 0)
+[  6319.16s]    [runA] 1440/2080 pairs (B window 1)
+[  6941.40s]    [runA] 1600/2080 pairs (B window 2)
+[  7593.39s]    [runA] 1760/2080 pairs (B window 2)
+[  8231.53s]    [runA] 1920/2080 pairs (B window 3)
+[  8870.51s]    [runA] 2080/2080 pairs (B window 3)
+[  8870.51s] collection finished in 8870.5 s (147.84 min); 2.132 s per query measured
+[  8870.52s] ring stddev after collection: 812.0 ms (poison floor 150.0 ms)
+[  8870.54s] attack recovered K = 73070925a159f9e2 (hits A={0: 17, 1: 18, 2: 20, 3: 20} B={0: 19, 1: 19, 2: 12, 3: 26})
+[  8870.54s]    (matches the recorded real Stage-3 master key)
+[  8870.54s] MARK stage3_oracle            t=8870.54s
+[  8870.54s] assembled title: CARTO{73070925a159f9e2_a5d66f1b2b5f596e_no_figure_sits_in_every_pixel}
+[  8870.55s]    ./stage4_assembly/validate accepted the title -- SURVEY CLOSED
+[  8870.55s] MARK stage4_assembly          t=8870.55s
+[  8870.55s] RESULT: CLEAN-PATH SOLVE COMPLETE, deterministically
+[  8870.55s] ---- per-step elapsed ----
+[  8870.55s] stage0_start               cumulative      0.00s   delta     0.00s
+[  8870.55s] stage1_vm                  cumulative      0.01s   delta     0.00s
+[  8870.55s] stage2_stego               cumulative      0.01s   delta     0.01s
+[  8870.55s] stage3_oracle              cumulative   8870.54s   delta  8870.53s
+[  8870.55s] stage4_assembly            cumulative   8870.55s   delta     0.00s
+[  8870.55s] TOTAL 8870.55s (147.84 min)

@@ -1,0 +1,11 @@
+mode=real candidates=[160, 200, 240, 260, 280, 320] trials=5 jobs=4 out=logs/runs/pf2_trials_real.jsonl
+[FAIL] n=160  trial=1   min_hits_a=3 min_hits_b=None {"mode": "real", "n": 160, "trial": 66396847, "seed": 1266396847, "ok": false, "clean": 214, "poison": 0, "kA": null, "kB": null, "hits_a": {"0": 3, "1": 7, "2": 13, "3": 13}, "hits_b": {}, "state": ["A0:insufficient"], "ring_sd_ms": 14.40148275404614, "seconds": 47.62, "min_hits_a": 3, "min_hits_b": null}
+
+==== reliability summary ====
+N      trials  ok      fail_rate  worst min_hits   notes
+160    5       4       0.200      3                avg 47.5s/trial
+200    5       5       0.000      9                avg 117.0s/trial
+240    5       5       0.000      7                avg 130.2s/trial
+260    5       5       0.000      8                avg 78.1s/trial
+280    5       5       0.000      7                avg 84.2s/trial
+320    5       5       0.000      10               avg 96.6s/trial

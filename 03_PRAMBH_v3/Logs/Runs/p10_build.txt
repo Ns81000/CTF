@@ -1,0 +1,6 @@
+build_package: musl-gcc -O2 -static -s -Wall -Wextra -std=gnu11 -D_GNU_SOURCE -o /mnt/e/drive-upload/prambh-build/prambh/stage1_flood/flood src/flood/flood.c failed rc=1
+/usr/bin/ld: /tmp/ccyIbEyc.o: in function `print_page':
+flood.c:(.text+0x7f): undefined reference to `carto_sha256'
+/usr/bin/ld: flood.c:(.text+0xa3): undefined reference to `prambh_sha256ctr_xor'
+collect2: error: ld returned 1 exit status
+

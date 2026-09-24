@@ -1,0 +1,43 @@
+P5 - CHAIN #1 REDUCED-T WALL-CLOCK PROJECTION (Appendix C.2)
+EVERY NUMBER BELOW IS PROJECTED - audit must confirm with the full REAL run.
+
+machine: 6.6.87.2-microsoft-standard-WSL2, 12 cores, /proc/loadavg at measurement = 1.15
+production dials: S=536870912 B, T_prod=7705630875 (chain_params.json budgets.chain1)
+chain #1 seed (label prambh:loom:seed:v1 || capsule_content) = 4668e434c5ea0e9b249cae68c6ecc81e1ad79afaa4f0aefef0661b72746045c7
+route 1 (native)   : /mnt/e/drive-upload/prambh-build/src/chain/prambh_chain walk
+route 2 (emulated) : /tmp/p5sbx.vantZ1/loom claim <reduced loom.rom> --vector <capsule_content>
+
+raw samples (native ladder; each sample = full fill + walk):
+  T=1500000   sample 1  4.8671 s   out=adcb38b6c3fba4b9b23c3dd7774032aeefb4de17b53dc9bb3ff4af7c89d8735c
+  T=1500000   sample 2  5.1270 s   out=adcb38b6c3fba4b9b23c3dd7774032aeefb4de17b53dc9bb3ff4af7c89d8735c
+  T=3000000   sample 1  6.0510 s   out=bec68fef6f1cbaf57bab37a1256a78e4d84e39c20ff1c3f8c0cc4c661a4a0bbe
+  T=3000000   sample 2  8.7731 s   out=bec68fef6f1cbaf57bab37a1256a78e4d84e39c20ff1c3f8c0cc4c661a4a0bbe
+  T=6000000   sample 1  7.5414 s   out=ce2b0506f8e3b24100c7b3c18aa7f8ad638c87438f878b68ffc9f2a137a497d3
+  T=6000000   sample 2  8.2316 s   out=ce2b0506f8e3b24100c7b3c18aa7f8ad638c87438f878b68ffc9f2a137a497d3
+
+fill (sequential SHA over the table, fillbench): 4.2180 s at S=536870912, 0.0160 s at S=2097152
+native regression: per-step 572.96 ns, intercept 4.760 s
+native extremes check: implied per-step 594.29 ns (deviation 3.7%)
+table-file walk (fill excluded): 2.4251 s for T=3000000 -> 808.35 ns/step
+cache-resident probe (S=2097152, T=6000000): ['5.460', '3.496'] s -> 743.61 ns/step
+emulated route (reduced T=200000, S=536870912): 4.7140 s -> 2480.22 ns/step
+rom-vs-native parity at reduced T: IDENTICAL (claim 38fa4d983672f0def8626f9e9d5018db... / walk 38fa4d983672f0def8626f9e9d5018db...)
+
+projection math:
+  native  : 572.96 ns/step x 7705630875 steps = 4415 s (73.6 min)
+  emulated: 2480.22 ns/step x 7705630875 steps = 19112 s (5.31 h)
+  per-step split: work 743.61 ns (cache-resident) + memory 0.00 ns
+  4x attacker core: work/4 + memory = 185.90 ns/step -> 1433 s (23.9 min)
+  two chains under the 4x assumption: 48 min
+  decoy cartridge lane (T=308225235) emulated: 13 min
+
+linear scaling check: the extremes-implied per-step deviates 3.7% from
+the regression slope (< 30%), so per-step cost is constant across T and
+the projection T_prod x per-step is sound: the walk is one sequential
+SHA-256 dependency chain, so there is nothing to parallelise.
+
+deferred (audit, Appendix C.2a): the full REAL-T emulated cartridge run
+(5.31 h projected) and the full REAL-T native walk (73.6 min projected).
+native command:
+  src/chain/prambh_chain walk --seed-hex 4668e434c5ea0e9b249cae68c6ecc81e1ad79afaa4f0aefef0661b72746045c7 --s 536870912 --t 7705630875
+

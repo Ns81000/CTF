@@ -1,0 +1,25 @@
+=== static attack: shipped bytes only, no execution ===
+PASS binary-count (471 executables)
+PASS static-no-symbols (0 bytes of nm output)
+PASS static-no-real-values-in-strings {}
+PASS static-stage0-token-scoped-to-milestone ['milestone']
+PASS static-no-toolchain-paths 
+PASS plate-chunks-carrier.png [b'IHDR', b'tEXt', b'IDAT', b'IEND']
+PASS plate-chunks-decoy_plate_0.png [b'IHDR', b'tEXt', b'IDAT', b'IEND']
+PASS plate-chunks-decoy_plate_1.png [b'IHDR', b'tEXt', b'IDAT', b'IEND']
+PASS plate-chunks-decoy_plate_2.png [b'IHDR', b'tEXt', b'IDAT', b'IEND']
+PASS plate-chunks-decoy_plate_3.png [b'IHDR', b'tEXt', b'IDAT', b'IEND']
+PASS plate-chunks-decoy_plate_4.png [b'IHDR', b'tEXt', b'IDAT', b'IEND']
+PASS plate-chunks-decoy_plate_5.png [b'IHDR', b'tEXt', b'IDAT', b'IEND']
+PASS plate-chunks-depth.png [b'IHDR', b'tEXt', b'IDAT', b'IEND']
+PASS plate-chunks-hue.png [b'IHDR', b'tEXt', b'IDAT', b'IDAT', b'IDAT', b'IEND']
+PASS plate-chunks-sheet_a.png [b'IHDR', b'tEXt', b'IDAT', b'IEND']
+PASS plate-chunks-sheet_b.png [b'IHDR', b'tEXt', b'IDAT', b'IEND']
+PASS static-plate-codes-are-registered-decoys (0 codes)
+PASS static-corpus-no-real-values {}
+PASS reconstruction-fails PRAMBH{21200db3_dfc675e0_21b3edf8_000000...
+PASS reconstruction-needs-chain-outputs 
+PASS learned-values-all-registered 
+PASS static-lane-cannot-reach-drip-inks 
+
+ATTACK-STATIC: 22 PASS, 0 FAIL

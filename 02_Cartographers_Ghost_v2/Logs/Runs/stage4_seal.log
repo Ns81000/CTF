@@ -1,0 +1,57 @@
+== stage4 ==
+  PASS no arguments (rc 0, stderr silent)
+  PASS the certificate is shown
+  PASS the block rule is stated
+  PASS the closing rule is stated
+  PASS the notice is on the certificate
+  PASS no mechanism word (Feistel)
+  PASS no mechanism word (S-box)
+  PASS no mechanism word (MITM)
+  PASS no mechanism word (key bytes)
+  PASS a wrong key (rc 0, stderr silent)
+  PASS the one refusal line
+  PASS a candidate in capitals (rc 0, stderr silent)
+  PASS a short candidate (rc 0, stderr silent)
+  PASS a non-hex candidate (rc 0, stderr silent)
+  PASS an empty argument (rc 0, stderr silent)
+  PASS two arguments (rc 0, stderr silent)
+  PASS sixteen arguments (rc 0, stderr silent)
+  PASS an 80 KB argument (rc 0, stderr silent)
+  PASS malformed candidates get the one refusal
+  PASS an unknown flag (rc 0, stderr silent)
+  PASS two wrong candidates are refused byte-identically (pty)
+  PASS two wrong candidates are refused byte-identically (pipe)
+  PASS the true key is offered (rc 0, stderr silent)
+  PASS the true key closes the stamp
+  PASS the stamp's face reads back the key
+  PASS record is 1168 bytes
+  PASS independent python check of the record
+  PASS the seal wrote nothing but the record
+  PASS the drawer opens (rc 0, stderr silent)
+  PASS the drawer has its own certificate
+  PASS the drawer never confirms anything
+  PASS the decoy key closes its own stamp (rc 0, stderr silent)
+  PASS the decoy key verifies against the decoy construction
+  PASS the real key refused by the drawer (rc 0, stderr silent)
+  PASS the real key does not close the drawer's stamp
+  PASS the drawer's pairs differ from the stamp's pairs
+  PASS the intended attack recovers the working bytes
+  PASS the attack's work is counted (12737502795 evaluations)
+  mitm: work=12737502795 wall=21.6s
+  PASS exactly one closing byte exists and the stamp names it
+  PASS nm is empty (/home/ns8pc/ghost-build/cartographer/stage4_seal/seal)
+  PASS no build provenance in strings (/home/ns8pc/ghost-build/cartographer/stage4_seal/seal)
+  PASS no key material in the binary
+  PASS no seed string in the binary
+  PASS the mask seed ships as a public constant (the blob is folded, not plain)
+  PASS no decoy seed in the binary
+  PASS no test hook in the binary
+  PASS the notice rides in the binary
+  PASS no mechanism word ships (Feistel)
+  PASS no mechanism word ships (meet-in-the-middle)
+  PASS no mechanism word ships (subkey)
+  PASS no mechanism word ships (S-box)
+  PASS no mechanism word ships (rotl)
+  PASS no mechanism word ships (spread)
+  53 checks, 0 failed
+  OK

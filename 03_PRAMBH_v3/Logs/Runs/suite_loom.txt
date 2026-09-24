@@ -1,0 +1,231 @@
+=== build hygiene (spec 4.4: musl-static, stripped, nm empty) ===
+PASS gen-rom-production
+PASS prod-rom-size
+PASS decoy-rom-count
+PASS rom-regeneration-deterministic
+PASS decoy-rom-deterministic-tide_merc6
+PASS decoy-rom-deterministic-star_merc3
+PASS decoy-rom-deterministic-grav_merc9
+PASS generated-headers-in-tree
+PASS params-T-matches-chain_params
+PASS params-S-matches-chain_params
+PASS params-T-is-production-not-test
+PASS build
+PASS binary-static
+PASS binary-nm-empty
+PASS binary-stripped
+PASS binary-rebuild-deterministic
+PASS binary-no-toolchain-strings
+PASS binary-notice-present
+
+=== datasheet (spec 4.4: field-notes/meru1_datasheet.txt) ===
+PASS datasheet-generated
+PASS datasheet-size
+PASS datasheet-deterministic
+PASS loom-documents-at-least-60-opcodes
+PASS datasheet-documents-all-opcodes
+PASS datasheet-opcode-count-generated
+PASS datasheet-model-name
+PASS datasheet-filename-in-core-comment
+PASS datasheet-stale-name-gone
+PASS datasheet-no-real-values
+PASS datasheet-rom-limit
+
+=== selftest cartridge: C emulator vs Python model (all 64 opcodes) ===
+PASS selftest-assembled
+PASS selftest-c-rc
+PASS selftest-c-stderr-silent
+PASS selftest-model-rc
+PASS selftest-c-vs-python-bit-equality
+PASS selftest-dump-lines
+PASS selftest-banner
+
+=== real cartridge vs native walk (reduced T, Appendix C.2) ===
+PASS gen-rom-reduced
+PASS no-params-kept-production-header
+PASS real-claim-rc
+PASS real-claim-stderr-silent
+PASS real-claim-hex-length
+PASS real-claim-hex-format
+PASS real-token-format
+PASS real-c-vs-python-bit-equality
+PASS real-two-run-determinism
+PASS verify-rc
+PASS verify-stderr-silent
+PASS verify-ink-8-bytes
+PASS verify-ink-is-claim-head
+PASS verify-checkpoint-is-claim-window
+PASS verify-other-vector-differs
+PASS verify-other-T-differs
+PASS real-zero-vector-parity
+
+=== decoy cartridges (reduced T; production values are registered) ===
+PASS decoy-1-claim-rc
+PASS decoy-1-stderr-silent
+PASS decoy-1-claim-hex
+PASS decoy-1-c-vs-python
+PASS decoy-1-differs-from-real
+PASS decoy-1-rom-carries-mint-pan
+PASS decoy-1-native-walk-parity
+PASS decoy-2-claim-rc
+PASS decoy-2-stderr-silent
+PASS decoy-2-claim-hex
+PASS decoy-2-c-vs-python
+PASS decoy-2-differs-from-real
+PASS decoy-2-rom-carries-mint-pan
+PASS decoy-2-native-walk-parity
+PASS decoy-3-claim-rc
+PASS decoy-3-stderr-silent
+PASS decoy-3-claim-hex
+PASS decoy-3-c-vs-python
+PASS decoy-3-differs-from-real
+PASS decoy-3-rom-carries-mint-pan
+PASS decoy-3-native-walk-parity
+PASS decoy-tokens-pairwise-distinct
+
+=== diagnostic lane (anti-debug, spec 4.4) ===
+PASS strace-lane-rc
+PASS strace-lane-stderr-silent
+PASS strace-lane-debug-token
+PASS strace-lane-framing
+PASS gdb-lane-rc
+PASS gdb-lane-debug-token
+PASS clean-run-hides-debug-token
+PASS debug-token-rederived-from-pan
+PASS tracerpid-reads-proc-status
+PASS tracerpid-field-parsed
+
+=== decoy registry (harvested once, never recomputed) ===
+PASS registry-row-count
+PASS registry-ids
+PASS registry-D-ROM-1-token-in-harvest
+PASS registry-D-ROM-1-token-in-catalogue
+PASS registry-D-ROM-1-token-in-keys
+PASS registry-D-ROM-1-id-in-catalogue
+PASS registry-D-ROM-1-key-mint-derived
+PASS registry-D-ROM-1-token-is-claim-head
+PASS registry-D-ROM-2-token-in-harvest
+PASS registry-D-ROM-2-token-in-catalogue
+PASS registry-D-ROM-2-token-in-keys
+PASS registry-D-ROM-2-id-in-catalogue
+PASS registry-D-ROM-2-key-mint-derived
+PASS registry-D-ROM-2-token-is-claim-head
+PASS registry-D-ROM-3-token-in-harvest
+PASS registry-D-ROM-3-token-in-catalogue
+PASS registry-D-ROM-3-token-in-keys
+PASS registry-D-ROM-3-id-in-catalogue
+PASS registry-D-ROM-3-key-mint-derived
+PASS registry-D-ROM-3-token-is-claim-head
+PASS registry-D-DBG-token-in-harvest
+PASS registry-D-DBG-token-in-catalogue
+PASS registry-D-DBG-token-in-keys
+PASS registry-D-DBG-id-in-catalogue
+PASS registry-D-DBG-key-mint-derived
+PASS harvest-file-unchanged
+PASS registry-tokens-differ-from-real-values
+
+=== canary (spec 4.10: on every shipped tool's usage screen) ===
+PASS canary-header-generated
+PASS canary-header-in-tree
+PASS canary-header-matches-mint
+PASS usage-screen-rc
+PASS canary-on-usage-screen
+PASS notice-on-usage-screen
+PASS usage-screen-stderr-silent
+
+=== leak / hygiene greps (spec 4.4) ===
+PASS loom-hides-capsule-content
+PASS loom-hides-chain-seed
+PASS loom-hides-stage0-token
+PASS loom-hides-launch-words
+PASS loom-prints-canary-notice
+PASS loom-hides-later-label-doors
+PASS loom-hides-later-label-mirror
+PASS loom-hides-later-label-eyes
+PASS loom-hides-later-label-final
+PASS loom-hides-later-label-capsule
+PASS real-rom-hides-real-values
+PASS loom-hides-registry-token-1
+PASS loom-hides-registry-token-2
+PASS loom-hides-registry-token-3
+PASS loom-hides-registry-token-4
+PASS production-cartridges-hide-real-values
+
+=== behaviour probe (rc 0, silent stderr, no crash) ===
+PASS beh-noargs-rc
+PASS beh-noargs-stderr-silent
+PASS beh-unknown-subcommand-rc
+PASS beh-unknown-subcommand-stderr-silent
+PASS beh-empty-arg-rc
+PASS beh-empty-arg-stderr-silent
+PASS beh-missing-rom-rc
+PASS beh-missing-rom-stderr-silent
+PASS beh-dir-as-rom-rc
+PASS beh-dir-as-rom-stderr-silent
+PASS beh-truncated-rom-rc
+PASS beh-truncated-rom-stderr-silent
+PASS beh-oversize-rom-rc
+PASS beh-oversize-rom-stderr-silent
+PASS beh-200kb-arg-rc
+PASS beh-200kb-arg-stderr-silent
+PASS beh-16-extra-args-rc
+PASS beh-16-extra-args-stderr-silent
+PASS beh-bad-vector-rc
+PASS beh-bad-vector-stderr-silent
+PASS beh-verify-garbage-flags-rc
+PASS beh-verify-garbage-flags-stderr-silent
+PASS beh-narrow-columns-rc
+PASS beh-narrow-columns-stderr-silent
+PASS beh-term-dumb-rc
+PASS beh-term-dumb-stderr-silent
+PASS beh-readonly-dir-rc
+PASS beh-readonly-dir-stderr-silent
+PASS beh-piped-stdin-rc
+PASS beh-piped-stdin-stderr-silent
+PASS beh-devnull-stdin-rc
+PASS beh-devnull-stdin-stderr-silent
+
+=== organizer chain tool: in-tree binary matches its source ===
+PASS chain-tool-fresh-build
+PASS chain-tool-in-tree-matches-source
+
+=== reduced-T wall-clock PROJECTION (Appendix C.2; NOT the REAL run) ===
+FAIL projection-script
+  native  T=3000000   sample 1  6.051 s
+  native  T=3000000   sample 2  8.773 s
+  native  T=6000000   sample 1  7.541 s
+  native  T=6000000   sample 2  8.232 s
+per-step: regression 573.0 ns, extremes 594.3 ns, deviation 3.7%
+table-file walk: 2.425 s for T=3000000 -> 808.4 ns/step (fill excluded)
+  cache   T=6000000   sample 1  5.460 s  (S=2097152)
+  cache   T=6000000   sample 2  3.496 s  (S=2097152)
+per-step split: work(cache) 743.6 ns + memory 0.0 ns
+emulated: T=200000 in 4.714 s -> 2480.2 ns/step
+PROJECTED chain #1 native  : 4415 s (73.6 min)
+PROJECTED chain #1 emulated: 19112 s (5.31 h)  ratio 4.3x native
+PROJECTED chain #1, 4x attacker core: 1433 s (23.9 min) (3.08x faster)
+PROJECTED two chains, 4x attacker: 48 min
+PROJECTED decoy cartridge lane (T=308225235, emulated): 13 min
+PASS native-per-step-linear (deviation 3.7% across T=1500000..6000000)
+FAIL regression-vs-walkonly (808.4 vs 573.0 ns/step)
+PASS rom-vs-native-parity (reduced-T cartridge claim == native walk)
+PASS emulation-slower-than-native
+FAIL memory-vs-work-split (0.0 ns of 573.0 ns per step is the DRAM round-trip)
+PASS projected-in-target-band (4415 s in [3600, 5400] s = 75 min +/- 15 min)
+wrote /mnt/e/drive-upload/prambh-build/organizer-private/runs/p5_projection.txt
+
+P5-PROJECTION: 4 PASS, 2 FAIL
+PASS proj-per-step-linear
+FAIL proj-walkonly-agrees
+PASS proj-rom-vs-native-parity
+PASS proj-emulation-slower
+FAIL proj-latency-split-measured
+PASS proj-projection-in-band
+PASS proj-report-written
+PASS proj-json-written
+PASS proj-json-consistent
+PASS proj-numbers-marked-projected
+
+P5: 177 PASS, 3 FAIL
+(deferred to the audit session per Appendix C.2a: the full REAL-T emulated
+ cartridge run and the full REAL-T native walk - see HANDOFF.md)

@@ -1,0 +1,37 @@
+== stage0 ==
+  PASS no arguments (rc 0, stderr silent)
+  PASS the ledger hands over its first entry
+  PASS the operator notice carries its canary
+  PASS it points at the notes
+  PASS it names the next door
+  PASS it never mentions the engine's ink
+  PASS it never mentions the sheet
+  PASS record is 1168 bytes
+  PASS independent python check of the record
+  PASS second run (rc 0, stderr silent)
+  PASS same first entry on the second run
+  PASS first_run stamp is stable
+  PASS garbage argument (rc 0, stderr silent)
+  PASS empty argument (rc 0, stderr silent)
+  PASS sixteen extra arguments (rc 0, stderr silent)
+src/stage0_ledger/test_stage0.sh: line 43: warning: command substitution: ignored null byte in input
+  FAIL 200 KB argument (rc=126, stderr 110 bytes)
+  PASS missing file argument (rc 0, stderr silent)
+  PASS piped streams (rc 0, stderr silent)
+  PASS dumb terminal (rc 0, stderr silent)
+  PASS narrow terminal (rc 0, stderr silent)
+  PASS wide terminal (rc 0, stderr silent)
+  PASS corrupt record (rc 0, stderr silent)
+  PASS still hands over the first entry
+  PASS record is 1168 bytes
+  PASS independent python check of the record
+  PASS nm is empty (/home/ns8pc/ghost-build/cartographer/stage0_ledger/ledger)
+  PASS no build provenance in strings (/home/ns8pc/ghost-build/cartographer/stage0_ledger/ledger)
+  PASS no engine ink in the ledger
+  PASS no reading in the ledger
+  PASS no title in the ledger
+  PASS no K_engine in the ledger
+  PASS the ledger is executable
+  PASS statically linked
+  33 checks, 1 failed
+  NOT OK

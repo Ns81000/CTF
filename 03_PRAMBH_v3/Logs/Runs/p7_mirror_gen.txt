@@ -1,0 +1,9 @@
+P7 - MIRROR ROOM GENERATED (spec 4.6)
+milestone token: PRAMBH{dup_c61d246a}
+stage A vector: 5855a5099d47510a590b13a9afa94432cbd9c4768403e29faa3737f7ef493665
+stage B out: 5e7a0768329a6bbb62a3e88d2942a263741f3385c5747a68c1c5a13657bcd2fd
+filed title: PRAMBH{mirror_5e7a0768329a6bbb}
+title digest: 968534d7fb5457576402e62e872537c9496ffbe32a71d8086765ecf7bed3dedf
+chain dials: S=536870912 T=410966980
+fiction folios: 6 (dated 1981, cite plate ids absent from plates/)
+real values in mirror/ : 0 (asserted by the P7 suite leak lane)

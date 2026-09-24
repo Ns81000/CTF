@@ -1,0 +1,155 @@
+P6 - HALL OF DOORS CHAMBER PREVIEW (spec 4.5)
+real chamber index = 0 (hall 761, door ink 6939de42d44af1f2)
+decoy chamber chains: S=536870912 T=1232900940 (12 min budget each)
+
+---- chamber 0 (REAL) ----
+HALL 761
+the survey walks on. hall 761 was cut in one pass and its folio is
+complete; the loom has nothing further to settle here.
+
+what the plate fragment leaves behind is the hall ink, taken as
+printed and nothing more: 6939de42d44af1f2
+
+the next instrument takes its own load vector from this hall,
+exactly as written:
+  83687190e2798db9283c55e0658ac7eb262a51b185dd5ea44987380108f4317a
+
+carry it to the eye plates. the seal is set at the same table as
+the loom's walk, so the wait is the same wait.
+
+
+---- chamber 1 (decoy) ----
+HALL 268
+hall 268 answers to the word taken after 'past' - the reading every duplicate
+folio in the depot used, and the one this hall was cut against.
+
+before the hall opens further it asks for its own stitch. run the
+loom's walk on the vector printed here, at the standard table:
+  ./loom verify --vector e76daedebb9ac947bd9fe49a5f03dea6c6042e6788056cce0b008c24163f98ae --T 1232900940 --S 536870912
+  the checkpoint that settles is this hall's field token: PRAMBH{432f9d6b8ea9ec6d}
+
+file it with folio_364 at the valley depot, beside the star_merc3 strips
+and the plate fragment 808db61e567e04f811 the depot sent with them - all three
+carry the same hall number, so the record is consistent.
+
+the duplicate survey is filed at the valley depot; every hall it
+holds answers to the same reading you have already used.
+
+
+---- chamber 2 (decoy) ----
+HALL 787
+hall 787 answers to the word taken after 'by' - the reading every duplicate
+folio in the depot used, and the one this hall was cut against.
+
+before the hall opens further it asks for its own stitch. run the
+loom's walk on the vector printed here, at the standard table:
+  ./loom verify --vector 51ee729802ba3ef326f33c7ed6e42009f7d41530c98d43654460b21d46cc701f --T 1232900940 --S 536870912
+  the checkpoint that settles is this hall's field token: PRAMBH{e087fdbb51f43a9e}
+
+file it with folio_192 at the valley depot, beside the grav_merc9 strips
+and the plate fragment d52cba0a2ab5931b34 the depot sent with them - all three
+carry the same hall number, so the record is consistent.
+
+the duplicate survey is filed at the valley depot; every hall it
+holds answers to the same reading you have already used.
+
+
+---- chamber 3 (decoy) ----
+HALL 451
+hall 451 answers to the word taken after 'at' - the reading every duplicate
+folio in the depot used, and the one this hall was cut against.
+
+before the hall opens further it asks for its own stitch. run the
+loom's walk on the vector printed here, at the standard table:
+  ./loom verify --vector 0feeeafc3ae9e4db2ffa3d1978d9baedd99306e69b7148b9ba52dd7ef55015a0 --T 1232900940 --S 536870912
+  the checkpoint that settles is this hall's field token: PRAMBH{4c4df8f2eac6d848}
+
+file it with folio_237 at the valley depot, beside the tide_merc6 strips
+and the plate fragment 67ad16b261c459305e the depot sent with them - all three
+carry the same hall number, so the record is consistent.
+
+the duplicate survey is filed at the valley depot; every hall it
+holds answers to the same reading you have already used.
+
+
+---- chamber 4 (decoy) ----
+HALL 215
+hall 215 answers to the word taken after 'near' - the reading every duplicate
+folio in the depot used, and the one this hall was cut against.
+
+before the hall opens further it asks for its own stitch. run the
+loom's walk on the vector printed here, at the standard table:
+  ./loom verify --vector f189febfb6bf4bfcc9c2505d716268a06b5392c2a39bdf7002a05d63a3538363 --T 1232900940 --S 536870912
+  the checkpoint that settles is this hall's field token: PRAMBH{45b797497afd9a43}
+
+file it with folio_374 at the valley depot, beside the star_merc3 strips
+and the plate fragment 1b6778cc6225d5afd4 the depot sent with them - all three
+carry the same hall number, so the record is consistent.
+
+the duplicate survey is filed at the valley depot; every hall it
+holds answers to the same reading you have already used.
+
+
+---- chamber 5 (decoy) ----
+HALL 338
+hall 338 answers to the word taken after 'under' - the reading every duplicate
+folio in the depot used, and the one this hall was cut against.
+
+before the hall opens further it asks for its own stitch. run the
+loom's walk on the vector printed here, at the standard table:
+  ./loom verify --vector 96a5a4d4d7310027aac9617cc12ef4539891fa51aafe19ed8b613c030efb9325 --T 1232900940 --S 536870912
+  the checkpoint that settles is this hall's field token: PRAMBH{ab76d23f8ec5704f}
+
+file it with folio_386 at the valley depot, beside the grav_merc9 strips
+and the plate fragment 8c83b6e330f1a51b0d the depot sent with them - all three
+carry the same hall number, so the record is consistent.
+
+the duplicate survey is filed at the valley depot; every hall it
+holds answers to the same reading you have already used.
+
+
+---- chamber 6 (decoy) ----
+HALL 834
+hall 834 answers to the word taken after 'through' - the reading every duplicate
+folio in the depot used, and the one this hall was cut against.
+
+before the hall opens further it asks for its own stitch. run the
+loom's walk on the vector printed here, at the standard table:
+  ./loom verify --vector 706e9bc146c226cbb8f8e5185955429ee8095e1ada3f09bd2fd3e0579ec62b58 --T 1232900940 --S 536870912
+  the checkpoint that settles is this hall's field token: PRAMBH{b130f6d580d8e8f6}
+
+file it with folio_364 at the valley depot, beside the tide_merc6 strips
+and the plate fragment 21b3edf867f4117638 the depot sent with them - all three
+carry the same hall number, so the record is consistent.
+
+the duplicate survey is filed at the valley depot; every hall it
+holds answers to the same reading you have already used.
+
+
+---- chamber 7 (decoy) ----
+HALL 756
+hall 756 answers to the word taken after 'toward' - the reading every duplicate
+folio in the depot used, and the one this hall was cut against.
+
+before the hall opens further it asks for its own stitch. run the
+loom's walk on the vector printed here, at the standard table:
+  ./loom verify --vector 11e2a171c398fa196b98f0652c4fed37c759bcd39e7a869674d84f2d0cde2558 --T 1232900940 --S 536870912
+  the checkpoint that settles is this hall's field token: PRAMBH{de95b03b2b86b34b}
+
+file it with folio_192 at the valley depot, beside the star_merc3 strips
+and the plate fragment 808db61e567e04f811 the depot sent with them - all three
+carry the same hall number, so the record is consistent.
+
+the duplicate survey is filed at the valley depot; every hall it
+holds answers to the same reading you have already used.
+
+
+candidate phrases (reading k -> phrase):
+  0 the word each mark settles with (line-final)         kiln weir sapling mantle hollow lunar  <== REAL
+  1 the word after 'past'                                vista survey walnut talon thorn vessel
+  2 the word after 'by'                                  sextant rope loom spur current trench
+  3 the word after 'at'                                  paddock chime current ford bolt lunar
+  4 the word after 'near'                                brine bolt walnut coast dawn granite
+  5 the word after 'under'                               spring meridian otter marsh cove tide
+  6 the word after 'through'                             field relay myrrh magnet cliff birch
+  7 the word after 'toward'                              horizon mantle border mill border braid

@@ -1,0 +1,305 @@
+### stage0 (36)
+== stage0_start end-to-end verification ==
+[PASS] binary exists and is executable
+[PASS] binary statically linked (musl)
+[PASS] binary stripped (no symtab)
+[PASS] first run exits 0
+[PASS] first run: stderr silent
+[PASS] first run prints exact flag line once
+[PASS] first-entry timestamp printed
+[PASS] .cartographer_state created
+[PASS] state file is exactly 352 bytes
+[PASS] state HMAC valid (independent python check)
+[PASS] first_run_ms ~= wall clock at creation
+[PASS] attempt_count[0] == 1 after first run
+[PASS] interaction ring: 1 entry, head=1
+[PASS] debugger flag is 0
+[PASS] ring_ts[0] == first_run_ms (same clock read)
+[PASS] no decoy bits on stage 0
+[PASS] second run exits 0
+[PASS] second run: stderr silent
+[PASS] second run prints flag (ungated every run)
+[PASS] attempt_count[0] == 2 after second run
+[PASS] ring: 2 entries, head=2
+[PASS] first_run_ms stable across runs
+[PASS] ring timestamps monotonic
+[PASS] no .tmp residue
+[PASS] run after tamper exits 0 (no error path)
+[PASS] tampered run: stderr silent (no diagnostics)
+[PASS] flag still handed over after tamper reset
+[PASS] state rewritten valid after tamper
+[PASS] first_run_ms reset (tamper was self-defeating)
+[PASS] counters reset to fresh defaults
+[PASS] reset first_run_ms ~= now
+[PASS] canonical HMAC key hex absent from binary
+[PASS] flag plaintext absent (masked blob only)
+[PASS] no debug paths / compiler strings in binary
+[PASS] stage-0 flag matches canonical format (CARTO{[a-z0-9_]{8,64}})
+[PASS] package left pristine (test state removed)
+
+== 36 tests run, 0 failed ==
+ALL TESTS PASSED
+### stage1 (8 + 65)
+musl-gcc -O0 -g -Wall -Wextra -std=c11 -static -fno-ident -I../state stage1_vm.c vm.c ../state/libstate.a -o stage1_vm.dbg
+./test_detect
+== vm_debug timing-verdict unit tests ==
+== 8 checks, 0 failed ==
+ALL CHECKS PASSED
+./test_stage1.sh
+== stage1_vm end-to-end verification ==
+[PASS] binary exists and is executable
+[PASS] binary statically linked (musl)
+[PASS] binary stripped (no symtab)
+[PASS] no debug paths / compiler strings in binary
+[PASS] model: no VM fault in any of the four runs
+[PASS] model: both variants yield the same key
+[PASS] model key matches the key recorded in the build tables
+[PASS] model: detected path yields a different (corrupted) key
+[PASS] model detected key matches the recorded debug constant
+[PASS] clean run exits 0
+[PASS] clean run: stderr silent
+[PASS] clean run serves the standard variant (coastal)
+[PASS] engine steps == python model (4083)
+[PASS] clean run prints the real Stage 2 key material
+[PASS] token is minted from the first half of the key
+[PASS] token matches the canonical flag format (D11)
+[PASS] engine ledger matches the python model (r1/r2/r6/r7)
+[PASS] state file is exactly 352 bytes
+[PASS] state HMAC valid (independent python check)
+[PASS] attempt_count[1] == 1 after first run
+[PASS] interaction ring extended (8 forged + 1 recorded)
+[PASS] debugger_detected stays 0 on a clean run
+[PASS] second run reproduces key and steps exactly
+[PASS] attempt_count[1] == 2 after second run
+[PASS] first_run_ms is preserved
+[PASS] no .tmp residue after runs
+[PASS] uniform interaction timing selects the escalated variant
+[PASS] escalated variant steps == model (7266)
+[PASS] escalated variant yields the identical key
+[PASS] fast arrival selects the escalated variant
+[PASS] fast-arrival variant matches the uniform-timing variant exactly
+[PASS] persisted debugger flag escalates the variant
+[PASS] persisted debugger flag alone does NOT corrupt the key
+[PASS] decoy submission exits 0 (no error path)
+[PASS] decoy submission: stderr silent
+[PASS] decoy route re-inks the decoy checkpoint key
+[PASS] decoy token equals the registered policy.h entry
+[PASS] decoy route is framed as new information, not failure
+[PASS] decoy route does not leak the real key
+[PASS] decoy bit 0 persisted in the state file
+[PASS] state HMAC valid after decoy routing
+[PASS] unknown token still runs the engine normally
+[PASS] unknown token gets a neutral reply
+[PASS] unknown token sets no decoy bit
+[PASS] the engine recognises its own token
+[PASS] token self-check does not disturb the key
+[PASS] debugger run exits 0 (detection stays silent)
+[PASS] debugger run serves the corrupted constant (same shape, wrong value)
+[PASS] debugger key differs from the real key
+[PASS] debugger run executes the detection branch (4081 steps)
+[PASS] debugger run still mints a well-formed token
+[PASS] debugger_detected flag persisted to the state file
+[PASS] state HMAC valid after the debugger run
+[PASS] timing-path run exits 0
+[PASS] single-stepped trace serves the corrupted constant
+[PASS] timing detection persisted the debugger flag
+[PASS] decoy constant present in the shipped binary (.rodata)
+[PASS] decoy lure string present (forgotten-debug framing)
+[PASS] registered decoy token is findable in the binary
+[PASS] real key material absent from the binary
+[PASS] real token absent from the binary
+[PASS] canonical HMAC key hex absent from binary
+[PASS] debug-path key is not stored in the binary
+[PASS] no writes outside the working directory
+[PASS] package left pristine (test state removed)
+
+== 65 tests run, 0 failed ==
+ALL TESTS PASSED
+### stage2 (58 + 71)
+./test_stage2.sh
+== stage2_stego end-to-end verification ==
+== s2_inflate differential unit tests (C vs python zlib) ==
+== 58 vectors run, 0 failed ==
+ALL TESTS PASSED
+[PASS] hand-rolled s2_inflate agrees with python zlib on 58 vectors, refuses all bad streams
+[PASS] binary exists and is executable
+[PASS] binary statically linked (musl)
+[PASS] binary stripped (no symtab)
+[PASS] no debug paths / compiler strings in binary
+[PASS] sheet carrier present
+[PASS] tape carrier present
+[PASS] sheet verified independently as a 512x512 PNG
+[PASS] naive whole-image LSB layer carries the registered decoy at the head
+[PASS] real sweep derives stride 46 / start mark 5070 from the Stage 1 real key
+[PASS] blue-channel layer decompresses to the interior reading
+[PASS] naive zlib decompression of the ink is refused (the press mark is required)
+[PASS] debugger-path key draws a different sweep (stride 6, start 1601)
+[PASS] stage-1 decoy key draws a different sweep (stride 39, start 1512)
+[PASS] a wrong Stage 1 key yields garbage that does not parse and does not error
+[PASS] the debugger-path key's sweep also yields unparseable garbage
+[PASS] tape carries INAM + ICMT metadata
+[PASS] the press mark extracted from the tape's metadata decrypts the ink
+[PASS] tape sample LSBs carry the irrelevant pattern (not the figure)
+[PASS] sheet carries the field note and the (flavor-only) comment
+[PASS] exiftool default output mangles the binary press mark (text-habit shortcut fails)
+[PASS] exiftool -b -Comment silently re-encodes the mark (70 bytes for 56)
+[PASS] exiftool -v3 prints the exact mark bytes (documented, fair resolution)
+[PASS] the mark is recoverable byte-exactly from the raw file
+[PASS] ImageMagick can read the sheet (a tool route exists as well)
+[PASS] clean run exits 0
+[PASS] clean run: stderr silent
+[PASS] claim mode accepts the real reading
+[PASS] acceptance echoes the reading
+[PASS] stage 2 checkpoint token minted from the reading digest
+[PASS] carrier audit recognises the shipped sheet and tape
+[PASS] human-paced ledger serves the plain audit variant
+[PASS] stage 2 attempt counter bumped
+[PASS] no decoy bit set by the real reading
+[PASS] state HMAC valid (independent python check)
+[PASS] state file is exactly 352 bytes
+[PASS] attempt counter advances across runs
+[PASS] checkpoint token is stable across runs
+[PASS] debugger flag stays 0 on clean runs
+[PASS] press mode exits 0
+[PASS] press mode accepts the ink with the tape's mark
+[PASS] the pressed reading verifies against the ledger
+[PASS] a wrong press mark is refused at the head (DICTID), without diagnosing
+[PASS] wrong press mark never leaks the real reading
+[PASS] a missing ink is reported plainly, not as an error
+[PASS] decoy claim exits 0 (no error path)
+[PASS] decoy claim: stderr silent
+[PASS] decoy claim routes into the extended branch
+[PASS] decoy branch is framed as new information, not failure
+[PASS] decoy branch never leaks the real reading
+[PASS] stage 2 decoy bit 0 persisted (branch 1 -> 1u<<0)
+[PASS] state HMAC valid after decoy routing
+[PASS] decoy claim also selects the extended audit variant
+[PASS] refusals are textually identical: no partial-match feedback
+[PASS] the stage-1 decoy token gets only a plain refusal (no oracle)
+[PASS] uniform interaction timing selects the extended audit variant
+[PASS] escalated variant still accepts the real reading
+[PASS] escalation does not touch the debugger flag
+[PASS] a persisted debugger flag selects the extended audit variant
+[PASS] a persisted debugger flag does NOT corrupt the real verdict
+[PASS] debugger flag is preserved across the stage 2 run
+[PASS] shipped binary carries the decoy flag, the spent-press note, the audit text and the mark prefix
+[PASS] real reading absent from the binary
+[PASS] stage 1 real key absent from the binary
+[PASS] press formula is not in the binary (tape only)
+[PASS] canonical HMAC key hex absent from binary
+[PASS] no sweep constants or pixel-stride logic are compiled into the binary
+[PASS] carriers leak neither the reading nor the sweep constants
+[PASS] the sheet's own field note spells the sweep rule (deterministic resolution)
+[PASS] package left pristine (test state removed)
+[PASS] no writes outside the working directory
+
+== 71 tests run, 0 failed ==
+ALL TESTS PASSED
+### stage3 (33)
+== stage3_oracle end-to-end verification ==
+[PASS] oracle exists and is executable
+[PASS] statically linked
+[PASS] stripped (no symtab)
+[PASS] no compiler/path residue
+[PASS] canonical HMAC key absent
+[PASS] KDF derivation seeds absent
+[PASS] masked KDF seed present in binary
+[PASS] no args: rc 0, stderr silent
+[PASS] -r only: rc 0, stderr silent
+[PASS] figure only: rc 0, stderr silent
+[PASS] malformed figure: rc 0, stderr silent
+[PASS] too-long figure: rc 0, stderr silent
+[PASS] clean query: rc 0, stderr silent
+[PASS] human state: oracle == model on 0123456789abcdef
+[PASS] human state: oracle == model on ffffffffffffffff
+[PASS] human state: oracle == model on 0000000000000000
+[PASS] human state: oracle == model on 123456789abcdef0
+[PASS] zero-padded 16-hex figure parses == model
+[PASS] uniform state: poison key served (== model poison-enc)
+[PASS] poison answer differs from the real-key answer
+[PASS] poison is self-consistent (same figure -> same answer)
+[PASS] stage-2 token as reading: rc 0 silent
+[PASS] stage-1 token as reading: rc 0 silent
+[PASS] wrong reading: rc 0 silent
+[PASS] state file created (352 bytes)
+[PASS] state HMAC valid (independent python)
+[PASS] attempt_count[3] == 1
+[PASS] attempt_count[3] == 2 after second run
+[PASS] stage-3 decoy bit 0 persisted
+[PASS] attack recovers true key (N=2080, calibrated)
+[PASS] attack recovers true key (N=2560, control)
+[PASS] poisoned dataset self-consistent (wrong key)
+[PASS] mixed dataset fails to converge (falsifiable)
+[PASS] oracle rebuild reproducible (identical sha256)
+
+== 34 passed, 0 failed ==
+ALL TESTS PASSED
+### stage4
+== stage4_assembly end-to-end verification ==
+[PASS] validator exists and is executable
+[PASS] statically linked
+[PASS] stripped (no symtab)
+[PASS] no compiler/path residue
+[PASS] assembled real flag absent from the binary
+[PASS] engine ink (stage-1 key bytes 16..23) absent from the binary
+[PASS] oracle ink (stage-3 master K) absent from the binary
+[PASS] sheet ink (reading, frame off) absent from the binary
+[PASS] stage-2 reading (whole) absent from the binary
+[PASS] stage-1 token content absent from the binary
+[PASS] canonical HMAC key hex absent from binary
+[PASS] struck-draft decoy present (findable)
+[PASS] the riddle verse is shipped (solver-facing)
+[PASS] the ink descriptions are shipped (fair, value-free)
+[PASS] title is D11-conforming and digest matches (independent recompute)
+[PASS] no args: rc 0
+[PASS] no args: stderr silent
+[PASS] usage shows the stage banner
+[PASS] correct title: rc 0
+[PASS] correct title: stderr silent
+[PASS] acceptance echoes the title
+[PASS] acceptance closes the survey
+[PASS] acceptance names the final flag as the answer
+[PASS] wrong ordering 1 (naive stage order): rc 0, stderr silent
+[PASS] wrong ordering 2: rc 0, stderr silent
+[PASS] wrong ordering 3: rc 0, stderr silent
+[PASS] wrong ordering 4: rc 0, stderr silent
+[PASS] wrong ordering 5: rc 0, stderr silent
+[PASS] engine ink = token content (the near-miss): rc 0, stderr silent
+[PASS] sheet ink keeps its frame: rc 0, stderr silent
+[PASS] oracle ink head/tail swapped: rc 0, stderr silent
+[PASS] engine ink taken from the wrong half (first half): rc 0, stderr silent
+[PASS] garbage input: rc 0, stderr silent
+[PASS] malformed flag: rc 0, stderr silent
+[PASS] wrong length (one char appended): rc 0, stderr silent
+[PASS] empty argument: rc 0, stderr silent
+[PASS] every refusal is byte-identical (no partial-match feedback)
+[PASS] refusal never contains the real title
+[PASS] refusal leaks no ink value
+[PASS] extra arguments: rc 0, identical refusal
+[PASS] decoy submission exits 0 (no error path)
+[PASS] decoy submission: stderr silent
+[PASS] decoy route is framed as new information, not failure
+[PASS] decoy route re-inks the struck draft
+[PASS] decoy route never leaks the real title
+[PASS] stage-4 decoy bit 0 persisted (branch 1 -> 1u<<0)
+[PASS] post-decoy refusals are unchanged
+[PASS] attempt_count[4] == 1 after first run
+[PASS] attempt_count[4] == 2 after second run
+[PASS] first_run_ms is preserved
+[PASS] state file is exactly 352 bytes
+[PASS] no decoy bit set by the real title
+[PASS] state HMAC valid (independent python)
+[PASS] no .tmp residue after runs
+[PASS] human-paced ledger: plain variant accepts the real title
+[PASS] human-paced ledger serves the plain variant
+[PASS] uniform-timing ledger: witnessed variant accepts the real title
+[PASS] escalated presentation is the witnessed line
+[PASS] witnessed variant verdict is bit-identical to plain
+[PASS] witnessed ledger: refusals are still identical
+[PASS] a persisted debugger flag does NOT corrupt the real verdict
+[PASS] validator rebuild reproducible (identical sha256)
+[PASS] package left pristine (test state removed)
+[PASS] no writes outside the working directory
+
+== 64 tests run, 0 failed ==
+ALL TESTS PASSED

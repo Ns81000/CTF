@@ -1,0 +1,18 @@
+[     0.00s] === Run A -- CLEAN PATH ===
+[     0.00s] time scale            : 1 (REAL/UNSCALED)
+[     0.00s] Stage-3 budget        : 8 experiments x 100 pairs = 800 pairs = 1600 queries
+[     0.00s] pacing                : jitter:0.6,3.4  -> mean 2.000 s, stddev 0.808 s
+[     0.00s] projected Stage-3 time: 53.3 min (2.00 s per query)
+[     0.00s] poison floor in force : CARTO_STDDEV_LOW_MS = 150.0 ms (stddev margin 5.4x)
+[     0.00s] state file removed; starting from a fresh ledger
+[     0.00s] stage0_start -> CARTO{first_ink_in_the_ledger}
+[     0.00s] MARK stage0_start             t=0.00s
+[     0.00s] stage1_vm[real] -> key fd3e8049dfdfc32efe22fe823822b8c0a5d66f1b2b5f596e4c8111cf4224010f steps=7266 token CARTO{fd3e8049dfdfc32efe22fe823822b8c0}
+[     0.00s]    (matches the recorded real Stage-2 key material)
+[     0.00s] MARK stage1_vm                t=0.00s
+[     0.01s]    sweep from key: stride=46 start=5070 (marks=262144)
+[     0.01s]    sweep detail: {'stride': 46, 'start': 5070, 'len': 48, 'error': None, 'framed_hex': '300078f971b816bc73760c0af1afcecb8f4fcb4c2f2d4a8d2fce2c298ecfcc8b...'}
+[     0.01s]    reading extracted: CARTO{no_figure_sits_in_every_pixel}
+[     0.01s]    ./stage2_stego/stage2_stego -c '<reading>' accepted it
+[     0.01s] MARK stage2_stego             t=0.01s
+[   630.21s]    [runA] 160/800 pairs (A window 1)

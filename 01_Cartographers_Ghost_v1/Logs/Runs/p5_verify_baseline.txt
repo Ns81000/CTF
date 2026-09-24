@@ -1,0 +1,434 @@
+############ preamble: patch policy.h + test_part2.c ############
+policy.h already normalized (3 rows)
+test_part2.c already normalized (LEN>=3, row 2 stage==3)
+nothing to do (already normalized)
+
+############ 1. state library (rebuilt with 4 decoys) ############
+rm -f *.o libstate.a test_state
+musl-gcc -O2 -Wall -Wextra -std=c11 -static -fno-ident -c carto_sha256.c -o carto_sha256.o
+musl-gcc -O2 -Wall -Wextra -std=c11 -static -fno-ident -c state_core.c -o state_core.o
+musl-gcc -O2 -Wall -Wextra -std=c11 -static -fno-ident -c state_policy.c -o state_policy.o
+ar rcs libstate.a carto_sha256.o state_core.o state_policy.o
+
+############ 2. regenerate oracle constants ############
+tables built; self-checks passed
+planted deltas A: ['0x1', '0x200', '0x40000', '0x8000000']
+planted deltas B: ['0x10', '0x2000', '0x400000', '0x80000000']
+demo reading kdf: kA=73070925 kB=a159f9e2
+demo poison keys: kA=0fab2971 kB=10c73e9f
+oracle_blob.h + oracle_layout.json written
+
+############ 3. build the oracle ############
+mkdir -p ../../cartographer/stage3_oracle
+musl-gcc -O2 -Wall -Wextra -std=c11 -static -fno-ident -I../state oracle.c ../state/libstate.a -o ../../cartographer/stage3_oracle/oracle
+strip --strip-all ../../cartographer/stage3_oracle/oracle
+objcopy --remove-section .comment ../../cartographer/stage3_oracle/oracle 2>/dev/null || true
+
+############ 4. stage3_oracle test suite ############
+== stage3_oracle end-to-end verification ==
+[PASS] oracle exists and is executable
+[PASS] statically linked
+[PASS] stripped (no symtab)
+[PASS] no compiler/path residue
+[PASS] canonical HMAC key absent
+[PASS] KDF derivation seeds absent
+[PASS] masked KDF seed present in binary
+[PASS] no args: rc 0, stderr silent
+[PASS] -r only: rc 0, stderr silent
+[PASS] figure only: rc 0, stderr silent
+[PASS] malformed figure: rc 0, stderr silent
+[PASS] too-long figure: rc 0, stderr silent
+[PASS] clean query: rc 0, stderr silent
+[PASS] human state: oracle == model on 0123456789abcdef
+[PASS] human state: oracle == model on ffffffffffffffff
+[PASS] human state: oracle == model on 0000000000000000
+[PASS] human state: oracle == model on 123456789abcdef0
+[PASS] zero-padded 16-hex figure parses == model
+[PASS] uniform state: poison key served (== model poison-enc)
+[PASS] poison answer differs from the real-key answer
+[PASS] poison is self-consistent (same figure -> same answer)
+[PASS] stage-2 token as reading: rc 0 silent
+[PASS] stage-1 token as reading: rc 0 silent
+[PASS] wrong reading: rc 0 silent
+[PASS] state file created (352 bytes)
+[PASS] state HMAC valid (independent python)
+[PASS] attempt_count[3] == 1
+[PASS] attempt_count[3] == 2 after second run
+[PASS] stage-3 decoy bit 0 persisted
+[PASS] attack recovers true key (N=2560)
+[PASS] poisoned dataset self-consistent (wrong key)
+[PASS] mixed dataset fails to converge (falsifiable)
+[PASS] oracle rebuild reproducible (identical sha256)
+
+== 33 passed, 0 failed ==
+ALL TESTS PASSED
+
+############ 5. phases 0-3 verify.sh (relinks stage0/1/2) ############
+############ 1. state library (Phase 0) ############
+rm -f *.o libstate.a test_state
+musl-gcc -O2 -Wall -Wextra -std=c11 -static -fno-ident -c carto_sha256.c -o carto_sha256.o
+musl-gcc -O2 -Wall -Wextra -std=c11 -static -fno-ident -c state_core.c -o state_core.o
+musl-gcc -O2 -Wall -Wextra -std=c11 -static -fno-ident -c state_policy.c -o state_policy.o
+ar rcs libstate.a carto_sha256.o state_core.o state_policy.o
+musl-gcc -O2 -Wall -Wextra -std=c11 -static -fno-ident test_part1.c test_part2.c libstate.a -o test_state -lm
+python3 gen_vectors.py
+68 vectors written; canonical probe: b32ef0b76dc05f0d1d0916cc361c427cf4dee9ec48529d17e9399f9f8f700910
+./test_state
+== cartographer state library unit tests ==
+[PASS] test_sha_selftest
+[PASS] test_hmac_selftest
+[PASS] test_key_selftest
+[PASS] test_key_canonical
+[PASS] test_fresh_create
+[PASS] test_roundtrip
+[PASS] test_tamper_silent_reset
+[PASS] test_truncated
+[PASS] test_extended
+[PASS] test_bad_magic
+[PASS] test_garbage
+[PASS] test_hmac_ring_flip
+[PASS] test_save_deterministic
+[PASS] test_no_tmp_residue
+[PASS] test_ring_wrap
+[PASS] test_stddev_reference
+[PASS] test_stddev_insufficient
+[PASS] test_escalate_fast
+[PASS] test_escalate_uniform
+[PASS] test_escalate_human
+[PASS] test_escalate_debugger
+[PASS] test_decoy_lookup
+[PASS] test_decoy_count
+[PASS] test_decoy_persist
+[PASS] test_attempts_persist
+[PASS] test_debugger_persist
+[PASS] test_hmac_differential
+== 27 tests run, 0 failed ==
+ALL TESTS PASSED
+test_state: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, with debug_info, not stripped
+
+############ 2. stage0_start (Phase 1) ############
+mkdir -p ../../cartographer/stage0_start
+musl-gcc -O2 -Wall -Wextra -std=c11 -static -fno-ident -I../state stage0.c ../state/libstate.a -o ../../cartographer/stage0_start/stage0_start
+strip --strip-all ../../cartographer/stage0_start/stage0_start
+objcopy --remove-section .comment ../../cartographer/stage0_start/stage0_start 2>/dev/null || true
+== stage0_start end-to-end verification ==
+[PASS] binary exists and is executable
+[PASS] binary statically linked (musl)
+[PASS] binary stripped (no symtab)
+[PASS] first run exits 0
+[PASS] first run: stderr silent
+[PASS] first run prints exact flag line once
+[PASS] first-entry timestamp printed
+[PASS] .cartographer_state created
+[PASS] state file is exactly 352 bytes
+[PASS] state HMAC valid (independent python check)
+[PASS] first_run_ms ~= wall clock at creation
+[PASS] attempt_count[0] == 1 after first run
+[PASS] interaction ring: 1 entry, head=1
+[PASS] debugger flag is 0
+[PASS] ring_ts[0] == first_run_ms (same clock read)
+[PASS] no decoy bits on stage 0
+[PASS] second run exits 0
+[PASS] second run: stderr silent
+[PASS] second run prints flag (ungated every run)
+[PASS] attempt_count[0] == 2 after second run
+[PASS] ring: 2 entries, head=2
+[PASS] first_run_ms stable across runs
+[PASS] ring timestamps monotonic
+[PASS] no .tmp residue
+[PASS] run after tamper exits 0 (no error path)
+[PASS] tampered run: stderr silent (no diagnostics)
+[PASS] flag still handed over after tamper reset
+[PASS] state rewritten valid after tamper
+[PASS] first_run_ms reset (tamper was self-defeating)
+[PASS] counters reset to fresh defaults
+[PASS] reset first_run_ms ~= now
+[PASS] canonical HMAC key hex absent from binary
+[PASS] flag plaintext absent (masked blob only)
+[PASS] no debug paths / compiler strings in binary
+[PASS] stage-0 flag matches canonical format (CARTO{[a-z0-9_]{8,64}})
+[PASS] package left pristine (test state removed)
+
+== 36 tests run, 0 failed ==
+ALL TESTS PASSED
+
+############ 3. stage1_vm (Phase 2) ############
+[PASS] package left pristine (test state removed)
+
+== 65 tests run, 0 failed ==
+ALL TESTS PASSED
+
+############ 4. stage2_stego (Phase 3) ############
+mkdir -p ../../cartographer/stage2_stego
+musl-gcc -O2 -Wall -Wextra -std=c11 -static -fno-ident -I../state stage2_stego.c s2_inflate.c ../state/libstate.a -o ../../cartographer/stage2_stego/stage2_stego
+strip --strip-all ../../cartographer/stage2_stego/stage2_stego
+objcopy --remove-section .comment ../../cartographer/stage2_stego/stage2_stego 2>/dev/null || true
+./test_stage2.sh
+== stage2_stego end-to-end verification ==
+== s2_inflate differential unit tests (C vs python zlib) ==
+== 58 vectors run, 0 failed ==
+ALL TESTS PASSED
+[PASS] hand-rolled s2_inflate agrees with python zlib on 58 vectors, refuses all bad streams
+[PASS] binary exists and is executable
+[PASS] binary statically linked (musl)
+[PASS] binary stripped (no symtab)
+[PASS] no debug paths / compiler strings in binary
+[PASS] sheet carrier present
+[PASS] tape carrier present
+[PASS] sheet verified independently as a 512x512 PNG
+[PASS] naive whole-image LSB layer carries the registered decoy at the head
+[PASS] real sweep derives stride 46 / start mark 5070 from the Stage 1 real key
+[PASS] blue-channel layer decompresses to the interior reading
+[PASS] naive zlib decompression of the ink is refused (the press mark is required)
+[PASS] debugger-path key draws a different sweep (stride 6, start 1601)
+[PASS] stage-1 decoy key draws a different sweep (stride 39, start 1512)
+[PASS] a wrong Stage 1 key yields garbage that does not parse and does not error
+[PASS] the debugger-path key's sweep also yields unparseable garbage
+[PASS] tape carries INAM + ICMT metadata
+[PASS] the press mark extracted from the tape's metadata decrypts the ink
+[PASS] tape sample LSBs carry the irrelevant pattern (not the figure)
+[PASS] sheet carries the field note and the (flavor-only) comment
+[PASS] exiftool default output mangles the binary press mark (text-habit shortcut fails)
+[PASS] exiftool -b -Comment silently re-encodes the mark (70 bytes for 56)
+[PASS] exiftool -v3 prints the exact mark bytes (documented, fair resolution)
+[PASS] the mark is recoverable byte-exactly from the raw file
+[PASS] ImageMagick can read the sheet (a tool route exists as well)
+[PASS] clean run exits 0
+[PASS] clean run: stderr silent
+[PASS] claim mode accepts the real reading
+[PASS] acceptance echoes the reading
+[PASS] stage 2 checkpoint token minted from the reading digest
+[PASS] carrier audit recognises the shipped sheet and tape
+[PASS] human-paced ledger serves the plain audit variant
+[PASS] stage 2 attempt counter bumped
+[PASS] no decoy bit set by the real reading
+[PASS] state HMAC valid (independent python check)
+[PASS] state file is exactly 352 bytes
+[PASS] attempt counter advances across runs
+[PASS] checkpoint token is stable across runs
+[PASS] debugger flag stays 0 on clean runs
+[PASS] press mode exits 0
+[PASS] press mode accepts the ink with the tape's mark
+[PASS] the pressed reading verifies against the ledger
+[PASS] a wrong press mark is refused at the head (DICTID), without diagnosing
+[PASS] wrong press mark never leaks the real reading
+[PASS] a missing ink is reported plainly, not as an error
+[PASS] decoy claim exits 0 (no error path)
+[PASS] decoy claim: stderr silent
+[PASS] decoy claim routes into the extended branch
+[PASS] decoy branch is framed as new information, not failure
+[PASS] decoy branch never leaks the real reading
+[PASS] stage 2 decoy bit 0 persisted (branch 1 -> 1u<<0)
+[PASS] state HMAC valid after decoy routing
+[PASS] decoy claim also selects the extended audit variant
+[PASS] refusals are textually identical: no partial-match feedback
+[PASS] the stage-1 decoy token gets only a plain refusal (no oracle)
+[PASS] uniform interaction timing selects the extended audit variant
+[PASS] escalated variant still accepts the real reading
+[PASS] escalation does not touch the debugger flag
+[PASS] a persisted debugger flag selects the extended audit variant
+[PASS] a persisted debugger flag does NOT corrupt the real verdict
+[PASS] debugger flag is preserved across the stage 2 run
+[PASS] shipped binary carries the decoy flag, the spent-press note, the audit text and the mark prefix
+[PASS] real reading absent from the binary
+[PASS] stage 1 real key absent from the binary
+[PASS] press formula is not in the binary (tape only)
+[PASS] canonical HMAC key hex absent from binary
+[PASS] no sweep constants or pixel-stride logic are compiled into the binary
+[PASS] carriers leak neither the reading nor the sweep constants
+[PASS] the sheet's own field note spells the sweep rule (deterministic resolution)
+[PASS] package left pristine (test state removed)
+[PASS] no writes outside the working directory
+
+== 71 tests run, 0 failed ==
+ALL TESTS PASSED
+
+############ 5. carrier regeneration determinism ############
+REGEN-DETERMINISTIC-OK
+HEADER-DETERMINISTIC-OK
+
+############ 6. binary reproducibility (two clean rebuilds) ############
+18043e634bf55305425db15551aa89d9a6565b0cf18d4e9dca533f476070b7db  /home/manish/cartographer-build/cartographer/stage2_stego/stage2_stego
+18043e634bf55305425db15551aa89d9a6565b0cf18d4e9dca533f476070b7db  /home/manish/cartographer-build/cartographer/stage2_stego/stage2_stego
+18043e634bf55305425db15551aa89d9a6565b0cf18d4e9dca533f476070b7db  /home/manish/cartographer-build/cartographer/stage2_stego/stage2_stego
+
+############ 7. artifact inventory ############
+total 120
+-rwxr-xr-x 1 manish manish 62728 Sep 20 07:14 stage2_stego
+-rw-r--r-- 1 manish manish 46258 Sep 20 07:14 survey_frame.png
+-rw-r--r-- 1 manish manish  8152 Sep 20 07:14 survey_tape.wav
+/home/manish/cartographer-build/cartographer/stage2_stego/stage2_stego: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, stripped
+62728 /home/manish/cartographer-build/cartographer/stage2_stego/stage2_stego
+SCRUB-CLEAN
+
+############ 8. solver-eye smoke run ############
+======================================================================
+  THE CARTOGRAPHER'S GHOST
+  Stage 2 -- The Interior Sheet
+======================================================================
+
+The coast is behind you. This is the interior: a sheet of survey
+marks, and the tape the old man spoke his field note onto. Neither
+of them is a map with the figure drawn on it plainly.
+
+  sheet : ./stage2_stego/survey_frame.png -- the ledger knows this one
+  tape : ./stage2_stego/survey_tape.wav -- the ledger knows this one
+  ledger mode : extended audit
+
+The ledger will take a reading, or press an ink.
+
+    ./stage2_stego/stage2_stego -c '<reading>'
+        hand over what you read out of the sheet
+
+    ./stage2_stego/stage2_stego -p <mark|mark-file> -R <ink-file>
+        hand over the sheet's press mark (raw bytes in a file, or as
+        hex letters) and the ink drawn from the sheet, packed eight
+        marks to a letter as it came
+
+Nothing about a wrong reading is an error -- the ledger says plainly
+that it does not know it, and keeps no grudge.
+  the ledger does not know that reading: it is not the interior figure.
+  Nothing about a wrong reading is an error. Keep the mark; the sweep is
+  somewhere on the sheet, and the press is on the tape.
+======================================================================
+--- claim of the real reading ---
+======================================================================
+  THE CARTOGRAPHER'S GHOST
+  Stage 2 -- The Interior Sheet
+======================================================================
+
+The ledger is warm. It has kept this page open since your last visit.
+
+  sheet : ./stage2_stego/survey_frame.png -- the ledger knows this one
+  tape : ./stage2_stego/survey_tape.wav -- the ledger knows this one
+  ledger mode : extended audit
+
+  the ledger takes this reading:
+
+    CARTO{no_figure_sits_in_every_pixel}
+
+  the interior figure stands. Stage 2 checkpoint token -- bank it:
+
+    CARTO{b27692a0d5f63d4f1a0c3fb79afbf81b}
+
+  extended audit: the second pass agrees with the first; sheet and
+  tape were struck from the same press.
+
+  Carry it to the oracle. It answers in figures, not in ink.
+======================================================================
+--- decoy claim ---
+======================================================================
+  THE CARTOGRAPHER'S GHOST
+  Stage 2 -- The Interior Sheet
+======================================================================
+
+The ledger is warm. It has kept this page open since your last visit.
+
+  sheet : ./stage2_stego/survey_frame.png -- the ledger knows this one
+  tape : ./stage2_stego/survey_tape.wav -- the ledger knows this one
+  ledger mode : extended audit
+
+  the ledger knows this ink. It accepts it as a corroborated reading
+  and re-inks the checkpoint the old man left for the coast survey:
+
+    CARTO{twice_over_the_coast_before_the_interior}
+
+  extended audit: this mark was struck from the coast press, not the
+  interior one.
+
+  Nothing here needs re-drawing.
+======================================================================
+
+############ done ############
+
+############ 6. oracle reproducibility (two clean rebuilds) ############
+build1=93bb876e7c7adcb730cfba0382e4a40609aed74d424283da4c02451d27351528 build2=93bb876e7c7adcb730cfba0382e4a40609aed74d424283da4c02451d27351528
+ORACLE-REGEN-REPRODUCIBLE-OK
+
+############ 7. artifact inventory + scrub + smoke ############
+total 60
+-rwxr-xr-x 1 manish manish 58632 Sep 20 07:14 oracle
+/home/manish/cartographer-build/cartographer/stage3_oracle/oracle: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, stripped
+58632 /home/manish/cartographer-build/cartographer/stage3_oracle/oracle
+SCRUB-CLEAN
+
+############ 8. solver-eye smoke run ############
+--- no-arg usage ---
+======================================================================
+  THE CARTOGRAPHER'S GHOST
+  Stage 3 -- The Cipher Oracle
+======================================================================
+
+Past the sheet, the survey turns to figures. Somewhere in
+the dark of the map room an engine answers every figure with
+a figure, and keeps its own counsel about what they mean.
+
+  oracle mode : witnessed
+
+  the oracle answers only what is handed a reading.
+
+The oracle answers figures with figures. Hand it a reading and
+a figure:
+
+    ./stage3_oracle/oracle -r '<reading>' <figure>
+
+  <reading>  what the interior sheet yielded, handed over whole.
+             The oracle keeps no reading of its own; the reading
+             you carry in is the one it works from.
+
+  <figure>   sixteen hex letters, eight bytes to the block, one
+             byte to a pair as the sheet wrote them. Hand them
+             over as they stand -- the head pair opens the block.
+             The ledger files every figure under the tail it came
+             in with, and the oracle does not swap your letters:
+             it answers in the same order you handed them over.
+
+Every figure receives an answer, and no answer is ever refused;
+nothing about a wrong reading is an error here. The oracle only
+turns figures. What an answer is worth is decided further up the
+survey, where figures are read.
+--- clean query ---
+======================================================================
+  THE CARTOGRAPHER'S GHOST
+  Stage 3 -- The Cipher Oracle
+======================================================================
+
+The oracle is warm. It has been answering while you were away.
+
+  oracle mode : witnessed
+
+  witnessed: the engine turns whether you watch it or
+  not.
+
+  the oracle answers:
+
+    2a7479540c7163e3
+
+--- decoy query ---
+======================================================================
+  THE CARTOGRAPHER'S GHOST
+  Stage 3 -- The Cipher Oracle
+======================================================================
+
+The oracle is warm. It has been answering while you were away.
+
+  oracle mode : witnessed
+
+  the ledger knows this ink. It is a checkpoint, not a reading --
+  struck earlier in the survey and handed back here. The oracle
+  will still turn figures for it, but under the ink you handed
+  over, not under the sheet's.
+
+  re-inked checkpoint (branch 1):
+
+    CARTO{b27692a0d5f63d4f1a0c3fb79afbf81b}
+
+  witnessed: the engine turns whether you watch it or
+  not.
+
+  the oracle answers:
+
+    8e7737de894ee908
+
+
+############ done ############

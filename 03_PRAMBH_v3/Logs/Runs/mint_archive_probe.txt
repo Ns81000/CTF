@@ -1,0 +1,10 @@
+stage0 : PRAMBH{zero_b8c1d72c} (expect PRAMBH{zero_b8c1d72c})
+canary : PRAMBH{canary_87eefe3e} (expect PRAMBH{canary_87eefe3e})
+phrase : fable coil autumn coast reed zinc (expect fable coil autumn coast reed zinc)
+capsule: e1cbbd2f51685fb35a0e0fa991a9580a7fe579e486007086dc6c1c3570531954
+loom seed material: 4668e434c5ea0e9b249cae68c6ecc81e1ad79afaa4f0aefef0661b72746045c7
+door numbers: [761, 268, 787, 451, 215, 338, 834, 756] real index 0
+real phrase: kiln weir sapling mantle hollow lunar
+eyes ink: 5LNE5X_XV5WUW_ALNGTJ
+door ink: 6939de42d44af1f2
+loom model: MERU-8

@@ -1,0 +1,26 @@
+OK   musl-gcc -> /usr/bin/musl-gcc
+OK   gcc -> /usr/bin/gcc
+OK   make -> /usr/bin/make
+OK   gdb -> /usr/bin/gdb
+OK   zip -> /usr/bin/zip
+OK   unzip -> /usr/bin/unzip
+OK   cppcheck -> /usr/bin/cppcheck
+OK   exiftool -> /usr/bin/exiftool
+OK   convert -> /usr/bin/convert
+OK   jq -> /usr/bin/jq
+OK   pngcheck -> /usr/bin/pngcheck
+OK   strace -> /usr/bin/strace
+OK   python3 -> /usr/bin/python3
+OK   git -> /usr/bin/git
+OK   objdump -> /usr/bin/objdump
+OK   readelf -> /usr/bin/readelf
+OK   nm -> /usr/bin/nm
+OK   strings -> /usr/bin/strings
+OK   xxd -> /usr/bin/xxd
+OK   file -> /usr/bin/file
+OK   objcopy -> /usr/bin/objcopy
+OK   bc -> /usr/bin/bc
+OK   openssl -> /usr/bin/openssl
+x86_64-linux-gnu-gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+py deps OK
+PHASE0-TOOLS OK

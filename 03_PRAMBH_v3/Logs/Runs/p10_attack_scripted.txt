@@ -1,0 +1,20 @@
+=== scripted attack: automated agent path ===
+PASS dictionary-lane-opens-nothing (tried 60 random corpus-word phrases)
+Traceback (most recent call last):
+  File "/mnt/e/drive-upload/prambh-build/src/final/attack_scripted.py", line 128, in <module>
+    sys.exit(main(sys.argv))
+             ^^^^^^^^^^^^^^
+  File "/mnt/e/drive-upload/prambh-build/src/final/attack_scripted.py", line 66, in main
+    r = sh([doors, "open", mint.door_phrase(k)], cwd=os.path.dirname(doors))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/e/drive-upload/prambh-build/src/final/attack_scripted.py", line 38, in sh
+    return subprocess.run(args, capture_output=True, text=True, cwd=cwd)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.12/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: '/mnt/e/drive-upload/prambh-build/prambh/stage3_doors/doors'

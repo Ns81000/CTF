@@ -1,0 +1,134 @@
+== cartographer Phase FINAL adversarial verification ==
+package root: /home/manish/cartographer-build/cartographer
+
+--- 1. symbol / string leakage audit ---
+[PASS] stage0_start: nm reports no symbols
+[PASS] stage0_start: no host path or username
+[PASS] stage0_start: no compiler ident
+[PASS] stage0_start: test-only time-scale hook absent
+[PASS] stage0_start: canonical HMAC key absent
+[PASS] stage1_vm: nm reports no symbols
+[PASS] stage1_vm: no host path or username
+[PASS] stage1_vm: no compiler ident
+[PASS] stage1_vm: test-only time-scale hook absent
+[PASS] stage1_vm: canonical HMAC key absent
+[PASS] stage2_stego: nm reports no symbols
+[PASS] stage2_stego: no host path or username
+[PASS] stage2_stego: no compiler ident
+[PASS] stage2_stego: test-only time-scale hook absent
+[PASS] stage2_stego: canonical HMAC key absent
+[PASS] oracle: nm reports no symbols
+[PASS] oracle: no host path or username
+[PASS] oracle: no compiler ident
+[PASS] oracle: test-only time-scale hook absent
+[PASS] oracle: canonical HMAC key absent
+[PASS] validate: nm reports no symbols
+[PASS] validate: no host path or username
+[PASS] validate: no compiler ident
+[PASS] validate: test-only time-scale hook absent
+[PASS] validate: canonical HMAC key absent
+[PASS] real answer material absent: CARTO{first_ink_in_the_ledge...
+[PASS] real answer material absent: 73070925a159f9e2_a5d66f1b2b5...
+[PASS] real answer material absent: fd3e8049dfdfc32efe22fe823822...
+[PASS] real answer material absent: 73070925a159f9e2...
+[PASS] real answer material absent: a5d66f1b2b5f596e...
+[PASS] real answer material absent: interior-ink-formula-v1:...
+
+--- 2. malformed / oversized / truncated input, every binary ---
+[PASS] stage0_start: empty arg -> rc0 silent
+[PASS] stage0_start: 200k arg -> rc0 silent
+[PASS] stage0_start: 60k flag-shaped arg -> rc0 silent
+[PASS] stage0_start: whitespace/newline arg -> rc0 silent
+[PASS] stage0_start: 8 extra args -> rc0 silent
+[PASS] stage0_start: missing -c file -> rc0 silent
+[PASS] stage0_start: missing press files -> rc0 silent
+[PASS] stage1_vm: empty arg -> rc0 silent
+[PASS] stage1_vm: 200k arg -> rc0 silent
+[PASS] stage1_vm: 60k flag-shaped arg -> rc0 silent
+[PASS] stage1_vm: whitespace/newline arg -> rc0 silent
+[PASS] stage1_vm: 8 extra args -> rc0 silent
+[PASS] stage1_vm: missing -c file -> rc0 silent
+[PASS] stage1_vm: missing press files -> rc0 silent
+[PASS] stage2_stego: empty arg -> rc0 silent
+[PASS] stage2_stego: 200k arg -> rc0 silent
+[PASS] stage2_stego: 60k flag-shaped arg -> rc0 silent
+[PASS] stage2_stego: whitespace/newline arg -> rc0 silent
+[PASS] stage2_stego: 8 extra args -> rc0 silent
+[PASS] stage2_stego: missing -c file -> rc0 silent
+[PASS] stage2_stego: missing press files -> rc0 silent
+[PASS] oracle: empty arg -> rc0 silent
+[PASS] oracle: 200k arg -> rc0 silent
+[PASS] oracle: 60k flag-shaped arg -> rc0 silent
+[PASS] oracle: whitespace/newline arg -> rc0 silent
+[PASS] oracle: 8 extra args -> rc0 silent
+[PASS] oracle: missing -c file -> rc0 silent
+[PASS] oracle: missing press files -> rc0 silent
+[PASS] validate: empty arg -> rc0 silent
+[PASS] validate: 200k arg -> rc0 silent
+[PASS] validate: 60k flag-shaped arg -> rc0 silent
+[PASS] validate: whitespace/newline arg -> rc0 silent
+[PASS] validate: 8 extra args -> rc0 silent
+[PASS] validate: missing -c file -> rc0 silent
+[PASS] validate: missing press files -> rc0 silent
+
+--- 3. decoy routing under adversarial retry ---
+[PASS] stage1 decoy submitted 5x: every path rc0 + stderr silent
+[PASS] stage1 decoy bit 0 persisted after 5 submissions
+[PASS] state HMAC still valid after 5 duplicate submissions
+[PASS] stage1 decoy retry never leaks the real key material
+[PASS] stage1 near-miss decoys (case/space/newline/off-by-one) all treated as unknown
+[PASS] stage1 serves the real key after decoy routing (the trap poisons nothing)
+[PASS] stage2 refuses the stage-1 decoy token (not registered for stage 2)
+[PASS] stage2 decoy: bit 0 persisted
+[PASS] stage2 real reading still accepted after decoy retries
+[PASS] stage3 decoy: bit 0 persisted
+[PASS] stage3 real reading still answered after decoy
+
+--- 4. state-file tamper resistance (every documented offset) ---
+[PASS] flip magic: silent reset to first-run defaults, re-signed
+[PASS] bump format_version: silent reset to first-run defaults, re-signed
+[PASS] set flags byte: silent reset to first-run defaults, re-signed
+[PASS] first_run_ms -> 0: silent reset to first-run defaults, re-signed
+[PASS] attempt_count inflated: silent reset to first-run defaults, re-signed
+[PASS] decoy_mask forged: silent reset to first-run defaults, re-signed
+[PASS] ring_count out of range: silent reset to first-run defaults, re-signed
+[PASS] ring_head out of range: silent reset to first-run defaults, re-signed
+[PASS] force debugger flag: silent reset to first-run defaults, re-signed
+[PASS] reserved byte set: silent reset to first-run defaults, re-signed
+[PASS] rewrite ring timestamp: silent reset to first-run defaults, re-signed
+[PASS] flip one HMAC bit: silent reset to first-run defaults, re-signed
+[PASS] truncate to 351 bytes: silent reset to first-run defaults, re-signed
+[PASS] extend to 353 bytes: silent reset to first-run defaults, re-signed
+
+--- 5. anti-debug: real gdb attach and real scripted-uniform timing ---
+[PASS] clean stage1 run exits 0
+[PASS] clean run leaves debugger_detected at 0 (TracerPid authoritative)
+[PASS] /proc/self/status TracerPid is readable (authoritative signal available)
+[PASS] real gdb attach: the corrupted constant is served (trap intact)
+[PASS] real gdb attach never prints the real key material
+[PASS] gdb attach persisted debugger_detected
+[PASS] state HMAC valid after the debugger run
+[PASS] a persisted debugger flag escalates the variant but keeps the real key
+[PASS] scripted-uniform spacing: the poison is self-consistent (0adb9b08b2e01566)
+[PASS] poison is falsifiable: same figure, two states, two answers (0adb9b08b2e01566 vs 2a7479540c7163e3)
+[PASS] human spacing: clean answer is self-consistent (2a7479540c7163e3)
+
+--- 6. CARTO_TEST_TIME_SCALE: works in the test build, inert as shipped ---
+  shipped    hook=present  : probe_scale: scale=(unset)
+probe_scale: elapsed_fast=FIRES (raw=0x1) uniform=FIRES (raw=0x3) ring_stddev_ms=3.959
+  testbuild  hook=present  : probe_scale: scale=(unset)
+probe_scale: elapsed_fast=FIRES (raw=0x1) uniform=FIRES (raw=0x3) ring_stddev_ms=3.959
+  (behavioural lines:)
+    shipped    scale=1   : probe_scale: elapsed_fast=FIRES (raw=0x1) uniform=FIRES (raw=0x3) ring_stddev_ms=3.959
+    shipped    scale=60  : probe_scale: elapsed_fast=FIRES (raw=0x1) uniform=FIRES (raw=0x3) ring_stddev_ms=3.959
+    testbuild  scale=1   : probe_scale: elapsed_fast=FIRES (raw=0x1) uniform=FIRES (raw=0x3) ring_stddev_ms=3.959
+    testbuild  scale=60  : probe_scale: elapsed_fast=quiet (raw=0x0) uniform=quiet (raw=0x1) ring_stddev_ms=3.959
+[PASS] shipped probe: both reasons fire at scale 1
+[PASS] shipped probe IGNORES the env var entirely (scale 60 == scale 1)
+[PASS] test build at scale 1 behaves exactly like the shipped probe
+[PASS] test build at scale 60 suppresses BOTH thresholds
+[PASS] garbage CARTO_TEST_TIME_SCALE falls back to 1 in the test build
+
+==========================================================
+== 107 checks passed, 0 failed ==
+ALL CHECKS PASSED

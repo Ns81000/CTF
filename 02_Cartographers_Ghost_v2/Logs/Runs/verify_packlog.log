@@ -1,0 +1,14 @@
+  PASS zip exists
+  PASS manifest exists
+  PASS no organiser files inside the zip
+  PASS no .git inside the zip
+  PASS every zip file on the allowed list
+  PASS manifest matches the package tree
+  PASS no state record in the package tree
+  PASS the notice rides in every text file
+  PASS the notice rides in every binary
+  PASS the PNG carries notice metadata
+  PASS the PNG scan shows the notice
+  PASS the WAV carries notice metadata
+  12 package checks, 0 failed
+OK

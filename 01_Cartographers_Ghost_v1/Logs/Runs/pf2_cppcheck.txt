@@ -1,0 +1,185 @@
+Checking src/state/carto_sha256.c ...
+src/state/carto_sha256.h:4:0: information: Include file: <stddef.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <stddef.h>
+^
+src/state/carto_sha256.h:5:0: information: Include file: <stdint.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <stdint.h>
+^
+src/state/carto_sha256.c:2:0: information: Include file: <stdlib.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <stdlib.h>
+^
+src/state/carto_sha256.c:3:0: information: Include file: <string.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <string.h>
+^
+1/10 files checked 4% done
+Checking src/state/state_core.c ...
+src/state/state.h:4:0: information: Include file: <stdint.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <stdint.h>
+^
+src/state/state_internal.h:6:0: information: Include file: <stdint.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <stdint.h>
+^
+src/state/state_core.c:7:0: information: Include file: <stdio.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <stdio.h>
+^
+src/state/state_core.c:8:0: information: Include file: <stdlib.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <stdlib.h>
+^
+src/state/state_core.c:9:0: information: Include file: <string.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <string.h>
+^
+2/10 files checked 13% done
+Checking src/state/state_policy.c ...
+src/state/state_policy.c:8:0: information: Include file: <float.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <float.h>
+^
+src/state/state_policy.c:9:0: information: Include file: <math.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <math.h>
+^
+src/state/state_policy.c:10:0: information: Include file: <string.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <string.h>
+^
+src/state/state_policy.c:11:0: information: Include file: <time.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <time.h>
+^
+src/state/state_policy.c:32:0: information: Include file: <stdlib.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <stdlib.h>
+^
+Checking src/state/state_policy.c: CARTO_TEST_TIME_SCALE_ENABLE...
+3/10 files checked 21% done
+Checking src/stage0/stage0.c ...
+src/stage0/stage0.c:23:0: information: Include file: <stdio.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <stdio.h>
+^
+src/stage0/stage0.c:24:0: information: Include file: <string.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <string.h>
+^
+src/stage0/stage0.c:25:0: information: Include file: <time.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <time.h>
+^
+4/10 files checked 25% done
+Checking src/stage1_vm/stage1_vm.c ...
+src/stage1_vm/stage1_vm.c:28:0: information: Include file: <errno.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <errno.h>
+^
+src/stage1_vm/stage1_vm.c:29:0: information: Include file: <stdlib.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <stdlib.h>
+^
+src/stage1_vm/stage1_vm.c:30:0: information: Include file: <stdio.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <stdio.h>
+^
+src/stage1_vm/stage1_vm.c:31:0: information: Include file: <string.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <string.h>
+^
+src/stage1_vm/stage1_vm.c:32:0: information: Include file: <time.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <time.h>
+^
+src/stage1_vm/stage1_vm.c:33:0: information: Include file: <sys/ptrace.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <sys/ptrace.h>
+^
+src/stage1_vm/vm.h:24:0: information: Include file: <stdint.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <stdint.h>
+^
+src/stage1_vm/stage1_vm.c:176:19: style: The scope of the variable 'recognised' can be reduced. [variableScope]
+    int           recognised = 0;
+                  ^
+5/10 files checked 36% done
+Checking src/stage1_vm/vm.c ...
+src/stage1_vm/vm.c:7:0: information: Include file: <string.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <string.h>
+^
+6/10 files checked 54% done
+Checking src/stage2_stego/stage2_stego.c ...
+src/stage2_stego/stage2_stego.c:33:0: information: Include file: <stdio.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <stdio.h>
+^
+src/stage2_stego/stage2_stego.c:34:0: information: Include file: <string.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <string.h>
+^
+src/stage2_stego/s2_inflate.h:13:0: information: Include file: <stddef.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <stddef.h>
+^
+src/stage2_stego/stage2_stego.c:218:12: style: The scope of the variable 'n' can be reduced. [variableScope]
+    size_t n, i;
+           ^
+src/stage2_stego/stage2_stego.c:218:15: style: The scope of the variable 'i' can be reduced. [variableScope]
+    size_t n, i;
+              ^
+7/10 files checked 68% done
+Checking src/stage2_stego/s2_inflate.c ...
+src/stage2_stego/s2_inflate.c:7:0: information: Include file: <string.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <string.h>
+^
+src/stage2_stego/s2_inflate.c:168:21: style: Condition 'idx<0' is always false [knownConditionTrueFalse]
+            if (idx < 0 || idx >= 29)
+                    ^
+src/stage2_stego/s2_inflate.c:162:17: note: Assuming that condition 'sym==256' is not redundant
+        if (sym == 256)
+                ^
+src/stage2_stego/s2_inflate.c:165:27: note: Assignment 'idx=sym-257', assigned value is greater than -1
+            int idx = sym - 257;
+                          ^
+src/stage2_stego/s2_inflate.c:168:21: note: Condition 'idx<0' is always false
+            if (idx < 0 || idx >= 29)
+                    ^
+src/stage2_stego/s2_inflate.c:121:46: style: The scope of the variable 'b' can be reduced. [variableScope]
+    int code = 0, first = 0, index = 0, len, b, count;
+                                             ^
+src/stage2_stego/s2_inflate.c:121:49: style: The scope of the variable 'count' can be reduced. [variableScope]
+    int code = 0, first = 0, index = 0, len, b, count;
+                                                ^
+src/stage2_stego/s2_inflate.c:233:35: style: The scope of the variable 'sym' can be reduced. [variableScope]
+    int hlit, hdist, hclen, i, n, sym;
+                                  ^
+8/10 files checked 80% done
+Checking src/stage3_oracle/oracle.c ...
+src/stage3_oracle/oracle.c:33:0: information: Include file: <stdio.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <stdio.h>
+^
+src/stage3_oracle/oracle.c:34:0: information: Include file: <string.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <string.h>
+^
+src/stage3_oracle/oracle_blob.h:13:0: information: Include file: <stdint.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <stdint.h>
+^
+9/10 files checked 92% done
+Checking src/stage4_assembly/validate.c ...
+src/stage4_assembly/validate.c:19:0: information: Include file: <stdio.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <stdio.h>
+^
+src/stage4_assembly/validate.c:20:0: information: Include file: <stdlib.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <stdlib.h>
+^
+src/stage4_assembly/validate.c:21:0: information: Include file: <string.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <string.h>
+^
+src/stage4_assembly/validate.c:22:0: information: Include file: <stdint.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <stdint.h>
+^
+src/stage4_assembly/stage4_blob.h:9:0: information: Include file: <stdint.h> not found. Please note: Cppcheck does not need standard library headers to get proper results. [missingIncludeSystem]
+#include <stdint.h>
+^
+src/stage4_assembly/validate.c:145:17: style: inconclusive: Boolean expression 'n==(unsigned long)70u' is used in bitwise operation. Did you mean '&&'? [bitwiseOnBoolean]
+    int ok = eq & (n == (size_t)CARTO_S4_EXPECTED_LEN) & (argc == 2);
+                ^
+src/stage4_assembly/validate.c:145:56: style: inconclusive: Boolean expression 'argc==2' is used in bitwise operation. Did you mean '&&'? [bitwiseOnBoolean]
+    int ok = eq & (n == (size_t)CARTO_S4_EXPECTED_LEN) & (argc == 2);
+                                                       ^
+10/10 files checked 100% done
+src/state/state_policy.c:124:0: style: The function 'carto_decoy_submitted' is never used. [unusedFunction]
+int carto_decoy_submitted(const carto_state_t *st, int stage, uint32_t decoy_bit)
+^
+src/state/state_policy.c:131:0: style: The function 'carto_get_debugger_detected' is never used. [unusedFunction]
+int carto_get_debugger_detected(const carto_state_t *st)
+^
+src/state/state_policy.c:183:0: style: The function 'carto_sha_selftest' is never used. [unusedFunction]
+int carto_sha_selftest(void)
+^
+src/state/state_policy.c:198:0: style: The function 'carto_hmac_selftest' is never used. [unusedFunction]
+int carto_hmac_selftest(void)
+^
+src/state/state_policy.c:229:0: style: The function 'carto_key_selftest' is never used. [unusedFunction]
+int carto_key_selftest(void)
+^
+nofile:0:0: information: Active checkers: 113/592 (use --checkers-report=<filename> to see details) [checkersReport]
+

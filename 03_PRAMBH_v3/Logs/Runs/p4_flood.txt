@@ -1,0 +1,60 @@
+PASS corpus-gen-run
+PASS words-header
+PASS corpus-byte-identical-regeneration
+PASS folio-count
+PASS corpus-line-budget
+PASS plate-gen-run
+PASS plate-byte-identical-regeneration
+PASS plate-count
+PASS plate-magic
+PASS plate-metadata-clean-notice-only
+PASS build
+PASS static-binary
+PASS nm-empty
+PASS deterministic-rebuild
+PASS noargs-rc
+PASS noargs-stderr-empty
+PASS usage-format
+PASS notice-printed
+PASS lane-page-count-stated
+PASS run-rc
+PASS run-stderr-empty
+PASS page-line-count
+PASS page-header-format
+PASS page-deterministic
+PASS index-changes-page
+PASS token-changes-page
+PASS page-count-fixed-8
+PASS last-page-valid
+PASS token-max-8
+PASS empty-token-usage
+PASS dash-separator-enforced
+PASS lane-parity-c-py-1
+PASS lane-parity-c-py-2
+PASS wrong-token-lanes-no-needles
+PASS wrong-token-lanes-no-hex
+PASS py: folio count 450
+PASS py: every folio header format identical
+PASS py: every folio exactly 46 lines
+PASS py: stitch tokens unique
+PASS py: no long hex strings in corpus
+PASS py: no CTF tokens in corpus
+PASS py: no capsule content
+PASS py: no launch phrase
+PASS py: real loom model only in needle folio
+PASS py: decoy loom model only in decoy folio
+PASS py: needle/decoy rare-token ranges overlap (n=[86, 91, 86, 90, 121] d=[115, 66, 106, 89, 85])
+PASS py: needle/decoy rare-token means within 4
+PASS py: needle/decoy mean line length within 15%%
+PASS py: needle splice markers present
+PASS py: decoy splice markers present
+PASS py: needle N3 names the real hall number
+PASS py: needle N5 plate method present
+PASS corpus-checker-green
+PASS decoy-folios-registered
+PASS decoy-plates-registered
+PASS plate-codes-in-catalogue
+PASS keys-table-p4-rows
+PASS zero-real-values-in-corpus
+
+P4: 41 PASS, 0 FAIL

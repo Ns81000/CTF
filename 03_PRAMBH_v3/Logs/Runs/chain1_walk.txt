@@ -1,0 +1,7 @@
+chain1 - organizer-side native chain walk
+command: src/chain/prambh_chain walk --seed-hex 4668e434c5ea0e9b249cae68c6ecc81e1ad79afaa4f0aefef0661b72746045c7 --s 536870912 --t 7705630875
+seed=4668e434c5ea0e9b249cae68c6ecc81e1ad79afaa4f0aefef0661b72746045c7
+S=536870912 T=7705630875
+out=de918c455c4b1d42ec5ba654fe8e606a3b9bff25972795e61e78447783c2fe12
+rc=0 elapsed_s=5447
+derived: ink=de918c455c4b1d42 checkpoint=PRAMBH{ec5ba654fe8e606a} tail=3b9bff25972795e6

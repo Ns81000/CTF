@@ -1,0 +1,30 @@
+[     0.00s] === Run B -- DECOY DETOUR SEGMENT (added cost only) ===
+[     0.00s] stage0_start -> CARTO{first_ink_in_the_ledger}
+[     0.00s] preamble: stage 0 run; the timed segment starts here (state is at Stage 1)
+[     0.00s] stage1_vm[decoy] -> key 12f8a367b772817e805725e7292acfb694501c4f16c17ed09d614022e0be7ced steps=? token CARTO{12f8a367b772817e805725e7292acfb6}
+[     0.00s] MARK detour: stage-1 decoy accepted t=0.00s
+[     0.01s]    sweep from key: stride=39 start=1512 (marks=262144)
+[     0.01s]    decoy sweep: stride=39 start=1512 framed_len=0 -> unparseable/inflate-refused
+[     0.01s]    stage2_stego refused the decoy reading with no diagnosis (dead end confirmed)
+[     0.01s] MARK detour: stage-2 dead end reached t=0.01s
+[     0.01s]    naive whole-image LSB read yields: CARTO{twice_over_the_coast_before_the_interior}
+[     0.01s]    stage2_stego ACCEPTED it into the extended branch (reads as progress)
+[     0.01s] MARK detour: stage-2 decoy branch t=0.01s
+[     0.01s]    oracle ACCEPTED the Stage-2 checkpoint token as a reading (re-inked checkpoint branch)
+[     0.01s] MARK detour: stage-3 decoy branch t=0.01s
+[     0.02s]    validator ACCEPTED the struck draft as a corroborated draft
+[     0.02s] MARK detour: stage-4 decoy branch t=0.02s
+[     0.02s] recovery: re-running the engine cleanly
+[     0.02s] stage1_vm[recover] -> key fd3e8049dfdfc32efe22fe823822b8c0a5d66f1b2b5f596e4c8111cf4224010f steps=7266 token CARTO{fd3e8049dfdfc32efe22fe823822b8c0}
+[     0.02s]    sweep from key: stride=46 start=5070 (marks=262144)
+[     0.02s] MARK recovery: real reading accepted t=0.02s
+[     0.02s] RESULT: detour segment complete; real path resumed at the START of Stage 3
+[     0.02s] ADDED DETOUR COST: 0.02 s (0.00 min)
+[     0.02s] ---- per-step elapsed ----
+[     0.02s] detour: stage-1 decoy accepted cumulative      0.00s   delta     0.00s
+[     0.02s] detour: stage-2 dead end reached cumulative      0.01s   delta     0.01s
+[     0.02s] detour: stage-2 decoy branch cumulative      0.01s   delta     0.00s
+[     0.02s] detour: stage-3 decoy branch cumulative      0.01s   delta     0.00s
+[     0.02s] detour: stage-4 decoy branch cumulative      0.02s   delta     0.00s
+[     0.02s] recovery: real reading accepted cumulative      0.02s   delta     0.01s
+[     0.02s] TOTAL 0.02s (0.00 min)

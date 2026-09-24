@@ -1,0 +1,112 @@
+=== plates (deterministic, metadata-clean) ===
+PASS plate-gen
+PASS plate-present-depth.png
+PASS plate-present-hue.png
+PASS plate-present-sheet_a.png
+PASS plate-present-sheet_b.png
+PASS plate-deterministic-depth.png
+PASS plate-deterministic-hue.png
+PASS plate-deterministic-sheet_a.png
+PASS plate-deterministic-sheet_b.png
+PASS plate-metadata-notice-only
+PASS plate-strings-clean
+PASS plate-no-real-codes-in-metadata
+
+=== eyes notes sealing ===
+PASS gen-eyes
+PASS notes-size
+PASS notes-sealed
+PASS consts-written
+
+=== build hygiene (same recipe as every shipped tool) ===
+PASS eyes-build
+PASS eyes-no-warnings
+PASS eyes-static
+PASS eyes-nm-empty
+PASS eyes-rebuild-deterministic
+PASS eyes-no-toolchain-strings
+PASS eyes-carries-canary
+PASS validate-build
+PASS validate-no-warnings
+PASS validate-static
+PASS validate-nm-empty
+PASS validate-rebuild-deterministic
+PASS validate-no-toolchain-strings
+PASS validate-carries-canary
+PASS validate-stores-only-the-digest
+PASS validate-has-no-ink-strings
+PASS eyes-hides-seal-source
+
+=== human-gate automation lanes (spec 7.4, measured) ===
+PASS decode-lanes
+moire lane: 0.01 s, marked contrast 132.00 (fine IoU 0.114), reciprocal contrast 133.58 (coarse IoU 0.114)
+PASS moire-lane-two-alignment-maxima (marked 132.00, reciprocal 133.58, 0.01 s)
+PASS moire-lane-reciprocal-resolves-coarse-bands (coarse IoU 0.114 at the reciprocal bearing vs fine IoU 0.114 at the marked one)
+lane cost: 0.01 s of machine time for all three; a working pipeline
+still has to be written, and the sealed notes are what order the
+planes and name the illuminant.
+
+DECODE-LANES: 6 PASS, 0 FAIL
+PASS lane-depth-measured
+PASS lane-hue-measured
+PASS lane-moire-measured
+
+=== validator: gates, refusals, timing ===
+gates forced for the acceptance lane
+PASS gates-forced
+PASS validate-accept-rc
+PASS validate-accept-stderr-silent
+FAIL validate-accept-line (got [the survey holds no such record.] want [the survey record is complete.])
+PASS validate-wrong-1-rc
+PASS validate-wrong-2-rc
+PASS validate-wrong-3-rc
+PASS validate-wrong-4-rc
+PASS validate-wrong-5-rc
+PASS validate-wrong-6-rc
+PASS validate-wrong-7-rc
+PASS validate-wrong-8-rc
+PASS validate-wrong-9-rc
+PASS validate-wrong-10-rc
+PASS validate-wrong-11-rc
+PASS validate-wrong-12-rc
+PASS validate-wrong-13-rc
+PASS validate-wrong-14-rc
+PASS validate-wrong-15-rc
+PASS validate-wrong-16-rc
+PASS validate-wrong-17-rc
+PASS validate-wrong-18-rc
+PASS validate-refusals-byte-identical
+PASS validate-refusal-text
+PASS validate-timing-run
+samples 30 min_ms 4.646 max_ms 7.578 spread_ms 2.932
+PASS validate-refusal-timing-constant
+PASS validate-refuses-without-gates
+PASS validate-noargs-rc
+PASS validate-usage-shows-canary
+PASS eyes-seal-gated-by-doors
+
+=== behaviour probe (rc 0, silent stderr) ===
+PASS beh-validate-noargs-rc
+PASS beh-validate-noargs-stderr-silent
+PASS beh-validate-empty-rc
+PASS beh-validate-empty-stderr-silent
+FAIL beh-validate-200kb-rc (got [126] want [0])
+FAIL beh-validate-200kb-stderr-silent (got [65] want [0])
+PASS beh-validate-16-extra-rc
+PASS beh-validate-16-extra-stderr-silent
+PASS beh-eyes-noargs-rc
+PASS beh-eyes-noargs-stderr-silent
+PASS beh-eyes-unknown-rc
+PASS beh-eyes-unknown-stderr-silent
+PASS beh-eyes-seal-garbage-rc
+PASS beh-eyes-seal-garbage-stderr-silent
+PASS beh-narrow-columns-rc
+PASS beh-narrow-columns-stderr-silent
+PASS beh-term-dumb-rc
+PASS beh-term-dumb-stderr-silent
+PASS beh-devnull-rc
+PASS beh-devnull-stderr-silent
+PASS beh-piped-stdin-rc
+PASS beh-piped-stdin-stderr-silent
+
+P8: 86 PASS, 3 FAIL

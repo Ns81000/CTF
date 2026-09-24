@@ -1,0 +1,638 @@
+{
+ "seed": 3393652193,
+ "op_count": 86,
+ "code_size": 1024,
+ "nreg": 12,
+ "stack_size": 256,
+ "data_size": 64,
+ "forms": [
+  "none",
+  "i8",
+  "i16",
+  "i32",
+  "i64",
+  "r",
+  "rr",
+  "r3",
+  "ri8",
+  "ri32",
+  "i32r",
+  "ri64",
+  "rel8",
+  "rel16",
+  "rrel16",
+  "a8"
+ ],
+ "ops": [
+  {
+   "name": "NOP",
+   "index": 0,
+   "byte": 52,
+   "form": "none",
+   "endian": 0
+  },
+  {
+   "name": "HALT",
+   "index": 1,
+   "byte": 130,
+   "form": "none",
+   "endian": 0
+  },
+  {
+   "name": "NOPA",
+   "index": 2,
+   "byte": 229,
+   "form": "i8",
+   "endian": 0
+  },
+  {
+   "name": "NOPB",
+   "index": 3,
+   "byte": 234,
+   "form": "i16",
+   "endian": 1
+  },
+  {
+   "name": "ENC",
+   "index": 4,
+   "byte": 69,
+   "form": "r",
+   "endian": 0
+  },
+  {
+   "name": "ENCS",
+   "index": 5,
+   "byte": 136,
+   "form": "rr",
+   "endian": 0
+  },
+  {
+   "name": "MOV",
+   "index": 6,
+   "byte": 213,
+   "form": "rr",
+   "endian": 0
+  },
+  {
+   "name": "MOVI8",
+   "index": 7,
+   "byte": 74,
+   "form": "ri8",
+   "endian": 0
+  },
+  {
+   "name": "MOVI32",
+   "index": 8,
+   "byte": 8,
+   "form": "i32r",
+   "endian": 1
+  },
+  {
+   "name": "MOVI64",
+   "index": 9,
+   "byte": 32,
+   "form": "ri64",
+   "endian": 0
+  },
+  {
+   "name": "XCHG",
+   "index": 10,
+   "byte": 7,
+   "form": "rr",
+   "endian": 0
+  },
+  {
+   "name": "MOVM",
+   "index": 11,
+   "byte": 73,
+   "form": "r3",
+   "endian": 0
+  },
+  {
+   "name": "MOVL",
+   "index": 12,
+   "byte": 47,
+   "form": "r3",
+   "endian": 0
+  },
+  {
+   "name": "MOVB",
+   "index": 13,
+   "byte": 16,
+   "form": "r3",
+   "endian": 0
+  },
+  {
+   "name": "STOREB",
+   "index": 14,
+   "byte": 250,
+   "form": "r3",
+   "endian": 0
+  },
+  {
+   "name": "CLOAD",
+   "index": 15,
+   "byte": 252,
+   "form": "rr",
+   "endian": 0
+  },
+  {
+   "name": "CSTORE",
+   "index": 16,
+   "byte": 125,
+   "form": "rr",
+   "endian": 0
+  },
+  {
+   "name": "CXOR",
+   "index": 17,
+   "byte": 26,
+   "form": "rr",
+   "endian": 0
+  },
+  {
+   "name": "CADD",
+   "index": 18,
+   "byte": 97,
+   "form": "ri8",
+   "endian": 0
+  },
+  {
+   "name": "CREAD",
+   "index": 19,
+   "byte": 220,
+   "form": "r",
+   "endian": 0
+  },
+  {
+   "name": "SKIPC",
+   "index": 20,
+   "byte": 140,
+   "form": "i8",
+   "endian": 0
+  },
+  {
+   "name": "ADD",
+   "index": 21,
+   "byte": 89,
+   "form": "rr",
+   "endian": 0
+  },
+  {
+   "name": "ADDI",
+   "index": 22,
+   "byte": 219,
+   "form": "i32r",
+   "endian": 0
+  },
+  {
+   "name": "SUB",
+   "index": 23,
+   "byte": 59,
+   "form": "rr",
+   "endian": 0
+  },
+  {
+   "name": "SUBI",
+   "index": 24,
+   "byte": 82,
+   "form": "i32r",
+   "endian": 0
+  },
+  {
+   "name": "MUL",
+   "index": 25,
+   "byte": 148,
+   "form": "rr",
+   "endian": 0
+  },
+  {
+   "name": "MULI",
+   "index": 26,
+   "byte": 127,
+   "form": "i32r",
+   "endian": 0
+  },
+  {
+   "name": "UMULH",
+   "index": 27,
+   "byte": 66,
+   "form": "rr",
+   "endian": 0
+  },
+  {
+   "name": "DIV",
+   "index": 28,
+   "byte": 182,
+   "form": "rr",
+   "endian": 0
+  },
+  {
+   "name": "MOD",
+   "index": 29,
+   "byte": 203,
+   "form": "rr",
+   "endian": 0
+  },
+  {
+   "name": "AND",
+   "index": 30,
+   "byte": 121,
+   "form": "rr",
+   "endian": 0
+  },
+  {
+   "name": "ANDI",
+   "index": 31,
+   "byte": 9,
+   "form": "i32r",
+   "endian": 0
+  },
+  {
+   "name": "OR",
+   "index": 32,
+   "byte": 235,
+   "form": "rr",
+   "endian": 0
+  },
+  {
+   "name": "ORI",
+   "index": 33,
+   "byte": 116,
+   "form": "i32r",
+   "endian": 0
+  },
+  {
+   "name": "XOR",
+   "index": 34,
+   "byte": 44,
+   "form": "rr",
+   "endian": 0
+  },
+  {
+   "name": "XORI",
+   "index": 35,
+   "byte": 187,
+   "form": "i32r",
+   "endian": 1
+  },
+  {
+   "name": "SHL",
+   "index": 36,
+   "byte": 162,
+   "form": "rr",
+   "endian": 0
+  },
+  {
+   "name": "SHLI",
+   "index": 37,
+   "byte": 225,
+   "form": "ri8",
+   "endian": 0
+  },
+  {
+   "name": "SHR",
+   "index": 38,
+   "byte": 230,
+   "form": "rr",
+   "endian": 0
+  },
+  {
+   "name": "SHRI",
+   "index": 39,
+   "byte": 153,
+   "form": "ri8",
+   "endian": 0
+  },
+  {
+   "name": "SAR",
+   "index": 40,
+   "byte": 244,
+   "form": "rr",
+   "endian": 0
+  },
+  {
+   "name": "ROTL",
+   "index": 41,
+   "byte": 102,
+   "form": "rr",
+   "endian": 0
+  },
+  {
+   "name": "ROTLI",
+   "index": 42,
+   "byte": 206,
+   "form": "ri8",
+   "endian": 0
+  },
+  {
+   "name": "ROTR",
+   "index": 43,
+   "byte": 93,
+   "form": "rr",
+   "endian": 0
+  },
+  {
+   "name": "NOT",
+   "index": 44,
+   "byte": 208,
+   "form": "r",
+   "endian": 0
+  },
+  {
+   "name": "NEG",
+   "index": 45,
+   "byte": 68,
+   "form": "r",
+   "endian": 0
+  },
+  {
+   "name": "INC",
+   "index": 46,
+   "byte": 200,
+   "form": "r",
+   "endian": 0
+  },
+  {
+   "name": "DEC",
+   "index": 47,
+   "byte": 37,
+   "form": "r",
+   "endian": 0
+  },
+  {
+   "name": "MULMOD",
+   "index": 48,
+   "byte": 214,
+   "form": "r3",
+   "endian": 0
+  },
+  {
+   "name": "ADDMM",
+   "index": 49,
+   "byte": 1,
+   "form": "r3",
+   "endian": 0
+  },
+  {
+   "name": "SUBMM",
+   "index": 50,
+   "byte": 28,
+   "form": "r3",
+   "endian": 0
+  },
+  {
+   "name": "POWM",
+   "index": 51,
+   "byte": 221,
+   "form": "r3",
+   "endian": 0
+  },
+  {
+   "name": "CMP",
+   "index": 52,
+   "byte": 191,
+   "form": "rr",
+   "endian": 0
+  },
+  {
+   "name": "CMPI",
+   "index": 53,
+   "byte": 139,
+   "form": "i32r",
+   "endian": 1
+  },
+  {
+   "name": "TEST",
+   "index": 54,
+   "byte": 163,
+   "form": "rr",
+   "endian": 0
+  },
+  {
+   "name": "SEL",
+   "index": 55,
+   "byte": 150,
+   "form": "r3",
+   "endian": 0
+  },
+  {
+   "name": "ACC",
+   "index": 56,
+   "byte": 46,
+   "form": "r",
+   "endian": 0
+  },
+  {
+   "name": "ACCC",
+   "index": 57,
+   "byte": 169,
+   "form": "r",
+   "endian": 0
+  },
+  {
+   "name": "ACRM",
+   "index": 58,
+   "byte": 167,
+   "form": "r",
+   "endian": 0
+  },
+  {
+   "name": "ACCS",
+   "index": 59,
+   "byte": 128,
+   "form": "r",
+   "endian": 0
+  },
+  {
+   "name": "JMP",
+   "index": 60,
+   "byte": 76,
+   "form": "rel16",
+   "endian": 1
+  },
+  {
+   "name": "JMP8",
+   "index": 61,
+   "byte": 184,
+   "form": "rel8",
+   "endian": 0
+  },
+  {
+   "name": "JMPR",
+   "index": 62,
+   "byte": 247,
+   "form": "r",
+   "endian": 0
+  },
+  {
+   "name": "JZ",
+   "index": 63,
+   "byte": 15,
+   "form": "rel16",
+   "endian": 1
+  },
+  {
+   "name": "JNZ",
+   "index": 64,
+   "byte": 84,
+   "form": "rel16",
+   "endian": 1
+  },
+  {
+   "name": "JL",
+   "index": 65,
+   "byte": 192,
+   "form": "rel16",
+   "endian": 0
+  },
+  {
+   "name": "JGE",
+   "index": 66,
+   "byte": 186,
+   "form": "rel16",
+   "endian": 1
+  },
+  {
+   "name": "JGT",
+   "index": 67,
+   "byte": 61,
+   "form": "rel16",
+   "endian": 1
+  },
+  {
+   "name": "JLE",
+   "index": 68,
+   "byte": 243,
+   "form": "rel16",
+   "endian": 0
+  },
+  {
+   "name": "JC",
+   "index": 69,
+   "byte": 164,
+   "form": "rel16",
+   "endian": 1
+  },
+  {
+   "name": "JNC",
+   "index": 70,
+   "byte": 83,
+   "form": "rel16",
+   "endian": 1
+  },
+  {
+   "name": "JOV",
+   "index": 71,
+   "byte": 227,
+   "form": "rel16",
+   "endian": 1
+  },
+  {
+   "name": "CALL",
+   "index": 72,
+   "byte": 218,
+   "form": "rel16",
+   "endian": 1
+  },
+  {
+   "name": "CALLR",
+   "index": 73,
+   "byte": 107,
+   "form": "r",
+   "endian": 0
+  },
+  {
+   "name": "RET",
+   "index": 74,
+   "byte": 131,
+   "form": "none",
+   "endian": 0
+  },
+  {
+   "name": "LOOP",
+   "index": 75,
+   "byte": 80,
+   "form": "rrel16",
+   "endian": 1
+  },
+  {
+   "name": "PUSH",
+   "index": 76,
+   "byte": 236,
+   "form": "r",
+   "endian": 0
+  },
+  {
+   "name": "POP",
+   "index": 77,
+   "byte": 115,
+   "form": "r",
+   "endian": 0
+  },
+  {
+   "name": "PUSHI",
+   "index": 78,
+   "byte": 35,
+   "form": "i32",
+   "endian": 0
+  },
+  {
+   "name": "DUP",
+   "index": 79,
+   "byte": 19,
+   "form": "none",
+   "endian": 0
+  },
+  {
+   "name": "SWAP",
+   "index": 80,
+   "byte": 157,
+   "form": "none",
+   "endian": 0
+  },
+  {
+   "name": "PICK",
+   "index": 81,
+   "byte": 195,
+   "form": "r",
+   "endian": 0
+  },
+  {
+   "name": "DROP",
+   "index": 82,
+   "byte": 176,
+   "form": "none",
+   "endian": 0
+  },
+  {
+   "name": "OPAQUE",
+   "index": 83,
+   "byte": 31,
+   "form": "none",
+   "endian": 0
+  },
+  {
+   "name": "POKE",
+   "index": 84,
+   "byte": 137,
+   "form": "r",
+   "endian": 0
+  },
+  {
+   "name": "PEEK",
+   "index": 85,
+   "byte": 171,
+   "form": "r",
+   "endian": 0
+  }
+ ],
+ "programs": {
+  "0": {
+   "hex": "09010000000a5400034c002520080df0fecaefbeadde2e08a708800820083412efbeaddeed5e09ffffff3f082e084c00004a0a00080000000c06250654fffb8b00000000060f00090811111111064c000020087c02000000000000fc842e0420083a00000000000000a908dc04692e04dc043f2e04dc04d12e04dc04072e04dc04bb2e04dc04522e04dc042c2e04dc04e42e042008b4000000000000002009c2000000000000008b000000000a0f0002f708f709080000020008250854fffb4c00002008d1000000000000006b084c0023200aac02000000000000fcab800bfcab2e0b200b157c4a7fb979379eec0b730a2e0a8320087c020000000000004a095a7d984a09a51a986108014a09371a98fc842e0420086602000000000000c8084a09111a98fc848004d57120080100000000000040eb812009ffffffffffffff7f7991d572ce021d2008157c4a7fb979379e2c8220080100000000000020eb827992cb128b0000000302ba00034a0203d573ce032f200893fd5966b8fee8d62c832008ffffffffffffff3f7983740100000003d5749904084a081ecb84e10401c8048b0000001f045400034a0421d5759905104a083ecb854a06014a003e4a0b3e20091ddd6c4f91f44525d6060601d538e6580901000000080f000cd6060602d50a949a2ca6cb165945cbb5250054ffda4a0008d5786608740100000008d6060801250054ffed200ad308a385886a3f24200b447370032e8a1913080000018000ce0a0394ba2c0a890aab0b59ab1f5000ffee4a000c20088c020000000000005908d50adb9d0000000a1aa8fc8a2e0a250054ffe120086602000000000000c8084a0a631aa8e500fc8a2e0a4a00004a08004a09004a0a004a0b0082000102030405060708090a0b0c0d0e0f5a595c535655484f4241447b7e7d7077c3beb9b4afaaa5a09b96918c87827d787e15914b2df038a6"
+  },
+  "1": {
+   "hex": "09010000000a5400034c002520080df0fecaefbeadde2e08a708800820083412efbeaddeed5e09ffffff3f082e084c00004a0a00080000000c06250654fffb8b00000000060f00090811111111064c00002008bf02000000000000fc842e0420083a00000000000000a908dc04692e04dc043f2e04dc04d12e04dc04072e04dc04bb2e04dc04522e04dc042c2e04dc04e42e042008b4000000000000002009c2000000000000008b000000000a0f0002f708f709080000020008250854fffb4c00002008d1000000000000006b084c0023200aef02000000000000fcab800bfcab2e0b200b157c4a7fb979379eec0b730a2e0a832008bf020000000000004a095a7d984a09a51a986108014a09371a98fc842e042008a902000000000000c8084a09111a98fc848004d57120080100000000000040eb812009ffffffffffffff7f7991d572ce021d2008157c4a7fb979379e2c8220080100000000000020eb827992cb128b0000000302ba00034a0203d573ce032f200893fd5966b8fee8d62c832008ffffffffffffff3f7983740100000003d5749904084a081ecb84e10401c8048b0000001f045400034a0421d5759905104a083ecb854a06014a003e4a0b3e20091ddd6c4f91f44525d6060601d538e6580901000000080f000cd6060602d50a949a2ca6cb165945cbb5250054ffda4a0008d5786608740100000008d6060801250054ffed200ad308a385886a3f24200b447370032e8a1913080000018000ce0a0394ba2c0a890aab0b59ab1f5000ffee4a000c2008cf020000000000005908d50adb9d0000000a1aa8fc8a2e0a250054ffe12009d308a385886a3f24080000018000ce090794b98909ab0a2ca91f1f5000ffef4a000c2008df020000000000005908d50adb3b0000000a1aa8fc8a2cab250054ffe12008a902000000000000c8084a0a631aa8e500fc8a2e0a4a00004a08004a09004a0a004a0b0082000102030405060708090a0b0c0d0e0f5a595c535655484f4241447b7e7d7077c3beb9b4afaaa5a09b96918c87827d787e15914b2df038a6"
+  }
+ }
+}

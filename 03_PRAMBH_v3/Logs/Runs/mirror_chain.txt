@@ -1,0 +1,11 @@
+P7 MIRROR CAMPAIGN - two-stage chain (spec 4.6)
+engine: /home/ns8pc/prambh-build/src/chain/prambh_chain (S=536870912, T=410966980 each stage)
+stage A seed = SHA256("prambh:mirror:stage-a:v1") = 9aa2f6451003b90d6db3bba4de6a5f73c2e4895e1a2e97ddcf3959a9f16029da
+stage A out  = 5855a5099d47510a590b13a9afa94432cbd9c4768403e29faa3737f7ef493665  (elapsed 575.7 s)
+stage A token = PRAMBH{5855a5099d47510a}
+stage B seed = SHA256("prambh:mirror:stage-b:v1" || stage A out) = 2d5550930c5064268305a0f424ee930a7159daa55101048bcbc372910d77f69f
+stage B out  = 5e7a0768329a6bbb62a3e88d2942a263741f3385c5747a68c1c5a13657bcd2fd  (elapsed 574.0 s)
+stage B token = PRAMBH{5e7a0768329a6bbb}
+dead-end title accepted by mirror_validate = PRAMBH{mirror_5e7a0768329a6bbb}
+NOTE: measured with the real engine at the mirror budget; the audit
+re-times these two walks under its own machine conditions.

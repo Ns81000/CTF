@@ -1,0 +1,204 @@
+############ preamble: regenerate stage4 blob + patch policy.h ############
+stage4_blob.h + stage4_layout.json written
+title length: 70
+digest: cfdcae7e64a81bbf1d9f19fd1e5bc217b14008c4db92ba5f0333204c4c0f4334
+draft : CARTO{dba9e10a73bc8633ccc1875207c075e1}
+policy.h already normalized (4 rows)
+test_part2.c already normalized (LEN>=4, rows 0..3 asserted)
+nothing to do (already normalized)
+
+############ 1. state library (rebuilt with 4 decoys) ############
+[PASS] test_escalate_fast
+[PASS] test_escalate_uniform
+[PASS] test_escalate_human
+[PASS] test_escalate_debugger
+[PASS] test_decoy_lookup
+[PASS] test_decoy_count
+[PASS] test_decoy_persist
+[PASS] test_attempts_persist
+[PASS] test_debugger_persist
+[PASS] test_hmac_differential
+== 27 tests run, 0 failed ==
+ALL TESTS PASSED
+
+############ 2. relink stages 0-3 against the updated library ############
+stage0_start relinked
+stage1_vm relinked
+stage2_stego relinked
+oracle relinked
+
+############ 3. build the validator ############
+mkdir -p ../../cartographer/stage4_assembly
+musl-gcc -O2 -Wall -Wextra -std=c11 -static -fno-ident -I../state validate.c ../state/libstate.a -o ../../cartographer/stage4_assembly/validate
+strip --strip-all ../../cartographer/stage4_assembly/validate
+objcopy --remove-section .comment ../../cartographer/stage4_assembly/validate 2>/dev/null || true
+
+############ 4. suites, serially (they share the state file) ############
+== stage4_assembly end-to-end verification ==
+[PASS] validator exists and is executable
+[PASS] statically linked
+[PASS] stripped (no symtab)
+[PASS] no compiler/path residue
+[PASS] assembled real flag absent from the binary
+[PASS] engine ink (stage-1 key bytes 16..23) absent from the binary
+[PASS] oracle ink (stage-3 master K) absent from the binary
+[PASS] sheet ink (reading, frame off) absent from the binary
+[PASS] stage-2 reading (whole) absent from the binary
+[PASS] stage-1 token content absent from the binary
+[PASS] canonical HMAC key hex absent from binary
+[PASS] struck-draft decoy present (findable)
+[PASS] the riddle verse is shipped (solver-facing)
+[PASS] the ink descriptions are shipped (fair, value-free)
+[PASS] title is D11-conforming and digest matches (independent recompute)
+[PASS] no args: rc 0
+[PASS] no args: stderr silent
+[PASS] usage shows the stage banner
+[PASS] correct title: rc 0
+[PASS] correct title: stderr silent
+[PASS] acceptance echoes the title
+[PASS] acceptance closes the survey
+[PASS] acceptance names the final flag as the answer
+[PASS] wrong ordering 1 (naive stage order): rc 0, stderr silent
+[PASS] wrong ordering 2: rc 0, stderr silent
+[PASS] wrong ordering 3: rc 0, stderr silent
+[PASS] wrong ordering 4: rc 0, stderr silent
+[PASS] wrong ordering 5: rc 0, stderr silent
+[PASS] engine ink = token content (the near-miss): rc 0, stderr silent
+[PASS] sheet ink keeps its frame: rc 0, stderr silent
+[PASS] oracle ink head/tail swapped: rc 0, stderr silent
+[PASS] engine ink taken from the wrong half (first half): rc 0, stderr silent
+[PASS] garbage input: rc 0, stderr silent
+[PASS] malformed flag: rc 0, stderr silent
+[PASS] wrong length (one char appended): rc 0, stderr silent
+[PASS] empty argument: rc 0, stderr silent
+[PASS] every refusal is byte-identical (no partial-match feedback)
+[PASS] refusal never contains the real title
+[PASS] refusal leaks no ink value
+[PASS] extra arguments: rc 0, identical refusal
+[PASS] decoy submission exits 0 (no error path)
+[PASS] decoy submission: stderr silent
+[PASS] decoy route is framed as new information, not failure
+[PASS] decoy route re-inks the struck draft
+[PASS] decoy route never leaks the real title
+[PASS] stage-4 decoy bit 0 persisted (branch 1 -> 1u<<0)
+[PASS] post-decoy refusals are unchanged
+[PASS] attempt_count[4] == 1 after first run
+[PASS] attempt_count[4] == 2 after second run
+[PASS] first_run_ms is preserved
+[PASS] state file is exactly 352 bytes
+[PASS] no decoy bit set by the real title
+[PASS] state HMAC valid (independent python)
+[PASS] no .tmp residue after runs
+[PASS] human-paced ledger: plain variant accepts the real title
+[PASS] human-paced ledger serves the plain variant
+[PASS] uniform-timing ledger: witnessed variant accepts the real title
+[PASS] escalated presentation is the witnessed line
+[PASS] witnessed variant verdict is bit-identical to plain
+[PASS] witnessed ledger: refusals are still identical
+[PASS] a persisted debugger flag does NOT corrupt the real verdict
+[PASS] validator rebuild reproducible (identical sha256)
+[PASS] package left pristine (test state removed)
+[PASS] no writes outside the working directory
+
+== 64 tests run, 0 failed ==
+ALL TESTS PASSED
+-- summary of the four earlier suites (full output: /home/manish/cartographer-build/logs/runs/p5_suites_run.txt) --
+== 36 tests run, 0 failed ==
+ALL TESTS PASSED
+== 8 checks, 0 failed ==
+ALL CHECKS PASSED
+== 65 tests run, 0 failed ==
+ALL TESTS PASSED
+== 58 vectors run, 0 failed ==
+ALL TESTS PASSED
+== 71 tests run, 0 failed ==
+ALL TESTS PASSED
+== 34 passed, 0 failed ==
+ALL TESTS PASSED
+== 64 tests run, 0 failed ==
+ALL TESTS PASSED
+
+############ 5. validator reproducibility (two clean builds) ############
+build1=4715ee4633cdb4614fa8860a12ee6a275a914c919e25e2d6cf22783a3090e637 build2=4715ee4633cdb4614fa8860a12ee6a275a914c919e25e2d6cf22783a3090e637
+VALIDATE-REGEN-REPRODUCIBLE-OK
+
+############ 6. artifact inventory + scrub ############
+total 56
+-rwxr-xr-x 1 manish manish 54536 Sep 21 07:38 validate
+/home/manish/cartographer-build/cartographer/stage4_assembly/validate: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, stripped
+54536 /home/manish/cartographer-build/cartographer/stage4_assembly/validate
+SCRUB-CLEAN
+
+############ 7. solver-eye smoke run ############
+--- no-arg usage (usage + the riddle) ---
+======================================================================
+  THE CARTOGRAPHER'S GHOST
+  Stage 4 -- The Title Block
+======================================================================
+
+Three inks, one line, under the old man's frame. He left the
+order of them in a verse he recited to the mirror:
+
+    The oracle, though it spoke last of the three,
+    sits at the head of the line -- so wrote he.
+    The engine came first in the survey, they say,
+    yet never at the front in the title's display:
+    it takes the middle seat it never held.
+    The sheet, which was drawn between the two,
+    is written below them both, last of the few.
+
+    Between neighbours set a single mark of the ground (an
+    underscore), and shut the line in the usual frame:
+    CARTO{...}.
+
+Each ink, as he meant it:
+
+  - the oracle ink: the key the oracle turned for the sheet's
+    own reading, sixteen lowercase hex letters, recovered as
+    it stands.
+  - the engine ink: the half of the engine's key material that
+    the engine's token never showed, sixteen lowercase hex
+    letters in the order the ledger prints them.
+  - the sheet ink: the sheet's reading, skinned of its frame.
+
+An earlier draft the old man struck out is still legible on
+the desk, though he abandoned it -- the mirror confused him:
+
+    CARTO{dba9e10a73bc8633ccc1875207c075e1}
+
+  ./stage4_assembly/validate '<the title, whole>'
+      lay the title in the block. The ledger knows the finished
+      title and no other; it will not say how close a draft is.
+
+Nothing about a wrong title is an error -- the block simply does
+not take it, and says the same thing to every draft.
+======================================================================
+--- correct title ---
+  witnessed: the ledger takes the title whether you watch it or not.
+  the ledger takes the title:
+
+    CARTO{73070925a159f9e2_a5d66f1b2b5f596e_no_figure_sits_in_every_pixel}
+
+  The survey is closed. The figure stands, the engine's
+  circuit is run, and the title block carries the whole
+  journey in one line.
+
+  Stage 4 complete -- the assembled flag is the answer.
+  Bank it; it is the last thing the old man hid.
+======================================================================
+--- struck-draft decoy ---
+  the struck line matches the ink you carried in. The
+  block takes it as a corroborated draft and re-inks the
+  title the old man first set down for the closing page:
+
+    CARTO{dba9e10a73bc8633ccc1875207c075e1}
+
+  witnessed: the ledger takes the title whether you watch it or not.
+  extended audit: a struck line is ink that never dried
+  into the block. The mirror's confusion is not yours to
+  inherit; the verse still names the seats.
+
+  Nothing here needs re-drawing.
+
+############ done ############
+rc=True

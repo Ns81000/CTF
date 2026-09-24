@@ -1,0 +1,51 @@
+== stage3 ==
+  PASS no arguments (rc 0, stderr silent)
+  PASS the usage is printed
+  PASS the usage names no mechanism
+  PASS the usage names no mechanism (tables)
+  PASS a garbage argument (rc 0, stderr silent)
+  PASS garbage gets the plate's one refusal
+  PASS an unknown flag (rc 0, stderr silent)
+  PASS no verdict word anywhere in the refusal
+  PASS a figure without a reading (rc 0, stderr silent)
+  PASS a reading without a figure (rc 0, stderr silent)
+  PASS a figure that is not hex (rc 0, stderr silent)
+  PASS sixteen arguments (rc 0, stderr silent)
+  PASS 80 KB argument (rc 0, stderr silent)
+  PASS an empty argument (rc 0, stderr silent)
+  PASS a thin record gets a cold plate and no tally
+  PASS a warm record is not cold
+  PASS a figure with no ink handed over is answered cold
+  PASS a piped ask gets the pipe verse
+  PASS a metronome ask gets the smooth verse
+  PASS a burst ask gets the hot verse
+  PASS a replayed ask gets the replay verse
+  PASS a young record gets the warming verse
+  PASS a figure in capitals gets the cutting verse
+  PASS the sitting produced an answer for every figure
+  PASS the sitting collected 832 answers
+  PASS the planted-bias attack recovers the ink bit-exactly
+  PASS both halves come out as the pinned little-endian halves
+  PASS the model matches the binary on six figures
+  PASS a warm plate hands over its tally witness
+  PASS a cold plate does not hand over the tally
+  PASS a fresh sitting gives the same answer for the same figure
+  PASS the same figure twice in a row comes back differently (stale plate)
+  PASS the stale answer is not the model's answer for that figure
+  PASS a mixed sitting gives no consensus
+  PASS the mixed sitting produced no key at all
+  PASS the static derivation gives the cold key
+  PASS the cold key is not the ink
+  PASS the oracle holds no ink
+  PASS the shipped build behaves identically with the hook variable set
+  PASS the hook name is absent from the shipped binary
+  PASS nm is empty (/home/ns8pc/ghost-build/cartographer/stage3_oracle/oracle)
+  PASS no build provenance in strings (/home/ns8pc/ghost-build/cartographer/stage3_oracle/oracle)
+  PASS no engine ink in the oracle
+  PASS no reading in the oracle
+  PASS no title in the oracle
+  PASS the tally token is embedded in the oracle (expected)
+  PASS statically linked
+  PASS a clean rebuild is byte-identical
+  48 checks, 0 failed
+  OK

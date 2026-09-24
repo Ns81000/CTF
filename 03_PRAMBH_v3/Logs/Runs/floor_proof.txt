@@ -1,0 +1,10 @@
+P10 FLOOR PROOF (spec 7.3; PROJECTED per Appendix C.2)
+native 573.0 ns/step -> chain 73.6 min
+emulated 2480.2 ns/step -> chain 5.3 h
+cache-resident 743.6 ns, DRAM 0.0 ns
+4x attacker 185.9 ns/step -> 23.9 min per chain, 47.8 min for two
+honest two-chain cost 2.45 h
+reduced-table attack: 0.17x cost per step at 1/8 table
+deferred (audit X6): the full REAL-T native walk and the full
+REAL-T emulated cartridge run, plus the reduced-table attack at
+production T.

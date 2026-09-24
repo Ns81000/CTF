@@ -1,0 +1,29 @@
+PASS extract-zip
+PASS stranger-tree
+=== stranger solve: milestone -> capsule -> riddle -> doors ===
+PASS milestone-rc
+PASS milestone-stderr-silent
+PASS stage0-token-printed
+PASS capsule-vector-extracted
+PASS harvested-chain1-present
+FAIL doors-riddle-rc
+FAIL doors-riddle-stderr-silent (got [86] want [0])
+FAIL verse-printed (got [0] want >= 1)
+FAIL doors-open-rc
+FAIL chamber-stderr-silent (got [86] want [0])
+FAIL real-chamber-opened (got [0] want >= 1)
+FAIL chamber-hands-over-ink (got [0] want >= 1)
+FAIL chamber-hands-over-load-vector (got [0] want >= 1)
+src/final/isolated_solve.sh: line 64: ./stage3_doors/doors: No such file or directory
+PASS wrong-phrase-gives-nothing
+=== stranger lane: the seal is the second paid chain ===
+FAIL seal-lane-runs-the-real-walk (got [0] want >= 1)
+  (the 75-minute REAL run of that command is DEFERRED to the audit:
+   Appendix C.2a; see HANDOFF.md for the exact command)
+FAIL validator-refuses-until-the-chains-are-paid (got [] want [the survey holds no such record.])
+src/final/isolated_solve.sh: line 81: ./stage5_eyes/validate: No such file or directory
+FAIL mirror-title-refused-identically (got [0] want [1])
+PASS no-organizer-files-in-extracted-tree
+PASS manifest-verifies-in-place
+
+ISOLATED SOLVE NOT OK

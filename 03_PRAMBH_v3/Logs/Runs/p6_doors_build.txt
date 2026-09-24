@@ -1,0 +1,17 @@
+P6 - HALL OF DOORS BUILD (spec 4.5)
+chambers: 8, record size 2080 (seed 32 + cipher 2048)
+doors.bin: 16640 bytes  sha256=0f6651561df9337d4813b9f4eca66096982064d1bb6c7dbc9187ec7c7c04407e
+riddle.bin: 2048 bytes  sha256=312b3b8ff46d4ee6e1fc8d059bbdbe0826d24a1508bebc13f0dd7e7e67323938
+chain #1 claim (K_loom) = de918c455c4b1d42ec5ba654fe8e606a3b9bff25972795e61e78447783c2fe12
+loom ink = de918c455c4b1d42   loom checkpoint = PRAMBH{ec5ba654fe8e606a}
+door ink (real chamber) = 6939de42d44af1f2
+real door index = 0, hall 761
+candidate phrases:
+  0 the word each mark settles with (line-final)         kiln weir sapling mantle hollow lunar  <== REAL
+  1 the word after 'past'                                vista survey walnut talon thorn vessel
+  2 the word after 'by'                                  sextant rope loom spur current trench
+  3 the word after 'at'                                  paddock chime current ford bolt lunar
+  4 the word after 'near'                                brine bolt walnut coast dawn granite
+  5 the word after 'under'                               spring meridian otter marsh cove tide
+  6 the word after 'through'                             field relay myrrh magnet cliff birch
+  7 the word after 'toward'                              horizon mantle border mill border braid

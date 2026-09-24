@@ -1,0 +1,4 @@
+wrote COST_MODEL.md (40 lines)
+wrote SOLVE_PATH_PRIVATE.md (55 lines)
+wrote HINTS.md (15 lines)
+wrote TRYHACKME_ROOM_TEXT.md (26 lines)

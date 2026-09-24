@@ -1,0 +1,62 @@
+6a: drive package has exactly the 9 permitted files
+6a: no markdown / source / logs / git / build artifacts in the drive package
+6a: /home/manish/cartographer-build/drive-upload/cartographer.zip  (212199 bytes)
+    66840  2026-09-21 10:29   cartographer/stage0_start/stage0_start
+---------                     -------
+   367353                     14 files
+6b: organizer-private/ (53 files)
+    HINTS.md
+    README_FOR_SOLVER.txt.solver-copy
+    SOLVE_PATH_PRIVATE.md
+    TRYHACKME_ROOM_TEXT.md
+    docs/BUILD_SPEC.md
+    logs/KICKOFF_PHASE_1.md
+    logs/KICKOFF_PHASE_2.md
+    logs/KICKOFF_PHASE_3.md
+    logs/KICKOFF_PHASE_4.md
+    logs/KICKOFF_PHASE_5.md
+    logs/KICKOFF_PHASE_6.md
+    logs/KICKOFF_PHASE_FINAL.md
+    logs/PHASE_0_LOG.md
+    logs/PHASE_1_LOG.md
+    logs/PHASE_2_LOG.md
+    logs/PHASE_3_LOG.md
+    logs/PHASE_4_LOG.md
+    logs/PHASE_5_LOG.md
+    logs/PHASE_FINAL_2_LOG.md
+    logs/PHASE_FINAL_LOG.md
+    logs/runs/final_adversarial.txt
+    logs/runs/final_clean_path.log
+    logs/runs/final_clean_path.started
+    logs/runs/final_clean_path.stdout
+    logs/runs/final_decoy_segment.log
+    logs/runs/p4_vectors.txt
+    logs/runs/p5_suites_run.txt
+    logs/runs/p5_verify_baseline.txt
+    logs/runs/p5_verify_final.txt
+    logs/runs/p5_verify_run.txt
+    logs/runs/pf2_adversarial.txt
+    logs/runs/pf2_binaries_diff.txt
+    logs/runs/pf2_clean_rebuild.txt
+    logs/runs/pf2_confirm_hedge.log
+    logs/runs/pf2_confirm_hedge.stdout
+    logs/runs/pf2_confirm_lower.log
+    logs/runs/pf2_confirm_lower.stdout
+    logs/runs/pf2_confirm_upper.log
+    logs/runs/pf2_confirm_upper.stdout
+    logs/runs/pf2_cppcheck.txt
+    logs/runs/pf2_model_sweep.txt
+    logs/runs/pf2_model_sweep2.txt
+    logs/runs/pf2_package.txt
+    logs/runs/pf2_poison_volume.txt
+    logs/runs/pf2_real_sweep.txt
+    logs/runs/pf2_trials_model.jsonl
+    logs/runs/pf2_trials_model2.jsonl
+    logs/runs/pf2_trials_real.jsonl
+    logs/runs/pf2_verify_chain.txt
+    logs/runs/pf_finalize.log
+    logs/runs/pf_verify_final.txt
+    logs/runs/scale60_clean.log
+    logs/runs/scale60_stdout.txt
+6b: drive zip contains zero organizer content
+SPLIT-PACKAGING-OK

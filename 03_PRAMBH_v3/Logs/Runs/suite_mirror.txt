@@ -1,0 +1,82 @@
+=== generate the Duplicate Survey (consts + fiction) ===
+PASS gen-mirror
+PASS mirror-consts-written
+PASS mirror-title-harvested
+PASS consts-digest-matches-harvested-title
+PASS fiction-folios
+PASS fiction-dated-1981
+PASS fiction-cites-phantom-plates
+PASS fiction-no-verdict-words
+PASS fiction-no-mechanism-words
+
+=== build hygiene: the mirror tools use the same recipe ===
+PASS mirror_milestone-build
+PASS mirror_milestone-no-warnings
+PASS mirror_milestone-static
+PASS mirror_milestone-nm-empty
+PASS mirror_milestone-rebuild-deterministic
+PASS mirror_milestone-no-toolchain-strings
+PASS mirror_milestone-carries-canary
+PASS mirror_validate-build
+PASS mirror_validate-no-warnings
+PASS mirror_validate-static
+PASS mirror_validate-nm-empty
+PASS mirror_validate-rebuild-deterministic
+PASS mirror_validate-no-toolchain-strings
+PASS mirror_validate-carries-canary
+
+=== scripted FULL mirror solve (reduced-T build; production run deferred) ===
+PASS reduced-consts-written
+PASS reduced-milestone-built
+PASS reduced-validator-built
+PASS solve-1-marker-rc
+PASS solve-1-stderr-silent
+PASS solve-1-has-mark
+PASS solve-2-walk-rc
+PASS solve-2-stderr-silent
+PASS solve-2-record-64-hex
+PASS solve-2-mark-format
+PASS solve-3-seal-rc
+PASS solve-3-stderr-silent
+PASS solve-3-yields-title
+PASS reduced-digest-written
+PASS reduced-validator-rebuilt
+PASS solve-4-validate-rc
+PASS solve-4-stderr-silent
+PASS solve-4-dead-end-line
+PASS validate-refuses-others
+PASS validate-noargs-rc
+PASS validate-noargs-usage
+PASS mirror-tools-ignore-real-state
+
+=== leak lanes: zero real values in mirror/ ===
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+  File "<string>", line 1, in <module>
+NameError: name 'mint' is not defined. Did you mean: 'min'?
+PASS mirror-clean-of-real-values
+PASS mirror-token-registered
+
+=== behaviour probe (rc 0, silent stderr) ===
+PASS beh-milestone-noargs-rc
+PASS beh-milestone-noargs-stderr-silent
+PASS beh-milestone-unknown-rc
+PASS beh-milestone-unknown-stderr-silent
+PASS beh-milestone-seal-garbage-rc
+PASS beh-milestone-seal-garbage-stderr-silent
+PASS beh-milestone-seal-short-rc
+PASS beh-milestone-seal-short-stderr-silent
+PASS beh-validate-200kb-rc
+PASS beh-validate-200kb-stderr-silent
+PASS beh-validate-empty-rc
+PASS beh-validate-empty-stderr-silent
+PASS beh-narrow-columns-rc
+PASS beh-narrow-columns-stderr-silent
+PASS beh-term-dumb-rc
+PASS beh-term-dumb-stderr-silent
+PASS beh-devnull-rc
+PASS beh-devnull-stderr-silent
+PASS beh-piped-stdin-rc
+PASS beh-piped-stdin-stderr-silent
+
+P7: 67 PASS, 0 FAIL

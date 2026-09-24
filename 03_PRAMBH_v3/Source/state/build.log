@@ -1,0 +1,9 @@
+test_state.c: In function ‘main’:
+test_state.c:188:42: warning: ‘/ro’ directive output may be truncated writing 3 bytes into a region of size between 1 and 256 [-Wformat-truncation=]
+  188 |         snprintf(rodir, sizeof rodir, "%s/ro", ROOT_A);
+      |                                          ^~~
+In function ‘run_checks’,
+    inlined from ‘main’ at test_state.c:229:9:
+test_state.c:188:9: note: ‘snprintf’ output between 4 and 259 bytes into a destination of size 256
+  188 |         snprintf(rodir, sizeof rodir, "%s/ro", ROOT_A);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

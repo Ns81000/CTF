@@ -1,0 +1,328 @@
+
+############ 1. waiting for Run A ############
+Sun Sep 20 19:36:02 UTC 2026
+Run A reported completion at Sun Sep 20 19:50:46 UTC 2026
+[  5066.07s] attack recovered K = 73070925a159f9e2 (hits A={0: 24, 1: 28, 2: 15, 3: 16} B={0: 24, 1: 23, 2: 26, 3: 32})
+[  5066.07s]    (matches the recorded real Stage-3 master key)
+[  5066.07s] MARK stage3_oracle            t=5066.07s
+[  5066.07s] assembled title: CARTO{73070925a159f9e2_a5d66f1b2b5f596e_no_figure_sits_in_every_pixel}
+[  5066.07s]    ./stage4_assembly/validate accepted the title -- SURVEY CLOSED
+[  5066.07s] MARK stage4_assembly          t=5066.07s
+[  5066.07s] RESULT: CLEAN-PATH SOLVE COMPLETE, deterministically
+[  5066.07s] ---- per-step elapsed ----
+[  5066.07s] stage0_start               cumulative      0.00s   delta     0.00s
+[  5066.07s] stage1_vm                  cumulative      0.00s   delta     0.00s
+[  5066.07s] stage2_stego               cumulative      0.01s   delta     0.01s
+[  5066.07s] stage3_oracle              cumulative   5066.07s   delta  5066.06s
+[  5066.07s] stage4_assembly            cumulative   5066.07s   delta     0.00s
+[  5066.07s] TOTAL 5066.07s (84.43 min)
+
+############ 1b. the measured numbers ############
+Sun Sep 20 19:50:46 UTC 2026
+[     0.00s] MARK stage0_start             t=0.00s
+[     0.00s] MARK stage1_vm                t=0.00s
+[     0.01s] MARK stage2_stego             t=0.01s
+[  5066.04s] collection finished in 5066.0 s (84.43 min); 0.989 s per query measured
+[  5066.04s] ring stddev after collection: 850.2 ms (poison floor 150.0 ms)
+[  5066.07s] attack recovered K = 73070925a159f9e2 (hits A={0: 24, 1: 28, 2: 15, 3: 16} B={0: 24, 1: 23, 2: 26, 3: 32})
+[  5066.07s] MARK stage3_oracle            t=5066.07s
+[  5066.07s]    ./stage4_assembly/validate accepted the title -- SURVEY CLOSED
+[  5066.07s] MARK stage4_assembly          t=5066.07s
+[  5066.07s] RESULT: CLEAN-PATH SOLVE COMPLETE, deterministically
+[  5066.07s] TOTAL 5066.07s (84.43 min)
+[     0.02s] RESULT: detour segment complete; real path resumed at the START of Stage 3
+[     0.02s] TOTAL 0.02s (0.00 min)
+
+############ 2. tree sweep (__pycache__ / *.pyc) ############
+Sun Sep 20 19:50:46 UTC 2026
+remaining: 0
+
+############ 3. full verification chain (shipped build) ############
+Sun Sep 20 19:50:46 UTC 2026
+verify.sh: GREEN
+== 27 tests run, 0 failed ==
+== 64 tests run, 0 failed ==
+== 36 tests run, 0 failed ==
+== 8 checks, 0 failed ==
+== 65 tests run, 0 failed ==
+== 58 vectors run, 0 failed ==
+== 71 tests run, 0 failed ==
+== 33 passed, 0 failed ==
+== 64 tests run, 0 failed ==
+VALIDATE-REGEN-REPRODUCIBLE-OK
+
+############ 4. section 6 -- split packaging ############
+Sun Sep 20 19:50:53 UTC 2026
+6a: drive package has exactly the 9 permitted files
+6a: no markdown / source / logs / git / build artifacts in the drive package
+6a: /home/manish/cartographer-build/drive-upload/cartographer.zip  (212030 bytes)
+    66840  2026-09-20 19:50   cartographer/stage0_start/stage0_start
+---------                     -------
+   366980                     14 files
+6b: organizer-private/ (32 files)
+    HINTS.md
+    README_FOR_SOLVER.txt.solver-copy
+    SOLVE_PATH_PRIVATE.md
+    TRYHACKME_ROOM_TEXT.md
+    docs/BUILD_SPEC.md
+    logs/KICKOFF_PHASE_1.md
+    logs/KICKOFF_PHASE_2.md
+    logs/KICKOFF_PHASE_3.md
+    logs/KICKOFF_PHASE_4.md
+    logs/KICKOFF_PHASE_5.md
+    logs/KICKOFF_PHASE_6.md
+    logs/KICKOFF_PHASE_FINAL.md
+    logs/PHASE_0_LOG.md
+    logs/PHASE_1_LOG.md
+    logs/PHASE_2_LOG.md
+    logs/PHASE_3_LOG.md
+    logs/PHASE_4_LOG.md
+    logs/PHASE_5_LOG.md
+    logs/runs/final_adversarial.txt
+    logs/runs/final_clean_path.log
+    logs/runs/final_clean_path.started
+    logs/runs/final_clean_path.stdout
+    logs/runs/final_decoy_segment.log
+    logs/runs/p4_vectors.txt
+    logs/runs/p5_suites_run.txt
+    logs/runs/p5_verify_baseline.txt
+    logs/runs/p5_verify_final.txt
+    logs/runs/p5_verify_run.txt
+    logs/runs/pf_finalize.log
+    logs/runs/pf_verify_final.txt
+    logs/runs/scale60_clean.log
+    logs/runs/scale60_stdout.txt
+6b: drive zip contains zero organizer content
+SPLIT-PACKAGING-OK
+build_package.sh: OK
+
+############ 5. section 7 -- isolated-package re-verification ############
+Sun Sep 20 19:50:53 UTC 2026
+--- 1. contents of the extracted package ---
+    README_FOR_SOLVER.txt
+    stage0_start/stage0_start
+    stage1_vm/stage1_vm
+    stage2_stego/stage2_stego
+    stage2_stego/survey_frame.png
+    stage2_stego/survey_tape.wav
+    stage3_oracle/oracle
+    stage4_assembly/validate
+  -> exactly the 9 shipped items, nothing else
+--- 2. forbidden content ---
+  -> zero markdown, zero git, zero source, zero logs, zero artifacts
+--- 3. executables survived the zip round-trip ---
+  executable: stage0_start/stage0_start
+  executable: stage1_vm/stage1_vm
+  executable: stage2_stego/stage2_stego
+  executable: stage3_oracle/oracle
+  executable: stage4_assembly/validate
+--- 4. symbol / string audit on THIS extracted copy ---
+  stage0_start: nm clean
+  stage1_vm: nm clean
+  stage2_stego: nm clean
+  oracle: nm clean
+  validate: nm clean
+  -> nm clean on all 5, no host paths/usernames, no compiler idents
+  -> CARTO_TEST_TIME_SCALE absent from every extracted binary
+  -> no real answer material is strings-findable
+--- 5. full clean-path solve, standing alone in this copy ---
+--- 6. what the isolated copy left behind ---
+isolated package root: /tmp/cartographer-dist/cartographer
+carriers in the package:
+  README_FOR_SOLVER.txt                            3010 bytes
+  stage0_start/stage0_start                       66840 bytes
+  stage1_vm/stage1_vm                             66824 bytes
+  stage2_stego/stage2_stego                       62728 bytes
+  stage2_stego/survey_frame.png                   46258 bytes
+  stage2_stego/survey_tape.wav                     8152 bytes
+  stage3_oracle/oracle                            58632 bytes
+  stage4_assembly/validate                        54536 bytes
+  stage0_start -> CARTO{first_ink_in_the_ledger}
+  stage1_vm[real] -> key fd3e8049dfdfc32efe22fe823822b8c0a5d66f1b2b5f596e4c8111cf4224010f steps=7266 token CARTO{fd3e8049dfdfc32efe22fe823822b8c0}
+  sweep from the isolated sheet: stride=46 start=5070 framed=48 -> CARTO{no_figure_sits_in_every_pixel}
+  isolated stage 2 accepted the reading
+  fresh-state oracle answered under the real key
+  isolated oracle matches the cipher model bit-exactly on 6 figures once the solver paces
+  K under the isolated sheet's reading: 73070925a159f9e2
+  isolated validator ACCEPTED the assembled title
+ISOLATED-SOLVE-OK in 0.0 s
+  -> no ledger, no tmp, nothing written outside the extracted folder
+ISOLATED-VERIFICATION-OK
+verify_isolated.sh: OK
+
+############ 6. section 8 -- copy both folders to the Windows surface ############
+Sun Sep 20 19:50:53 UTC 2026
+--- sweep __pycache__ / *.pyc out of the repo tree ---
+  remaining: 0
+--- D:\gandu\ now holds ---
+    01_BUILD_PROMPT_FOR_CLAUDE_CODE.md
+    README.md
+    _stage
+    drive-upload
+    organizer-private
+    workspace_structure.txt
+    wsl_structure.txt
+--- drive-upload ---
+        212030  cartographer.zip
+          3010  cartographer/README_FOR_SOLVER.txt
+         66840  cartographer/stage0_start/stage0_start
+         66824  cartographer/stage1_vm/stage1_vm
+         62728  cartographer/stage2_stego/stage2_stego
+         46258  cartographer/stage2_stego/survey_frame.png
+          8152  cartographer/stage2_stego/survey_tape.wav
+         58632  cartographer/stage3_oracle/oracle
+         54536  cartographer/stage4_assembly/validate
+--- organizer-private ---
+          2695  HINTS.md
+          3010  README_FOR_SOLVER.txt.solver-copy
+         27196  SOLVE_PATH_PRIVATE.md
+          3068  TRYHACKME_ROOM_TEXT.md
+         19263  docs/BUILD_SPEC.md
+          2359  logs/KICKOFF_PHASE_1.md
+          3544  logs/KICKOFF_PHASE_2.md
+          5704  logs/KICKOFF_PHASE_3.md
+          6789  logs/KICKOFF_PHASE_4.md
+          7445  logs/KICKOFF_PHASE_5.md
+          8437  logs/KICKOFF_PHASE_6.md
+          7016  logs/KICKOFF_PHASE_FINAL.md
+         18351  logs/PHASE_0_LOG.md
+         17293  logs/PHASE_1_LOG.md
+         49870  logs/PHASE_2_LOG.md
+         44540  logs/PHASE_3_LOG.md
+         37378  logs/PHASE_4_LOG.md
+         32467  logs/PHASE_5_LOG.md
+          7283  logs/runs/final_adversarial.txt
+          3313  logs/runs/final_clean_path.log
+            21  logs/runs/final_clean_path.started
+          3313  logs/runs/final_clean_path.stdout
+          2329  logs/runs/final_decoy_segment.log
+           592  logs/runs/p4_vectors.txt
+         14224  logs/runs/p5_suites_run.txt
+         18877  logs/runs/p5_verify_baseline.txt
+          8506  logs/runs/p5_verify_final.txt
+          8501  logs/runs/p5_verify_run.txt
+          3037  logs/runs/pf_finalize.log
+          8506  logs/runs/pf_verify_final.txt
+          3320  logs/runs/scale60_clean.log
+          3320  logs/runs/scale60_stdout.txt
+WINDOWS-COPY-OK
+finalize_windows.sh: OK
+
+############ 7. hash tables ############
+Sun Sep 20 19:50:53 UTC 2026
+==============================================================
+== drive-upload
+==============================================================
+    212030  fe3d8fecf083939d04599d10d7a8b7a37cc41493761ed2263be3fc84cd413d2e  cartographer.zip
+      3010  175009cbd83f8094677724d7203b88f1b1d917e127f296b8a652455b2d31dd8c  cartographer/README_FOR_SOLVER.txt
+     66840  ebce5c7f9012021ab6de1d770f28bf34f938ac11d38fb99022082899042766b9  cartographer/stage0_start/stage0_start
+     66824  5574b14a3e9ccb9b1b55abef422eb0d52c3b565bb942d6e674b3b3389cbc5752  cartographer/stage1_vm/stage1_vm
+     62728  64e9d123b52082fd56e8612f712efdef70f7e7b743032418f27e69b27bbc1a73  cartographer/stage2_stego/stage2_stego
+     46258  81b630a8d9cf0a7a85ac2fd99e352d6a4a3b432f568900a7ab9da5e88712d23c  cartographer/stage2_stego/survey_frame.png
+      8152  17bb6addf71803ebf13864fde2c96c9a28927180b9fa4074697b67e2201d29f6  cartographer/stage2_stego/survey_tape.wav
+     58632  2bc24a4a70fd4b22d6962aabd820b1255f793b37b47b6c9ed998ceaf07a3ab8e  cartographer/stage3_oracle/oracle
+     54536  4715ee4633cdb4614fa8860a12ee6a275a914c919e25e2d6cf22783a3090e637  cartographer/stage4_assembly/validate
+files: 9
+==============================================================
+== organizer-private
+==============================================================
+      2695  a26f5a408222e318f5fdbf37c73bde40d0c997036bf928a3c47cf9a01b92b28c  HINTS.md
+      3010  175009cbd83f8094677724d7203b88f1b1d917e127f296b8a652455b2d31dd8c  README_FOR_SOLVER.txt.solver-copy
+     27196  8a7cfe321e397e96012260fd94a49d4b0fdcca444c019758ba09e352261524b9  SOLVE_PATH_PRIVATE.md
+      3068  74019b02d4ca72b521f249779a99f7f2178a3eb5f7f2a304f43fef47a84198fa  TRYHACKME_ROOM_TEXT.md
+     19263  18dd1fa22a90371704ce574a7d0c445aa258a13a2bd8ad3f0b761e89e152c8ab  docs/BUILD_SPEC.md
+      2359  884d3566b765a23c52f0ae64f1a439062162acd8a1ddf828a397215a3739cca2  logs/KICKOFF_PHASE_1.md
+      3544  ad91c3067876c0a78c62b39b455809cf90674947a2c014e1762728bbfd53965e  logs/KICKOFF_PHASE_2.md
+      5704  8dae414942028b579e0784721424b17119e6448855600780dba801b6514804f2  logs/KICKOFF_PHASE_3.md
+      6789  827322a49b5e4da66577596e38a336c26cbf2bc67438f086889b037838e652d1  logs/KICKOFF_PHASE_4.md
+      7445  1d57cd869032268ff52ff66c6b62ab1475f25baf84f6c71ae28d8879517b9a2e  logs/KICKOFF_PHASE_5.md
+      8437  d6a51b85faf04e7fb8bbe227ba92d6b23f6460587b9c8e380c05478294061eda  logs/KICKOFF_PHASE_6.md
+      7016  fb6c3cb6940f5ddbe2ac6aa2bd9fc59973ad597b600283c2cabbb7cacb424c25  logs/KICKOFF_PHASE_FINAL.md
+     18351  c498e1765cc407b1ccfb00db0fccf21459f30d1ef5bbc3714638776dfe7bf839  logs/PHASE_0_LOG.md
+     17293  42b428e537754aedba7e657f7f5f1fb828c66bceffd9f4ec7a80e2fed098b742  logs/PHASE_1_LOG.md
+     49870  3838e3fcaaca5b155fff78f394023ceefe109bc480b648830610eeca7b12ffd1  logs/PHASE_2_LOG.md
+     44540  848c65c6a24903990845e62694e3356a0a94f58a4061d916fabdcce2824d6448  logs/PHASE_3_LOG.md
+     37378  4131111f5afcae62d173e78a93710ee483a80527dbbe03e17a4289281763ca65  logs/PHASE_4_LOG.md
+     32467  866b966192f23ed11b28ef9a5e2dc50fff0f918a4ed026165f87d3a8f5a056b6  logs/PHASE_5_LOG.md
+      7283  fd48fa839d0b0bf4159d1575daa4bcdac0a3a16169d23e605c11e9fda5cb8ac6  logs/runs/final_adversarial.txt
+      3313  5306771884399747e5b1410d51f680a04168d3d8bbf6b732b69c5f7fddec499e  logs/runs/final_clean_path.log
+        21  65bc33b17460cfa86e565afb4a55ce29a544272b8e0f4e4d1070c66a11aee601  logs/runs/final_clean_path.started
+      3313  5306771884399747e5b1410d51f680a04168d3d8bbf6b732b69c5f7fddec499e  logs/runs/final_clean_path.stdout
+      2329  c219f80d4b953827647fd267319c5a808e2d14a47c31557bf1aef3ab04fb9487  logs/runs/final_decoy_segment.log
+       592  831bccf22f0b6a50d49742176760e5a88b45cdd210d83bf0d9729f99b021ce55  logs/runs/p4_vectors.txt
+     14224  ec8ac320244ef5bc3977a9f164398da43b6a27c31dae1fe85abdb007e8e4070f  logs/runs/p5_suites_run.txt
+     18877  a79e2d58c796b36261a557fb54d8f1526340815addf77a4b6908ab2b7700d81a  logs/runs/p5_verify_baseline.txt
+      8506  db18c3ce29b1861b6f8c72f40b56f5569b894b640bf548840d093bb4edcd09cf  logs/runs/p5_verify_final.txt
+      8501  794e875bcab2aac82885c9e7dfb8c354d82e41d009b5f16f65f964265aa90d93  logs/runs/p5_verify_run.txt
+      3037  304276262df966eb9afd8a4966346e8980818299ccff40043d552c256d1f4185  logs/runs/pf_finalize.log
+      8506  80e1d659c09174e29bd00d1c8404dfae248db1ceae1e830c4d40e0a1243156ad  logs/runs/pf_verify_final.txt
+      3320  20e91ebd85691a5d64736a1697ac5be44590d9205e4db68a474547966e9cdb56  logs/runs/scale60_clean.log
+      3320  20e91ebd85691a5d64736a1697ac5be44590d9205e4db68a474547966e9cdb56  logs/runs/scale60_stdout.txt
+files: 32
+
+== the shipped zip, itemised ==
+Archive:  cartographer.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  2026-09-20 19:50   cartographer/
+        0  2026-09-20 19:50   cartographer/stage2_stego/
+    62728  2026-09-20 19:50   cartographer/stage2_stego/stage2_stego
+     8152  2026-09-20 19:50   cartographer/stage2_stego/survey_tape.wav
+    46258  2026-09-20 19:50   cartographer/stage2_stego/survey_frame.png
+        0  2026-09-20 19:50   cartographer/stage4_assembly/
+    54536  2026-09-20 19:50   cartographer/stage4_assembly/validate
+        0  2026-09-20 19:50   cartographer/stage3_oracle/
+    58632  2026-09-20 19:50   cartographer/stage3_oracle/oracle
+        0  2026-09-20 19:50   cartographer/stage1_vm/
+    66824  2026-09-20 19:50   cartographer/stage1_vm/stage1_vm
+     3010  2026-09-20 19:50   cartographer/README_FOR_SOLVER.txt
+        0  2026-09-20 19:50   cartographer/stage0_start/
+    66840  2026-09-20 19:50   cartographer/stage0_start/stage0_start
+---------                     -------
+   366980                     14 files
+
+############ 8. final commit ############
+Sun Sep 20 19:50:54 UTC 2026
+--- pre-commit tree sweep ---
+--- staged ---
+ organizer-private/logs/runs/p5_verify_baseline.txt | 434 ++++++++++
+ organizer-private/logs/runs/p5_verify_final.txt    | 203 +++++
+ organizer-private/logs/runs/p5_verify_run.txt      | 203 +++++
+ organizer-private/logs/runs/pf_finalize.log        |  61 ++
+ organizer-private/logs/runs/pf_verify_final.txt    | 203 +++++
+ organizer-private/logs/runs/scale60_clean.log      |  49 ++
+ organizer-private/logs/runs/scale60_stdout.txt     |  49 ++
+ src/final/README_FOR_SOLVER.txt                    |  85 ++
+ src/final/after_runA.sh                            |  74 ++
+ src/final/build_package.sh                         |  79 ++
+ src/final/build_testbuild.sh                       |  45 +
+ src/final/cartosolve.py                            | 432 ++++++++++
+ src/final/commit_final.sh                          |  38 +
+ src/final/finalize_windows.sh                      |  28 +
+ src/final/probe_scale.c                            |  65 ++
+ src/final/report_hashes.sh                         |  19 +
+ src/final/run_clean_path.py                        | 128 +++
+ src/final/run_decoy_segment.py                     | 125 +++
+ src/final/run_isolated_solve.py                    |  96 +++
+ src/final/verify_adversarial.sh                    | 378 +++++++++
+ src/final/verify_isolated.sh                       |  98 +++
+ src/final/watch_runA.py                            |  41 +
+ src/stage1_vm/stage1_vm.c                          |  40 +-
+ src/stage1_vm/test_stage1.sh                       |   2 +-
+ src/stage2_stego/test_stage2.sh                    |   2 +-
+ src/state/Makefile                                 |   8 +
+ src/state/policy.h                                 |  30 +-
+ src/state/state_policy.c                           |  50 +-
+ src/state/test_part2.c                             |  30 +-
+ 80 files changed, 10336 insertions(+), 19 deletions(-)
+f710820 phase FINAL: calibration + deep verification + split deliverables
+890bd6d docs: consolidate Phase 6 and 7 into Phase FINAL, add KICKOFF_PHASE_FINAL.md
+cf4a41f fix(stage3): make policy_patch.py regex match 4-row decoy table gracefully
+--- working tree after commit ---
+ M logs/runs/pf_finalize.log
+COMMIT-OK
+commit_final.sh: OK
+
+############ DONE ############
+Sun Sep 20 19:50:54 UTC 2026
+ALL STEPS COMPLETED

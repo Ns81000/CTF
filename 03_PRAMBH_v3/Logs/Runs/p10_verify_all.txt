@@ -1,0 +1,12 @@
+PASS suite-state   
+PASS suite-chain   
+PASS suite-stage0   P3: 53 PASS, 0 FAIL
+PASS suite-flood   P4: 41 PASS, 0 FAIL
+FAIL suite-loom   P5: 177 PASS, 3 FAIL  (see runs/suite_loom.txt)
+FAIL suite-doors   P6: 152 PASS, 3 FAIL  (see runs/suite_doors.txt)
+PASS suite-mirror   P7: 67 PASS, 0 FAIL
+FAIL suite-eyes   P8: 86 PASS, 3 FAIL  (see runs/suite_eyes.txt)
+PASS suite-server   P9-SERVER: 48 PASS, 0 FAIL
+PASS suite-eventgen   P9-EVENTGEN: 32 PASS, 0 FAIL
+
+VERIFY ALL NOT OK (3 suites failed)

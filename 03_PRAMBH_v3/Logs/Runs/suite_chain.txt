@@ -1,0 +1,42 @@
+PASS build (musl static)
+PASS static link
+PASS nm empty
+PASS c-vs-python bit-exact (seed A)
+PASS c-vs-python bit-exact (seed B)
+PASS c-vs-python bit-exact (alt T)
+PASS non-pow2 table (n=96) bit-exact
+PASS n=1 table bit-exact
+PASS 1MiB table bit-exact
+PASS T=1 bit-exact
+PASS determinism (same run twice)
+PASS output is 64 hex chars
+PASS steps=0 python agrees
+PASS steps=0 returns run-label hash (not raw seed)
+PASS seed single-bit sensitivity
+PASS step-count sensitivity
+PASS mutation fill-swap changes output
+PASS mutation walk-no-t changes output
+PASS mutation walk-t-offby1 changes output
+PASS mutation bad-fill-label changes output
+PASS mutation bad-run-label changes output
+PASS mutation bad-S changes output
+PASS mutation bad-T changes output
+PASS dumped table exactly S bytes
+PASS table-file reload identical
+PASS python walks dumped table bit-exact
+PASS fill preimage binds T
+PASS fill deterministic
+PASS corrupted table block changes output
+PASS withheld/truncated table refused
+PASS bad seed rejected
+PASS fill KAT table[0] (label+seed+S+T)
+PASS fill KAT table[1]
+PASS checkpoint attack reproduces output (soundness)
+PASS attack(8 ckpt) recompute blowup: 258838 for 2000 steps
+PASS memory-time tradeoff monotone (64ckpt=31126 < 8ckpt=258838)
+PASS attack(1 ckpt, minimal memory) recomputes: 522123 for 500 steps (recorded)
+PASS peak RSS 131072kB >= 0.9*S (117964kB)
+PASS parallel probe: solo 5775178 steps/3s vs concurrent 5320810 + 5337836 (recorded)
+FAIL timing variance 12.420% (3444340 3464992 3872116)
+PASS fillbench 32MiB in 0.246s (recorded)
+CHAIN SUITE DONE

@@ -1,0 +1,50 @@
+--- 1. contents of the extracted package ---
+    README_FOR_SOLVER.txt
+    stage0_start/stage0_start
+    stage1_vm/stage1_vm
+    stage2_stego/stage2_stego
+    stage2_stego/survey_frame.png
+    stage2_stego/survey_tape.wav
+    stage3_oracle/oracle
+    stage4_assembly/validate
+  -> exactly the 9 shipped items, nothing else
+--- 2. forbidden content ---
+  -> zero markdown, zero git, zero source, zero logs, zero artifacts
+--- 3. executables survived the zip round-trip ---
+  executable: stage0_start/stage0_start
+  executable: stage1_vm/stage1_vm
+  executable: stage2_stego/stage2_stego
+  executable: stage3_oracle/oracle
+  executable: stage4_assembly/validate
+--- 4. symbol / string audit on THIS extracted copy ---
+  stage0_start: nm clean
+  stage1_vm: nm clean
+  stage2_stego: nm clean
+  oracle: nm clean
+  validate: nm clean
+  -> nm clean on all 5, no host paths/usernames, no compiler idents
+  -> CARTO_TEST_TIME_SCALE absent from every extracted binary
+  -> no real answer material is strings-findable
+--- 5. full clean-path solve, standing alone in this copy ---
+--- 6. what the isolated copy left behind ---
+isolated package root: /tmp/cartographer-dist/cartographer
+carriers in the package:
+  README_FOR_SOLVER.txt                            3383 bytes
+  stage0_start/stage0_start                       66840 bytes
+  stage1_vm/stage1_vm                             66824 bytes
+  stage2_stego/stage2_stego                       62728 bytes
+  stage2_stego/survey_frame.png                   46258 bytes
+  stage2_stego/survey_tape.wav                     8152 bytes
+  stage3_oracle/oracle                            58632 bytes
+  stage4_assembly/validate                        54536 bytes
+  stage0_start -> CARTO{first_ink_in_the_ledger}
+  stage1_vm[real] -> key fd3e8049dfdfc32efe22fe823822b8c0a5d66f1b2b5f596e4c8111cf4224010f steps=7266 token CARTO{fd3e8049dfdfc32efe22fe823822b8c0}
+  sweep from the isolated sheet: stride=46 start=5070 framed=48 -> CARTO{no_figure_sits_in_every_pixel}
+  isolated stage 2 accepted the reading
+  fresh-state oracle answered under the real key
+  isolated oracle matches the cipher model bit-exactly on 6 figures once the solver paces
+  K under the isolated sheet's reading: 73070925a159f9e2
+  isolated validator ACCEPTED the assembled title
+ISOLATED-SOLVE-OK in 0.0 s
+  -> no ledger, no tmp, nothing written outside the extracted folder
+ISOLATED-VERIFICATION-OK

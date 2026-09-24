@@ -1,0 +1,18 @@
+{
+  "title": "CARTO{73070925a159f9e2_a5d66f1b2b5f596e_no_figure_sits_in_every_pixel}",
+  "title_len": 70,
+  "digest": "cfdcae7e64a81bbf1d9f19fd1e5bc217b14008c4db92ba5f0333204c4c0f4334",
+  "draft_flag": "CARTO{dba9e10a73bc8633ccc1875207c075e1}",
+  "decoy_seed": "cartographer-ghost:stage4:decoy:first-draft:v1",
+  "inks": {
+    "engine": "a5d66f1b2b5f596e",
+    "sheet": "no_figure_sits_in_every_pixel",
+    "oracle": "73070925a159f9e2"
+  },
+  "order": [
+    "oracle",
+    "engine",
+    "sheet"
+  ],
+  "separator": "_"
+}

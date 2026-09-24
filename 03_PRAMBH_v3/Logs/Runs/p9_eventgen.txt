@@ -1,0 +1,46 @@
+=== three per-player packages (reduced-T for the suite only) ===
+PASS build-alice
+PASS answers-alice
+PASS package-alice
+PASS build-bob
+PASS answers-bob
+PASS package-bob
+PASS build-carol
+PASS answers-carol
+PASS package-carol
+PASS build-alice-again
+
+=== determinism ===
+answers identical
+PASS answers-deterministic
+PASS package-byte-identical
+
+=== cross-contamination (values must not travel) ===
+contexts, tokens and titles all differ across players
+PASS per-player-values-differ
+PASS no-alice-token-in-bob
+PASS no-alice-title-in-bob
+PASS no-bob-token-in-carol
+PASS no-bob-title-in-carol
+PASS no-alice-token-in-carol
+PASS no-alice-title-in-carol
+PASS doors-differ-between-players
+PASS roms-differ-between-players
+PASS plates-differ-between-players
+PASS corpus-differs-between-players
+
+=== per-player answers land on their own package only ===
+PASS alice-milestone-prints-alice
+PASS bob-milestone-prints-bob
+PASS bob-milestone-hides-alice
+PASS alice-phrase-opens-alice-capsule
+PASS alice-doors-open-alice-chamber
+
+=== ARCHIVE-mode regression (no context => archived values) ===
+PASS archive-stage0-intact
+PASS archive-canary-intact
+PASS archive-phrase-intact
+PASS no-master-secret-in-package
+
+P9-EVENTGEN: 32 PASS, 0 FAIL
+p9-eventgen rc=0

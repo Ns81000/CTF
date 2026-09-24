@@ -1,0 +1,6 @@
+r_build = 1681418.2 steps/s
+chain1    T=48424843200  honest=28800s  attacker_floor=7200s
+chain2    T=48424843200  honest=28800s  attacker_floor=7200s
+mirror    T=10088509000  honest=6000s  attacker_floor=1500s
+door      T=6053105400  honest=3600s  attacker_floor=900s
+decoy_rom T=1210621080  honest=720s  attacker_floor=180s

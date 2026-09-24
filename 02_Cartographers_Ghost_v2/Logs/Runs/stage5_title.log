@@ -1,0 +1,56 @@
+== stage5 ==
+  PASS the stored digest is the digest of the one title (independent)
+  PASS no arguments (rc 0, stderr silent)
+  PASS the banner is shown
+  PASS the riddle is shown
+  PASS layout cue: wax first
+  PASS layout cue: plate second
+  PASS layout cue: engine third
+  PASS layout cue: words last
+  PASS a draft struck out
+  PASS the struck draft is the registered decoy
+  PASS provenance: the wax stamp
+  PASS provenance: the warm plate
+  PASS provenance: the engine
+  PASS provenance: the sheet
+  PASS the notice is on the desk
+  PASS the usage names the older spelling
+  PASS no ink ships on the desk (seal)
+  PASS no ink ships on the desk (oracle)
+  PASS no ink ships on the desk (engine)
+  PASS no reading ships on the desk
+  PASS no grammar on the desk (hex)
+  PASS no grammar on the desk (counts)
+  PASS no grammar on the desk (lengths)
+  PASS no mechanism on the desk (digest)
+  PASS 16 wrong or gated-out hands, all refused byte-identically
+  PASS the one refusal line
+  PASS the right title, on a walked record, at a terminal: taken
+  PASS the acceptance reads the title back
+  PASS acceptance and refusal are different phrasings
+  PASS the right title piped is refused identically
+  PASS the right title on a thin record is refused identically
+  PASS a tampered record resets and refuses identically
+  PASS no record at all: refused identically
+  PASS record is 1168 bytes
+  PASS independent python check of the record
+  PASS refusal timing constant over 30 samples (span 3207us < 5ms)
+  PASS piped refusals identical across shapes
+  PASS nm is empty (/home/ns8pc/ghost-build/cartographer/stage5_title/validate)
+  PASS no build provenance in strings (/home/ns8pc/ghost-build/cartographer/stage5_title/validate)
+  PASS no digest hex in the binary
+  PASS no ink in the binary (seal)
+  PASS no ink in the binary (oracle)
+  PASS no ink in the binary (engine)
+  PASS no reading in the binary
+  PASS no token in the binary
+  PASS no test hook in the binary
+  PASS the notice rides in the binary
+  PASS the binary's only CARTO strings are the registered decoy and the canary
+  PASS no grammar leak ships (riddle-answer)
+  PASS no grammar leak ships (in order)
+  PASS no grammar leak ships (first second third fourth)
+  PASS rebuild reproduces the identical binary
+  PASS the shipped package is pristine (no record in the real tree)
+  53 checks, 0 failed
+  OK

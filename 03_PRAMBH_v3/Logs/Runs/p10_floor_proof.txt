@@ -1,0 +1,20 @@
+=== time floor: reduced-T projection (Appendix C.2) ===
+native 768 ns/step, emulated 942 ns/step, cache-resident 592 ns, DRAM round-trip 177 ns
+projected chain #1: native 99 min, emulated 2.0 h
+PASS projection-recorded 
+FAIL per-step-linear (deviation 30.5%)
+PASS emulation-slower 
+PASS latency-component-measured 
+reduced-table attack: 4.675 s at S=536870912 vs 0.732 s at S=67108864 (0.16x)
+PASS reduced-table-measured (1/8 table costs 0.16x the full table per step)
+attacker per-step under the 4x assumption: 324 ns (work/4 + memory)
+PROJECTED per chain: honest 99 min, 4x attacker 41.7 min
+PROJECTED two chains: honest 3.3 h, 4x attacker 83.3 min
+PROJECTED scripted/decoy detours: seven 12-min decoy chambers + a
+4-min two-stage mirror campaign + the plate gates (see test_eyes.sh)
+server backstop (EVENT mode): MIN_JOURNEY 14400 s = 4 h
+FAIL floor-two-chains-exceed-3h30-honest (3.29 h honest)
+PASS floor-4x-attacker-below-honest (the 4x assumption buys 2.37x, not 4x - DRAM latency holds the floor)
+PASS floor-projected-and-marked (every number above is PROJECTED - audit confirms with the REAL run)
+
+FLOOR-PROOF: 6 PASS, 2 FAIL

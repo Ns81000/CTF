@@ -1,0 +1,11 @@
+{
+ "stride": 8,
+ "start": 2629,
+ "payload_real": 48,
+ "payload_near": 53,
+ "middle_text": "run drawn harbour the was after before tin",
+ "decoy": "CARTO{the_coast_was_drawn_twice}",
+ "png_sha256": "e415de4d62792d82f565353362c93be96bdeba2d2a4b355c4ff5293bd250ba1a",
+ "wav_sha256": "d3187f5b97085953bbda89eb2a141fa954cb1f183b52f6534cadd831beedbfaa",
+ "frame_bit": 1
+}

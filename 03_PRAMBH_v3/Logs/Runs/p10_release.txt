@@ -1,0 +1,11 @@
+PASS zip-built
+zip sha256: db1d0bb3b51031b83092951d9ca1e6a34aa28ce25b684d0ec9423cb39a27cab2
+files: 485  manifest: db21e59c76e42f70104a3641e09cff126fdff2074a1e879d2c63087dae277728
+copied to /mnt/e/drive-upload/prambh/RELEASE
+total 2448
+drwxrwxrwx 1 ns8pc ns8pc    4096 Sep 23 02:12 .
+drwxrwxrwx 1 ns8pc ns8pc    4096 Sep 23 02:12 ..
+-rwxrwxrwx 1 ns8pc ns8pc   46139 Sep 23 02:12 MANIFEST.sha256
+-rwxrwxrwx 1 ns8pc ns8pc 1226503 Sep 23 02:12 prambh.zip
+-rwxrwxrwx 1 ns8pc ns8pc 1226528 Sep 23 02:12 prambh.zip.enc
+RELEASE OK

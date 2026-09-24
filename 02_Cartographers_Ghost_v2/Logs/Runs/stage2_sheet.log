@@ -1,0 +1,76 @@
+== stage2 ==
+  PASS the carriers are byte-identical across three regenerations
+  PASS the shipped carriers are exactly what the generator makes
+  PASS pngcheck accepts the frame
+  PASS the frame is 1024x1024
+  PASS the tape is PCM16 mono 8 kHz
+  PASS the frame metadata names no mechanism
+  PASS the frame metadata carries no reading
+  PASS a raw byte read gives the 56-byte press
+  PASS the press opens with its tag
+  PASS the press tail is the pinned digest
+  PASS exiftool -v3 shows the press chunk and its size
+  PASS the comment route is re-encoded (133 bytes, not 56) - documented
+  PASS the drawn lane gives the reading
+  PASS the near-miss lane gives readable words, never a mark
+  PASS the first row carries the decoy
+  PASS the decoy is not the reading
+  PASS the two lanes share no mark
+  PASS the lane arithmetic matches the pinned bearing
+  PASS the near-miss lane carries no press check
+  PASS no statistical detector localises the marks
+  PASS all four detectors ran
+  PASS no arguments (rc 0, stderr silent)
+  PASS the audit names the frame
+  PASS the audit names the tape
+  PASS a cold bench is described honestly
+  PASS piped reveal (rc 0, stderr silent)
+  PASS a piped reveal asks for a hand
+  PASS a piped reveal says nothing else
+  PASS a piped reveal prints exactly one line
+  PASS a terminal with a cold record gets flavour, not the reading
+  PASS a warm bench at a terminal reads the frame out
+  PASS the reveal says plainly what the box is
+  PASS the plain form spells the colour as a word
+  PASS the plain form uses no escapes at all
+  PASS the default form states the colour rule in its own words
+  PASS the colour is carried by the terminal
+  PASS the colour line is legible after a capture
+  PASS a narrow room is told it is narrow
+  PASS the narrow room does not get the layout
+  PASS the plain word survives a narrow room (the fallback is fair)
+  PASS stripping the escapes leaves the reading intact
+  PASS the bearing can come from the record the engine wrote
+  PASS a record with no bearing laid says so
+  PASS the near-miss parameters do not return the reading
+  PASS the near-miss parameters still spell something out
+  PASS the right press (rc 0, stderr silent)
+  PASS the press and the frame agree
+  PASS a wrong press (rc 0, stderr silent)
+  PASS a missing press file (rc 0, stderr silent)
+  PASS every failed press check gets the same line
+  PASS empty argument (rc 0, stderr silent)
+  PASS sixteen arguments (rc 0, stderr silent)
+  PASS an unknown flag (rc 0, stderr silent)
+  PASS 80 KB argument (rc 0, stderr silent)
+  PASS dumb terminal (rc 0, stderr silent)
+  PASS narrow columns (rc 0, stderr silent)
+  PASS corrupt record (rc 0, stderr silent)
+  PASS record is 1168 bytes
+  PASS independent python check of the record
+  PASS reveal with the bearing on the command line (rc 0, stderr silent)
+  PASS the reveal was recorded on the record
+  PASS press mode (rc 0, stderr silent)
+  PASS the press check was recorded on the record
+  PASS the press bit is evidence-backed on the record
+  PASS nm is empty (/home/ns8pc/ghost-build/cartographer/stage2_sheet/sheet)
+  PASS no build provenance in strings (/home/ns8pc/ghost-build/cartographer/stage2_sheet/sheet)
+  PASS no reading in the sheet
+  PASS no engine ink in the sheet
+  PASS no title in the sheet
+  PASS no bearing in the sheet
+  PASS no lane arithmetic word in the sheet
+  PASS statically linked
+  PASS a clean rebuild is byte-identical
+  73 checks, 0 failed
+  OK

@@ -1,0 +1,10 @@
+P8 - EYES GENERATED (spec 4.7)
+chain #2 out (K_eyes, seal source): 43560fb33c8d0924d4802d644703f98a5dbd33ab7b36f08ed34765745c4af68a
+seal ink: 43560fb33c8d0924
+eyes ink: 5LNE5X_XV5WUW_ALNGTJ
+door ink: 6939de42d44af1f2
+FINAL TITLE: PRAMBH{43560fb33c8d0924_de918c455c4b1d42_6939de42d44af1f2_5LNE5X_XV5WUW_ALNGTJ}
+title digest: b25b0458061a1a8290a9d0ff7ee6a6c3884ef56773722a9e43044548372cf2d2
+eyes_notes.bin: 2048 bytes sealed with K_eyes
+chain dials: S=536870912 T=7705630875, pacing 60000 ms
+PLATES: depth.png hue.png sheet_a.png sheet_b.png (plate_gen.py)

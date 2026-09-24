@@ -1,0 +1,9 @@
+# stage3 oracle test vectors (real reading; K = SHA-256(seed_real||reading))
+# kA=73070925 kB=a159f9e2; poison kA=0fab2971 kB=10c73e9f
+
+figure 0123456789abcdef  real-> 2a7479540c7163e3  poison-> 0adb9b08b2e01566
+figure ffffffffffffffff  real-> 50175fafe8292077  poison-> 069b3aa438ddce7a
+figure 0000000000000000  real-> aad1a962b4e66bf8  poison-> 9237bb2735b4bdcf
+figure 123456789abcdef0  real-> 4629fae7c6ee6bba  poison-> 9db6674f210a6fa7
+figure 00000000000000ff  real-> c4faca6134049afb  poison-> de70072e2be2adda
+figure deadbeefcafebabe  real-> cc634fb39d0b7105  poison-> 64c8fc37a7076047

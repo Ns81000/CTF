@@ -1,0 +1,75 @@
+--- sweep __pycache__ / *.pyc out of the repo tree ---
+  remaining: 0
+--- D:\gandu\ now holds ---
+    01_BUILD_PROMPT_FOR_CLAUDE_CODE.md
+    README.md
+    _stage
+    drive-upload
+    organizer-private
+    workspace_structure.txt
+    wsl_structure.txt
+--- drive-upload ---
+        212199  cartographer.zip
+          3383  cartographer/README_FOR_SOLVER.txt
+         66840  cartographer/stage0_start/stage0_start
+         66824  cartographer/stage1_vm/stage1_vm
+         62728  cartographer/stage2_stego/stage2_stego
+         46258  cartographer/stage2_stego/survey_frame.png
+          8152  cartographer/stage2_stego/survey_tape.wav
+         58632  cartographer/stage3_oracle/oracle
+         54536  cartographer/stage4_assembly/validate
+--- organizer-private ---
+          2695  HINTS.md
+          3383  README_FOR_SOLVER.txt.solver-copy
+         32666  SOLVE_PATH_PRIVATE.md
+          3068  TRYHACKME_ROOM_TEXT.md
+         19263  docs/BUILD_SPEC.md
+          2359  logs/KICKOFF_PHASE_1.md
+          3544  logs/KICKOFF_PHASE_2.md
+          5704  logs/KICKOFF_PHASE_3.md
+          6789  logs/KICKOFF_PHASE_4.md
+          7445  logs/KICKOFF_PHASE_5.md
+          8437  logs/KICKOFF_PHASE_6.md
+          7016  logs/KICKOFF_PHASE_FINAL.md
+         18351  logs/PHASE_0_LOG.md
+         17293  logs/PHASE_1_LOG.md
+         49870  logs/PHASE_2_LOG.md
+         44540  logs/PHASE_3_LOG.md
+         37378  logs/PHASE_4_LOG.md
+         32467  logs/PHASE_5_LOG.md
+         26527  logs/PHASE_FINAL_2_LOG.md
+         21150  logs/PHASE_FINAL_LOG.md
+          7283  logs/runs/final_adversarial.txt
+          3313  logs/runs/final_clean_path.log
+            21  logs/runs/final_clean_path.started
+          3313  logs/runs/final_clean_path.stdout
+          2329  logs/runs/final_decoy_segment.log
+           592  logs/runs/p4_vectors.txt
+         14286  logs/runs/p5_suites_run.txt
+         18877  logs/runs/p5_verify_baseline.txt
+          8506  logs/runs/p5_verify_final.txt
+          8501  logs/runs/p5_verify_run.txt
+          7288  logs/runs/pf2_adversarial.txt
+           686  logs/runs/pf2_binaries_diff.txt
+          3196  logs/runs/pf2_clean_rebuild.txt
+          1355  logs/runs/pf2_confirm_hedge.log
+          2904  logs/runs/pf2_confirm_hedge.stdout
+          3154  logs/runs/pf2_confirm_lower.log
+          3154  logs/runs/pf2_confirm_lower.stdout
+          3157  logs/runs/pf2_confirm_upper.log
+          3157  logs/runs/pf2_confirm_upper.stdout
+         11565  logs/runs/pf2_cppcheck.txt
+       1335356  logs/runs/pf2_model_sweep.txt
+         98890  logs/runs/pf2_model_sweep2.txt
+           357  logs/runs/pf2_package.txt
+           389  logs/runs/pf2_poison_volume.txt
+           957  logs/runs/pf2_real_sweep.txt
+       1831083  logs/runs/pf2_trials_model.jsonl
+       5312744  logs/runs/pf2_trials_model2.jsonl
+         18634  logs/runs/pf2_trials_real.jsonl
+          8514  logs/runs/pf2_verify_chain.txt
+         17073  logs/runs/pf_finalize.log
+          8506  logs/runs/pf_verify_final.txt
+          3320  logs/runs/scale60_clean.log
+          3320  logs/runs/scale60_stdout.txt
+WINDOWS-COPY-OK

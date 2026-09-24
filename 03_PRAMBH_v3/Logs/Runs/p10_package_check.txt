@@ -1,0 +1,27 @@
+PASS package-present
+PASS no-state-shipped
+PASS no-organizer-dir
+PASS no-master-secret
+PASS no-server-code
+PASS no-python-in-package
+PASS no-spec-in-package
+PASS no-hints-in-package
+PASS no-archives-nested
+PASS stage-dirs
+FAIL tools-present (got [1] want [8])
+FAIL all-binaries-static (got [1] want [15])
+FAIL all-binaries-nm-empty (got [1] want [15])
+PASS corpus-line-budget
+PASS corpus-file-count
+PASS manifest-exists
+PASS manifest-verifies
+PASS manifest-covers-every-file
+
+=== deterministic zip (built twice) ===
+PASS release-script
+PASS zip-deterministic
+PASS zip-extracts
+PASS zip-contents-match-package
+PASS no-leaks-in-zip-listing
+
+PACKAGE CHECK: 20 PASS, 3 FAIL

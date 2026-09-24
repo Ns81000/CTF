@@ -1,0 +1,33 @@
+P2 CALIBRATION
+fill: fill 4.03s
+r_build = 1712362.4 steps/s at S=536870912
+{
+  "table_bytes": 536870912,
+  "table_blocks": 16777216,
+  "r_build_steps_per_sec": 1712362.4,
+  "attacker_advantage_assumption": 4,
+  "latency_bound_note": "walk is DRAM-latency-bound at S=512MiB; see COST_MODEL.md",
+  "measure_seconds": 12,
+  "budgets": {
+    "chain1": {
+      "honest_target_seconds": 4500,
+      "T": 7705630875
+    },
+    "chain2": {
+      "honest_target_seconds": 4500,
+      "T": 7705630875
+    },
+    "door_decoy": {
+      "honest_target_seconds": 720,
+      "T": 1232900940
+    },
+    "mirror": {
+      "honest_target_seconds": 240,
+      "T": 410966980
+    },
+    "decoy_rom": {
+      "honest_target_seconds": 180,
+      "T": 308225235
+    }
+  }
+}
