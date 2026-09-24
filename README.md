@@ -59,7 +59,7 @@ Three shipped generations, each one hardened against what actually beat the last
 |:---:|:---|:---|:---|:---|
 | **v1** | The Cartographer's Ghost | Make being smart not shorten the work | Token-cost design: verification-expensive traps, real sample volumes, format-valid decoys | 2–3 h target; 84.4 min measured oracle sitting |
 | **v2** | The Cartographer's Ghost v2 | No answer may be computable statically | Twelve design laws: one-oracle discipline (no tool confirms correctness), behaviour gates, anti-static derivation, bait prose | 12–20 h projected (agent + human) |
-| **v3** | PRAMBH | Never answer back | Feedback starvation first: silent tools, byte-identical refusals, corroborating dead ends — over memory-hard sequential work and human-senses gates | **Untimed / No time limit**; two ~91-min sequential chains measured as anti-bot compute floor |
+| **v3** | PRAMBH | Never answer back | Feedback starvation first: silent tools, byte-identical refusals, corroborating dead ends — over memory-hard sequential work and human-senses gates | sequential chains measured as anti-bot compute floor |
 
 All three ship as complete, offline, deterministic packages — source, audits, calibration
 logs and organizer-private material included — and v3 is live on TryHackMe in
